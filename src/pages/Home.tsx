@@ -1,0 +1,150 @@
+import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useGameData } from '../lib/data';
+import { DAY, eventStyle, isActive, withDates, type TimedEvent } from '../lib/events';
+import { gblSchedule } from '../lib/names';
+import { useRoster } from '../lib/roster';
+import EventModal from '../components/EventModal';
+import { Sprite, Types, fmtDateTime } from '../components/ui';
+
+function EventRow({ e, onPick }: { e: TimedEvent; onPick: (e: TimedEvent) => void }) {
+  return (
+    <div className="event" style={{ ['--ec' as string]: eventStyle(e.eventType).color }} onClick={() => onPick(e)} role="button">
+      <img src={e.image} alt="" loading="lazy" />
+      <div className="ev-body">
+        <div className="ev-name">{e.name}</div>
+        <div className="muted small">
+          {eventStyle(e.eventType).label} · {isActive(e) ? `ends ${fmtDateTime(e.endDate)}` : fmtDateTime(e.startDate)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Home() {
+  const data = useGameData();
+  const { roster } = useRoster();
+  const [picked, setPicked] = useState<TimedEvent | null>(null);
+  const now = new Date();
+  const events = useMemo(() => withDates(data.events), [data.events]);
+  const live = events.filter((e) => isActive(e) && !['season', 'go-battle-league', 'go-pass'].includes(e.eventType));
+  const soon = events.filter((e) => e.startDate > now && e.startDate.getTime() - now.getTime() < 7 * DAY && e.eventType !== 'go-battle-league');
+  const gbl = gblSchedule(data).find((w) => w.start <= now && w.end > now);
+  const topRaids = data.raids.filter((r) => /5-star|mega/i.test(r.tier));
+
+  return (
+    <div className="stack">
+      <div className="page-head">
+        <div>
+          <h1>Today</h1>
+          <p className="muted">{now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
+        </div>
+      </div>
+      <div className="grid cols-2">
+        <div className="card">
+          <div className="row">
+            <h2>Happening now</h2>
+            <span className="spacer" />
+            <Link to="/calendar" className="small">
+              Calendar →
+            </Link>
+          </div>
+          <div className="event-list">
+            {live.length === 0 && <div className="muted">Nothing special live right now.</div>}
+            {live.map((e) => (
+              <EventRow key={e.eventID} e={e} onPick={setPicked} />
+            ))}
+          </div>
+        </div>
+        <div className="card">
+          <h2>Next 7 days</h2>
+          <div className="event-list">
+            {soon.length === 0 && <div className="muted">No announced events in the next week.</div>}
+            {soon.map((e) => (
+              <EventRow key={e.eventID} e={e} onPick={setPicked} />
+            ))}
+          </div>
+        </div>
+        <div className="card">
+          <div className="row">
+            <h2>Headline raids</h2>
+            <span className="spacer" />
+            <Link to="/raids" className="small">
+              Counters →
+            </Link>
+          </div>
+          <div className="boss-list">
+            {topRaids.map((r) => (
+              <Link key={r.name} to="/raids" className="card boss-btn" style={{ margin: 0 }}>
+                <Sprite src={r.image} size={48} />
+                <span className="mon-name">{r.name}</span>
+                <Types types={r.types.map((t) => t.name)} small />
+                <span className="tier">
+                  100%: {r.combatPower.normal.max} / {r.combatPower.boosted.max}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="card">
+          <div className="row">
+            <h2>GO Battle League</h2>
+            <span className="spacer" />
+            <Link to="/leagues" className="small">
+              Schedule →
+            </Link>
+          </div>
+          {gbl ? (
+            <>
+              <p className="muted small">Until {fmtDateTime(gbl.end)}</p>
+              <div className="stack">
+                {gbl.leagues.map((l) => (
+                  <div key={l.label} className="row">
+                    <strong>{l.label}</strong>
+                    <span className="spacer" />
+                    {l.format && (
+                      <>
+                        <Link className="small" to={`/meta/${l.format.key}`}>
+                          Meta
+                        </Link>
+                        <Link className="small" to={`/teams?league=${l.format.key}`}>
+                          My team
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <p className="muted">No GBL week live.</p>
+          )}
+          <p className="small muted" style={{ marginTop: 12 }}>
+            {roster.length} Pokémon saved. <Link to="/roster">Manage →</Link>
+          </p>
+        </div>
+        <div className="card">
+          <div className="row">
+            <h2>Official news</h2>
+            <span className="spacer" />
+            <a className="small" href="https://pokemongolive.com/news" target="_blank" rel="noreferrer">
+              pokemongolive.com ↗
+            </a>
+          </div>
+          {data.news.length === 0 && <p className="muted">No news in the latest data refresh.</p>}
+          <ul className="news">
+            {data.news.slice(0, 8).map((n) => (
+              <li key={n.link}>
+                <a href={n.link} target="_blank" rel="noreferrer">
+                  {n.title}
+                </a>
+                <span className="small muted"> · {new Date(n.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {picked && <EventModal event={picked} onClose={() => setPicked(null)} />}
+    </div>
+  );
+}
