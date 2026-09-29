@@ -3,6 +3,7 @@ import { eventStyle, type TimedEvent } from '../lib/events';
 import { usePrefs, useT } from '../lib/i18n';
 import { resolveName } from '../lib/names';
 import { PokeName, Sprite } from './ui';
+import { EventName, OfficialBadge, officialLink } from './Official';
 
 function fmtDateTime(d: Date, lang: string) {
   return d.toLocaleString(lang === 'ko' ? 'ko-KR' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
@@ -45,7 +46,10 @@ export default function EventModal({ event, onClose }: { event: TimedEvent; onCl
           <span className="spacer" />
           <button onClick={onClose}>{t('Close')}</button>
         </div>
-        <h2 style={{ marginTop: 8 }}>{event.name}</h2>
+        <h2 style={{ marginTop: 8 }}>
+          <EventName event={event} />
+        </h2>
+        <OfficialBadge event={event} />
         <p className="muted">
           {fmtDateTime(event.startDate, lang)} → {fmtDateTime(event.endDate, lang)}
         </p>
@@ -85,9 +89,26 @@ export default function EventModal({ event, onClose }: { event: TimedEvent; onCl
             </ul>
           </>
         ) : null}
-        <a href={event.link} target="_blank" rel="noreferrer">
-          {t('Full details on LeekDuck ↗')}
-        </a>
+        {event.official?.mismatch && event.official.leekStart && (
+          <p className="small official-note">
+            {t('LeekDuck listed {start} → {end}; using the official times above.', {
+              start: fmtDateTime(new Date(event.official.leekStart), lang),
+              end: fmtDateTime(new Date(event.official.leekEnd ?? event.official.leekStart), lang),
+            })}
+          </p>
+        )}
+        <div className="row">
+          {officialLink(event, lang) && (
+            <a href={officialLink(event, lang)!} target="_blank" rel="noreferrer">
+              {t('Official announcement ↗')}
+            </a>
+          )}
+          {!event.official?.only && (
+            <a href={event.link} target="_blank" rel="noreferrer">
+              {t('Full details on LeekDuck ↗')}
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

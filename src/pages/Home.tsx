@@ -6,6 +6,7 @@ import { leagueNames, ordered, usePrefs, useT } from '../lib/i18n';
 import { gblSchedule, resolveName } from '../lib/names';
 import { useRoster } from '../lib/roster';
 import EventModal from '../components/EventModal';
+import { EventName, OfficialBadge } from '../components/Official';
 import { PokeName, Sprite, Types } from '../components/ui';
 
 const locale = (lang: string) => (lang === 'ko' ? 'ko-KR' : 'en-US');
@@ -21,7 +22,9 @@ function EventRow({ e, onPick }: { e: TimedEvent; onPick: (e: TimedEvent) => voi
     <div className="event" style={{ ['--ec' as string]: eventStyle(e.eventType).color }} onClick={() => onPick(e)} role="button">
       <img src={e.image} alt="" loading="lazy" />
       <div className="ev-body">
-        <div className="ev-name">{e.name}</div>
+        <div className="ev-name">
+                  <EventName event={e} /> <OfficialBadge event={e} />
+                </div>
         <div className="muted small">
           {t(eventStyle(e.eventType).label)} · {isActive(e) ? t('ends {date}', { date: fmtDateTimeL(e.endDate, lang) }) : fmtDateTimeL(e.startDate, lang)}
         </div>
@@ -172,8 +175,8 @@ export default function Home() {
           <ul className="news">
             {data.news.slice(0, 8).map((n) => (
               <li key={n.link}>
-                <a href={n.link} target="_blank" rel="noreferrer">
-                  {n.title}
+                <a href={(lang === 'ko' && n.linkKo) || n.link} target="_blank" rel="noreferrer">
+                  {(lang === 'ko' && n.titleKo) || n.title}
                 </a>
                 <span className="small muted"> · {new Date(n.date).toLocaleDateString(locale(lang), { month: 'short', day: 'numeric' })}</span>
               </li>

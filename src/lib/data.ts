@@ -38,6 +38,19 @@ export interface LeekEvent {
   start: string;
   end: string;
   extraData?: Record<string, unknown>;
+  /** Set when an official pokemongo.com post confirms (or is the only source of) this event. */
+  official?: {
+    url: string;
+    urlKo: string;
+    title: string;
+    titleKo: string | null;
+    start: string;
+    end: string;
+    leekStart?: string;
+    leekEnd?: string;
+    mismatch: boolean;
+    only?: boolean;
+  };
 }
 
 export interface LeekRaid {
@@ -79,7 +92,9 @@ export interface ShinyEntry {
 
 export interface NewsItem {
   title: string;
+  titleKo?: string | null;
   link: string;
+  linkKo?: string;
   date: string;
 }
 

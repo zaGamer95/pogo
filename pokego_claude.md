@@ -41,6 +41,7 @@ Nav order is defined in `src/App.tsx` (`NAV`). Footer shows data refresh time + 
 scripts/fetch-data.mjs     data pipeline (Node 22+, no deps)
 scripts/i18n.mjs           ko/en/ja names from official game text → data/i18n/*.csv + public/data/i18n.json
 scripts/jp-parties.mjs     popular GBL teams from pokemongo-get.com → public/data/jp-parties.json
+scripts/official.mjs       official pokemongo.com posts (en + ko) → event windows; verifies/overrides LeekDuck event times
 data/i18n/                 COMMITTED name tables (CSV, UTF-8 BOM for Excel): pokemon_names, move_names, type_names,
                            weather_names, league_names, overrides.csv (hand fixes, always win), _untranslated.txt
 src/main.tsx               entry (HashRouter)
@@ -73,11 +74,12 @@ src/lib/
 | `moves.json` | PvPoke moves + PokeMiners PvE stats | `Record<MOVE_ID, Move>` |
 | `types.json` | PokeMiners `typeEffective` | `{ types: string[18], chart: {atk: {def: mult}} }` |
 | `cpm.json` | PokeMiners `PLAYER_LEVEL_SETTINGS` | `number[]`, index = `(level-1)*2`, levels 1–55 in 0.5 steps (half levels interpolated) |
-| `events.json` | ScrapedDuck `events.min.json` (LeekDuck) | `LeekEvent[]` (raw) |
+| `events.json` | ScrapedDuck `events.min.json` (LeekDuck), **verified against official posts** | `LeekEvent[]`; matched events get `official: { url, urlKo, title, titleKo, start, end, leekStart, leekEnd, mismatch }` and their `start/end` replaced by the official window; official posts LeekDuck lacks are appended as `eventType: 'official'` (`official.only = true`) |
 | `raids.json` | ScrapedDuck `raids.min.json` | `LeekRaid[]` (raw) |
 | `shinies.json` | LeekDuck `shiny/pms.json` | `{ dex, form: string\|null, released: 'YYYY-MM-DD'\|null }[]` |
 | `names.json` | LeekDuck `shiny/name.json` | `Record<dex, { en, ko }>` |
-| `news.json` | Official RSS `pokemongolive.com/feed` | `{ title, link, date }[]` |
+| `news.json` | Official posts (pokemongo.com/news, en + ko); RSS fallback | `{ title, titleKo?, link, linkKo?, date }[]` |
+| `official.json` | pokemongo.com/news — latest ~30 posts, en + `/ko/` | `{ slug, url, urlKo, title, titleKo, published, image, windows: {start, end, text}[] }[]` (windows = local wall-clock `YYYY-MM-DDTHH:MM`) |
 | `pvp/formats.json` | PvPoke formats + cups that have rankings | `PvpFormat[]` (`key = "<cup>-<cp>"`) |
 | `pvp/<cup>-<cp>.json` | PvPoke rankings | `{ overall?, leads?, closers?, switches?, attackers?, chargers?: RankEntry[] }` (overall top 200, others top 60) |
 | `i18n.json` | PokeMiners `pogo_assets` i18n (ko/ja/en game text) → fallbacks LeekDuck names, PokeAPI (newest species/moves) → `data/i18n/overrides.csv` | `{ pokemon, moves, types, weather: Record<id, [ko, ja]>, leagues: Record<EnglishTitle, [ko, ja]> }` |
@@ -158,7 +160,10 @@ Goal: official data first, community data only when it's *backed*. Speculation n
 4. Status is explicit: `confirmed` (T0, or T1 live in game), `datamined` (in files, not announced), `study` (measured), `disputed` (conflicting backed sources). Expired/overridden remarks get `expires`/`supersededBy`.
 5. When a higher tier contradicts a remark, the higher tier wins and the remark is marked `disputed` or removed.
 
-### Proposed implementation (not built yet)
+### Implemented: official-first events
+`scripts/official.mjs` reads the latest ~30 posts from pokemongo.com/news (English + Korean pages, ~60 spaced requests per run). Only **standalone** window lines are parsed (`…, from 2:00 p.m. to 5:00 p.m. local time` / `…, at 10:00 a.m. to …, at 8:00 p.m. local time`); times inside sentences and non-local zones (PDT/UTC/JST) are ignored, so unreadable posts fall back to LeekDuck rather than being guessed. Matching = same local start day + name/slug token similarity ≥ 0.5. Official times win; the UI shows **공식 ✓** / **공식 ✓ · 시간 수정됨** / **공식 발표만** badges, the official Korean title, and links to the Korean post. Only events with local (no `Z`) LeekDuck times are compared. The login-gated pokemongo.com/events calendar is **not** used.
+
+### Proposed implementation for community remarks (not built yet)
 - `data/remarks/*.yaml` (committed, human-reviewed) → pipeline validates the schema and emits `public/data/remarks.json`:
   ```yaml
   - id: 2026-10-xerneas-geomancy

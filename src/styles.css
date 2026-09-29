@@ -308,3 +308,10 @@ table.compare td:first-child { font-size: 0.88rem; }
 th { color: var(--muted); }
 tr.mine td { background: color-mix(in srgb, var(--go-teal) 12%, transparent); }
 .page-head h1::after { content: ''; display: block; width: 44px; height: 4px; margin-top: 6px; border-radius: 999px; background: var(--go-grad); }
+
+/* ---------- Official verification badges ---------- */
+.pill.official { border-color: var(--go-teal); color: var(--go-teal-dark); background: color-mix(in srgb, var(--go-teal) 12%, transparent); }
+.pill.official.corrected { border-color: var(--accent-2); color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 12%, transparent); }
+.pill.official-only { border-color: #7048e8; color: #7048e8; background: color-mix(in srgb, #7048e8 10%, transparent); }
+.official-note { color: var(--accent-2); }
+@media (prefers-color-scheme: dark) { .pill.official { color: var(--go-teal); } .pill.official-only { color: #b197fc; border-color: #b197fc; } }

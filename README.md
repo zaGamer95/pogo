@@ -35,7 +35,8 @@ npm run build      # production build in dist/
 
 `scripts/fetch-data.mjs` downloads the sources and writes compact JSON to `public/data/`:
 
-- **ScrapedDuck** (LeekDuck scrape): events and current raid bosses
+- **Official pokemongo.com news** (English and Korean): the authority for event dates and times. LeekDuck events are checked against it, official times win, and official-only announcements are added.
+- **ScrapedDuck** (LeekDuck scrape): the event calendar structure and current raid bosses
 - **PvPoke**: species list, PvP moves, league formats and rankings
 - **PokeMiners game master**: PvE move stats, CP multipliers, type chart, Dynamax/Gigantamax flags
 

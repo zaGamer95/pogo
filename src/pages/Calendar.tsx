@@ -3,6 +3,7 @@ import { useGameData } from '../lib/data';
 import { DAY, durationDays, eventStyle, isActive, overlapsDay, withDates, type TimedEvent } from '../lib/events';
 import { usePrefs, useT } from '../lib/i18n';
 import EventModal from '../components/EventModal';
+import { EventName, OfficialBadge } from '../components/Official';
 
 const HIDDEN_BY_DEFAULT = ['go-battle-league', 'season', 'go-pass'];
 const LONG_EVENT_DAYS = 10;
@@ -61,7 +62,8 @@ function Month({ year, month, events, onPick }: { year: number; month: number; e
                     title={`${e.name}\n${fmtDateTime(e.startDate, lang)} → ${fmtDateTime(e.endDate, lang)}`}
                     onClick={() => onPick(e)}
                   >
-                    {e.name}
+                    {e.official && !e.official.only ? '✓ ' : ''}
+                    {lang === 'ko' && e.official?.titleKo ? e.official.titleKo : e.name}
                   </button>
                 );
               })}
@@ -161,7 +163,9 @@ export default function Calendar() {
             <div key={e.eventID} className="event" style={{ ['--ec' as string]: eventStyle(e.eventType).color }} onClick={() => setPicked(e)} role="button">
               <img src={e.image} alt="" loading="lazy" />
               <div className="ev-body">
-                <div className="ev-name">{e.name}</div>
+                <div className="ev-name">
+                  <EventName event={e} /> <OfficialBadge event={e} />
+                </div>
                 <div className="muted small">
                   {t(eventStyle(e.eventType).label)} · {fmtDateTime(e.startDate, lang)} → {fmtDateTime(e.endDate, lang)}
                   {isActive(e) && <span className="pill good" style={{ marginLeft: 6 }}>{t('Live')}</span>}

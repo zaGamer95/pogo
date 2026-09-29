@@ -11,6 +11,7 @@ import { access, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { buildI18n } from './i18n.mjs';
 import { fetchJpParties } from './jp-parties.mjs';
+import { applyOfficial, fetchOfficialPosts } from './official.mjs';
 
 const OUT = path.resolve(import.meta.dirname, '../public/data');
 const POKEMINERS = 'https://raw.githubusercontent.com/PokeMiners/game_masters/master/latest/latest.json';
@@ -68,7 +69,7 @@ async function main() {
     }
   }
   console.log('Fetching sources…');
-  const [gm, pv, events, raids, shinyRaw, namesRaw, feed] = await Promise.all([
+  let [gm, pv, events, raids, shinyRaw, namesRaw, feed] = await Promise.all([
     getJson(POKEMINERS),
     getJson(`${PVPOKE}/gamemaster.min.json`),
     getJson(`${SCRAPEDDUCK}/events.min.json`),
@@ -86,7 +87,7 @@ async function main() {
   });
   // Dex number -> localized names (en + ko), useful for searching in either language
   const names = Object.fromEntries(Object.entries(namesRaw).map(([dex, n]) => [dex, { en: n.en, ko: n.ko, ja: n.ja }]));
-  const news = feed ? parseRss(feed) : [];
+  let news = feed ? parseRss(feed) : [];
 
   // ---- CP multipliers (levels 1 … 55 in 0.5 steps) ----
   const levelSettings = gm.find((t) => t.templateId === 'PLAYER_LEVEL_SETTINGS').data.playerLevel;
@@ -223,6 +224,24 @@ async function main() {
     await write(`pvp/${key}.json`, rankings);
   }
 
+  // ---- Official announcements (T0) verify / override LeekDuck (T2) event times ----
+  console.log('Checking events against official pokemongo.com posts…');
+  const officialPosts = await fetchOfficialPosts().catch((e) => {
+    console.warn('  official posts unavailable:', e.message);
+    return [];
+  });
+  const official = applyOfficial(events, officialPosts);
+  events = official.events;
+  console.log(
+    `  ${officialPosts.length} posts read, ${officialPosts.filter((p) => p.windows.length).length} with event times · matched ${official.stats.matched} (${official.stats.mismatched} time corrections) · ${official.stats.officialOnly} official-only`,
+  );
+  if (officialPosts.length) {
+    news = officialPosts
+      .filter((p) => p.published)
+      .sort((a, b) => b.published.localeCompare(a.published))
+      .map((p) => ({ title: p.title, titleKo: p.titleKo, link: p.url, linkKo: p.urlKo, date: p.published }));
+  }
+
   // ---- Korean / English / Japanese names (official in-game text) ----
   console.log('Building ko/en/ja names…');
   const i18n = await buildI18n({ gm, pv, dexNames: namesRaw });
@@ -237,6 +256,7 @@ async function main() {
 
   await Promise.all([
     write('i18n.json', i18n.json),
+    write('official.json', officialPosts),
     jpParties && write('jp-parties.json', jpParties),
     write('pokemon.json', pokemon),
     write('moves.json', moves),
@@ -251,7 +271,7 @@ async function main() {
     write('meta.json', {
       updated: new Date().toISOString(),
       pvpokeUpdated: pv.timestamp,
-      counts: { shinies: shinies.length, news: news.length, pokemon: pokemon.length, moves: Object.keys(moves).length, formats: formats.length, events: events.length, raids: raids.length, dmax: dmax.size, gmax: gmax.size },
+      counts: { official: officialPosts.length, officialMatched: official.stats.matched, officialCorrections: official.stats.mismatched, officialOnly: official.stats.officialOnly, shinies: shinies.length, news: news.length, pokemon: pokemon.length, moves: Object.keys(moves).length, formats: formats.length, events: events.length, raids: raids.length, dmax: dmax.size, gmax: gmax.size },
     }),
   ]);
   console.log('Done.');
