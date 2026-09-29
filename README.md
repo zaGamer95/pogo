@@ -41,7 +41,7 @@ npm run build      # production build in dist/
 
 ## Deploying (GitHub Pages)
 
-`.github/workflows/deploy.yml` rebuilds the data and deploys the site on every push to `main` and every 6 hours. To turn it on, go to **Settings → Pages → Source: GitHub Actions** in the GitHub repo.
+`.github/workflows/deploy.yml` rebuilds the data and deploys the site on every push to `main` and three times a day, at 05:30, 10:15 and 17:30 Korea time. To turn it on, go to **Settings → Pages → Source: GitHub Actions** in the GitHub repo.
 
 ## Caveats
 
