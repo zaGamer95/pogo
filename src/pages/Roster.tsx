@@ -2,7 +2,8 @@ import { useMemo, useRef, useState } from 'react';
 import { useGameData, type Species } from '../lib/data';
 import { cpAtLevel, levelFromCP, LEVELS, pvpIvRank, type IVs } from '../lib/calc';
 import { exportRoster, importPokeGenieCsv, mergePokeGenie, newUid, parseRosterJson, useRoster, type RosterMon } from '../lib/roster';
-import { Empty, MoveName, SpeciesPicker, Sprite, Types } from '../components/ui';
+import { Empty, MoveName, PokeName, SpeciesPicker, Sprite, Types } from '../components/ui';
+import { moveNames, pokeNames, searchText, typeNames, usePrefs, useT } from '../lib/i18n';
 
 function blank(): RosterMon {
   return { uid: newUid(), speciesId: '', ivs: [15, 15, 15], level: 40, charged: [], source: 'manual', addedAt: Date.now() };
@@ -10,6 +11,8 @@ function blank(): RosterMon {
 
 export default function Roster() {
   const data = useGameData();
+  const { lang } = usePrefs();
+  const t = useT();
   const { roster, upsert, remove, addMany, replaceAll } = useRoster();
   const [editing, setEditing] = useState<RosterMon | null>(null);
   const [q, setQ] = useState('');
@@ -36,14 +39,20 @@ export default function Roster() {
         };
       })
       .filter((x): x is NonNullable<typeof x> => !!x);
-    const n = q.trim().toLowerCase();
+    const n = q.trim().toLowerCase().normalize('NFKC');
     return list
-      .filter((r) => !n || r.sp.name.toLowerCase().includes(n) || r.m.nickname?.toLowerCase().includes(n) || r.sp.types.some((t) => t === n))
+      .filter(
+        (r) =>
+          !n ||
+          searchText(data, r.sp).includes(n) ||
+          r.m.nickname?.toLowerCase().includes(n) ||
+          r.sp.types.some((ty) => ty === n || Object.values(typeNames(data, ty)).some((x) => x.toLowerCase() === n)),
+      )
       .filter((r) => filter === 'all' || (filter === 'raid' && r.m.raidReady) || (filter === 'pvp' && r.m.pvpReady) || (filter === 'dmax' && r.m.dynamax) || (filter === 'shiny' && r.m.shiny) || (filter === 'trade' && r.m.forTrade))
       .sort((a, b) => {
         switch (sort) {
           case 'name':
-            return a.sp.name.localeCompare(b.sp.name);
+            return pokeNames(data, a.sp)[lang].localeCompare(pokeNames(data, b.sp)[lang], lang);
           case 'iv':
             return b.ivPct - a.ivPct;
           case 'recent':
@@ -56,7 +65,7 @@ export default function Roster() {
             return b.cp - a.cp;
         }
       });
-  }, [roster, data, q, filter, sort]);
+  }, [roster, data, q, filter, sort, lang]);
 
   const download = () => {
     const blob = new Blob([exportRoster(roster)], { type: 'application/json' });
@@ -74,20 +83,26 @@ export default function Roster() {
         const { added, skipped } = importPokeGenieCsv(data, text);
         const { roster: next, kept, removed } = mergePokeGenie(roster, added);
         replaceAll(next);
-        setMsg(`Imported ${added.length} Pokémon from Poke Genie (${kept} matched earlier imports and kept your flags, ${removed} no longer in the export were removed; manual entries untouched).${skipped.length ? ` Skipped ${skipped.length}: ${skipped.slice(0, 8).join(', ')}${skipped.length > 8 ? '…' : ''}` : ''}`);
+        setMsg(
+          t('Imported {n} Pokémon from Poke Genie ({kept} matched earlier imports and kept your flags, {removed} no longer in the export were removed; manual entries untouched).', {
+            n: added.length,
+            kept,
+            removed,
+          }) + (skipped.length ? ' ' + t('Skipped {n}: {list}', { n: skipped.length, list: `${skipped.slice(0, 8).join(', ')}${skipped.length > 8 ? '…' : ''}` }) : ''),
+        );
       } else {
         const list = parseRosterJson(text);
-        if (roster.length && !confirm(`Replace your ${roster.length} saved Pokémon with ${list.length} from this backup? Cancel to merge instead.`)) {
+        if (roster.length && !confirm(t('Replace your {n} saved Pokémon with {m} from this backup? Cancel to merge instead.', { n: roster.length, m: list.length }))) {
           const have = new Set(roster.map((r) => r.uid));
           addMany(list.filter((r) => !have.has(r.uid)));
-          setMsg(`Merged backup into your roster.`);
+          setMsg(t('Merged backup into your roster.'));
         } else {
           replaceAll(list);
-          setMsg(`Restored ${list.length} Pokémon from backup.`);
+          setMsg(t('Restored {n} Pokémon from backup.', { n: list.length }));
         }
       }
     } catch (e) {
-      setMsg(`Import failed: ${(e as Error).message}`);
+      setMsg(t('Import failed: {error}', { error: (e as Error).message }));
     }
   };
 
@@ -95,18 +110,22 @@ export default function Roster() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>My Pokémon</h1>
+          <h1>{t('My Pokémon')}</h1>
           <p className="muted">
-            {roster.length} saved · {roster.filter((m) => m.raidReady).length} raid-ready · {roster.filter((m) => m.pvpReady).length} PvP-ready · saved in this browser only
+            {t('{n} saved · {raid} raid-ready · {pvp} PvP-ready · saved in this browser only', {
+              n: roster.length,
+              raid: roster.filter((m) => m.raidReady).length,
+              pvp: roster.filter((m) => m.pvpReady).length,
+            })}
           </p>
         </div>
         <div className="row">
           <button className="primary" onClick={() => setEditing(blank())}>
-            + Add Pokémon
+            {t('+ Add Pokémon')}
           </button>
-          <button onClick={() => fileRef.current?.click()}>Import (Poke Genie CSV / backup)</button>
+          <button onClick={() => fileRef.current?.click()}>{t('Import (Poke Genie CSV / backup)')}</button>
           <button onClick={download} disabled={!roster.length}>
-            Export backup
+            {t('Export backup')}
           </button>
           <input
             ref={fileRef}
@@ -125,7 +144,7 @@ export default function Roster() {
         <div className="card row">
           <span>{msg}</span>
           <span className="spacer" />
-          <button onClick={() => setMsg(null)}>OK</button>
+          <button onClick={() => setMsg(null)}>{t('OK')}</button>
         </div>
       )}
 
@@ -142,40 +161,40 @@ export default function Roster() {
 
       <div className="card">
         <div className="row" style={{ marginBottom: 10 }}>
-          <input placeholder="Search name, nickname or type…" value={q} onChange={(e) => setQ(e.target.value)} />
+          <input placeholder={t('Search name (한국어 / English / 日本語), nickname or type…')} value={q} onChange={(e) => setQ(e.target.value)} />
           <select value={filter} onChange={(e) => setFilter(e.target.value as typeof filter)}>
-            <option value="all">All</option>
-            <option value="raid">Raid-ready</option>
-            <option value="pvp">PvP-ready</option>
-            <option value="dmax">Dynamax / Gigantamax</option>
-            <option value="shiny">Shiny</option>
-            <option value="trade">For trade</option>
+            <option value="all">{t('All')}</option>
+            <option value="raid">{t('Raid-ready')}</option>
+            <option value="pvp">{t('PvP-ready')}</option>
+            <option value="dmax">{t('Dynamax / Gigantamax')}</option>
+            <option value="shiny">{t('Shiny')}</option>
+            <option value="trade">{t('For trade')}</option>
           </select>
           <select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)}>
-            <option value="cp">Sort: CP</option>
-            <option value="name">Sort: Name</option>
-            <option value="iv">Sort: IV %</option>
-            <option value="gl">Sort: Great League IV rank</option>
-            <option value="ul">Sort: Ultra League IV rank</option>
-            <option value="recent">Sort: Recently added</option>
+            <option value="cp">{t('Sort: CP')}</option>
+            <option value="name">{t('Sort: Name')}</option>
+            <option value="iv">{t('Sort: IV %')}</option>
+            <option value="gl">{t('Sort: Great League IV rank')}</option>
+            <option value="ul">{t('Sort: Ultra League IV rank')}</option>
+            <option value="recent">{t('Sort: Recently added')}</option>
           </select>
         </div>
         {rows.length === 0 ? (
           <Empty>
-            {roster.length ? 'Nothing matches that filter.' : 'No Pokémon yet. Add them one at a time, or import a CSV exported from Poke Genie (Poke Genie → Settings → Export data).'}
+            {roster.length ? t('Nothing matches that filter.') : t('No Pokémon yet. Add them one at a time, or import a CSV exported from Poke Genie (Poke Genie → Settings → Export data).')}
           </Empty>
         ) : (
           <div className="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Pokémon</th>
+                  <th>{t('Pokémon')}</th>
                   <th className="right">CP</th>
-                  <th>IVs</th>
-                  <th>Moves</th>
-                  <th title="IV rank for Great League (1 = best of 4096)">GL rank</th>
-                  <th title="IV rank for Ultra League">UL rank</th>
-                  <th>Ready</th>
+                  <th>{t('IVs')}</th>
+                  <th>{t('Moves')}</th>
+                  <th title={t('IV rank for Great League (1 = best of 4096)')}>{t('GL rank')}</th>
+                  <th title={t('IV rank for Ultra League')}>{t('UL rank')}</th>
+                  <th>{t('Ready')}</th>
                   <th />
                 </tr>
               </thead>
@@ -186,17 +205,17 @@ export default function Roster() {
                       <div className="mon">
                         <Sprite species={sp} size={36} />
                         <div>
-                          <div className="mon-name">
-                            {m.nickname || sp.name}
-                            {m.shadow && <span className="pill bad" style={{ marginLeft: 4 }}>Shadow</span>}
-                            {m.purified && <span className="pill accent" style={{ marginLeft: 4 }}>Purified</span>}
+                          <div>
+                            <PokeName species={sp} nickname={m.nickname} />
+                            {m.shadow && <span className="pill bad" style={{ marginLeft: 4 }}>{t('Shadow')}</span>}
+                            {m.purified && <span className="pill accent" style={{ marginLeft: 4 }}>{t('Purified')}</span>}
                             {m.shiny && <span className="pill warn" style={{ marginLeft: 4 }}>✨</span>}
-                            {m.forTrade && <span className="pill good" style={{ marginLeft: 4 }}>Trade</span>}
-                            {m.lucky && <span className="pill warn" style={{ marginLeft: 4 }}>Lucky</span>}
-                            {m.dynamax && <span className="pill accent" style={{ marginLeft: 4 }}>{m.dynamax === 'gmax' ? 'G-Max' : 'D-Max'}</span>}
+                            {m.forTrade && <span className="pill good" style={{ marginLeft: 4 }}>{t('Trade')}</span>}
+                            {m.lucky && <span className="pill warn" style={{ marginLeft: 4 }}>{t('Lucky')}</span>}
+                            {m.dynamax && <span className="pill accent" style={{ marginLeft: 4 }}>{m.dynamax === 'gmax' ? t('G-Max') : t('D-Max')}</span>}
                           </div>
                           <div className="small muted">
-                            {m.nickname ? `${sp.name} · ` : ''}Lv {m.level} <Types types={sp.types} small />
+                            {t('Lv {level}', { level: m.level })} <Types types={sp.types} small />
                           </div>
                         </div>
                       </div>
@@ -214,25 +233,25 @@ export default function Roster() {
                         </span>
                       ))}
                     </td>
-                    <td className="small nowrap">{gl ? <RankCell r={gl} /> : <span className="muted">over cap</span>}</td>
-                    <td className="small nowrap">{ul ? <RankCell r={ul} /> : <span className="muted">over cap</span>}</td>
+                    <td className="small nowrap">{gl ? <RankCell r={gl} /> : <span className="muted">{t('over cap')}</span>}</td>
+                    <td className="small nowrap">{ul ? <RankCell r={ul} /> : <span className="muted">{t('over cap')}</span>}</td>
                     <td>
                       <label className="check small">
-                        <input type="checkbox" checked={!!m.raidReady} onChange={(e) => upsert({ ...m, raidReady: e.target.checked })} /> Raid
+                        <input type="checkbox" checked={!!m.raidReady} onChange={(e) => upsert({ ...m, raidReady: e.target.checked })} /> {t('Raid')}
                       </label>
                       <label className="check small">
-                        <input type="checkbox" checked={!!m.pvpReady} onChange={(e) => upsert({ ...m, pvpReady: e.target.checked })} /> PvP
+                        <input type="checkbox" checked={!!m.pvpReady} onChange={(e) => upsert({ ...m, pvpReady: e.target.checked })} /> {t('PvP')}
                       </label>
                       <label className="check small">
-                        <input type="checkbox" checked={!!m.forTrade} onChange={(e) => upsert({ ...m, forTrade: e.target.checked })} /> Trade
+                        <input type="checkbox" checked={!!m.forTrade} onChange={(e) => upsert({ ...m, forTrade: e.target.checked })} /> {t('Trade')}
                       </label>
                     </td>
                     <td className="nowrap">
-                      <button onClick={() => setEditing(m)}>Edit</button>{' '}
+                      <button onClick={() => setEditing(m)}>{t('Edit')}</button>{' '}
                       <button
                         className="danger"
                         onClick={() => {
-                          if (confirm(`Remove ${m.nickname || sp.name}?`)) remove(m.uid);
+                          if (confirm(t('Remove {name}?', { name: m.nickname || pokeNames(data, sp)[lang] }))) remove(m.uid);
                         }}
                       >
                         ✕
@@ -244,11 +263,9 @@ export default function Roster() {
             </table>
             {rows.length > limit && (
               <div className="row" style={{ justifyContent: 'center', marginTop: 10 }}>
-                <span className="muted small">
-                  Showing {limit} of {rows.length}
-                </span>
-                <button onClick={() => setLimit(limit + 200)}>Show more</button>
-                <button onClick={() => setLimit(rows.length)}>Show all</button>
+                <span className="muted small">{t('Showing {n} of {total}', { n: limit, total: rows.length })}</span>
+                <button onClick={() => setLimit(limit + 200)}>{t('Show more')}</button>
+                <button onClick={() => setLimit(rows.length)}>{t('Show all')}</button>
               </div>
             )}
           </div>
@@ -259,9 +276,10 @@ export default function Roster() {
 }
 
 function RankCell({ r }: { r: NonNullable<ReturnType<typeof pvpIvRank>> }) {
+  const t = useT();
   const cls = r.rank <= 100 ? 'good' : r.rank <= 500 ? 'warn' : '';
   return (
-    <span title={`CP ${r.cp} at Lv ${r.level} · ${r.percent.toFixed(1)}% of rank 1`}>
+    <span title={t('CP {cp} at Lv {level} · {pct}% of rank 1', { cp: r.cp, level: r.level, pct: r.percent.toFixed(1) })}>
       <span className={`pill ${cls}`}>#{r.rank}</span> <span className="muted">{r.percent.toFixed(1)}%</span>
     </span>
   );
@@ -269,6 +287,8 @@ function RankCell({ r }: { r: NonNullable<ReturnType<typeof pvpIvRank>> }) {
 
 function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m: RosterMon) => void; onCancel: () => void }) {
   const data = useGameData();
+  const { lang } = usePrefs();
+  const t = useT();
   const [m, setM] = useState<RosterMon>(initial);
   const [cpInput, setCpInput] = useState('');
   const sp: Species | undefined = m.speciesId ? data.byId.get(m.speciesId) : undefined;
@@ -283,10 +303,10 @@ function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m:
 
   return (
     <div className="card">
-      <h2>{initial.speciesId ? 'Edit Pokémon' : 'Add Pokémon'}</h2>
+      <h2>{initial.speciesId ? t('Edit Pokémon') : t('Add Pokémon')}</h2>
       <div className="roster-form">
         <label className="field">
-          Species
+          {t('Species')}
           <SpeciesPicker
             value={m.speciesId}
             onChange={(id) => {
@@ -296,11 +316,11 @@ function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m:
           />
         </label>
         <label className="field">
-          Nickname (optional)
+          {t('Nickname (optional)')}
           <input value={m.nickname ?? ''} onChange={(e) => set({ nickname: e.target.value || undefined })} />
         </label>
         <label className="field">
-          IVs (Atk / Def / HP)
+          {t('IVs (Atk / Def / HP)')}
           <span className="iv-inputs">
             {[0, 1, 2].map((i) => (
               <input key={i} type="number" min={0} max={15} value={m.ivs[i]} onChange={(e) => setIv(i, e.target.value)} />
@@ -308,7 +328,7 @@ function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m:
           </span>
         </label>
         <label className="field">
-          Level {cp !== null && <span>→ CP {cp}</span>}
+          {t('Level')} {cp !== null && <span>→ CP {cp}</span>}
           <select value={m.level} onChange={(e) => set({ level: Number(e.target.value) })}>
             {LEVELS.map((l) => (
               <option key={l} value={l}>
@@ -318,7 +338,7 @@ function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m:
           </select>
         </label>
         <label className="field">
-          …or enter the CP to find the level
+          {t('…or enter the CP to find the level')}
           <span className="row" style={{ flexWrap: 'nowrap' }}>
             <input type="number" style={{ width: 90 }} value={cpInput} onChange={(e) => setCpInput(e.target.value)} />
             <button
@@ -327,30 +347,30 @@ function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m:
                 if (!sp) return;
                 const lvl = levelFromCP(data, sp, m.ivs, Number(cpInput));
                 if (lvl) set({ level: lvl });
-                else alert('No level matches that CP with these IVs. Double-check the IVs.');
+                else alert(t('No level matches that CP with these IVs. Double-check the IVs.'));
               }}
             >
-              Find
+              {t('Find')}
             </button>
           </span>
-          {cpMismatch && <span style={{ color: 'var(--accent-2)' }}>Doesn't match the current level</span>}
+          {cpMismatch && <span style={{ color: 'var(--accent-2)' }}>{t("Doesn't match the current level")}</span>}
         </label>
         {sp && (
           <>
             <label className="field">
-              Fast move
+              {t('Fast move')}
               <select value={m.fast ?? ''} onChange={(e) => set({ fast: e.target.value || undefined })}>
                 <option value="">—</option>
                 {sp.fast.map((f) => (
                   <option key={f} value={f}>
-                    {data.moves[f]?.name ?? f} ({data.moves[f]?.type}){sp.elite.includes(f) ? ' ★' : ''}
+                    {moveNames(data, f)[lang]} ({data.moves[f] ? typeNames(data, data.moves[f].type)[lang] : '?'}){sp.elite.includes(f) ? ' ★' : ''}
                   </option>
                 ))}
               </select>
             </label>
             {[0, 1].map((i) => (
               <label className="field" key={i}>
-                Charged move {i + 1}
+                {t('Charged move {n}', { n: i + 1 })}
                 <select
                   value={m.charged[i] ?? ''}
                   onChange={(e) => {
@@ -362,7 +382,7 @@ function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m:
                   <option value="">—</option>
                   {sp.charged.map((c) => (
                     <option key={c} value={c}>
-                      {data.moves[c]?.name ?? c} ({data.moves[c]?.type}){sp.elite.includes(c) ? ' ★' : ''}
+                      {moveNames(data, c)[lang]} ({data.moves[c] ? typeNames(data, data.moves[c].type)[lang] : '?'}){sp.elite.includes(c) ? ' ★' : ''}
                     </option>
                   ))}
                 </select>
@@ -371,49 +391,49 @@ function Editor({ initial, onSave, onCancel }: { initial: RosterMon; onSave: (m:
           </>
         )}
         <label className="field">
-          Dynamax
+          {t('Dynamax')}
           <select value={m.dynamax ?? ''} onChange={(e) => set({ dynamax: (e.target.value || undefined) as RosterMon['dynamax'] })}>
-            <option value="">No</option>
-            <option value="dmax">Dynamax</option>
-            <option value="gmax">Gigantamax</option>
+            <option value="">{t('No')}</option>
+            <option value="dmax">{t('Dynamax')}</option>
+            <option value="gmax">{t('Gigantamax')}</option>
           </select>
         </label>
       </div>
       <div className="row" style={{ marginTop: 12 }}>
         <label className="check">
-          <input type="checkbox" checked={!!m.shadow} onChange={(e) => set({ shadow: e.target.checked, purified: e.target.checked ? false : m.purified })} /> Shadow
+          <input type="checkbox" checked={!!m.shadow} onChange={(e) => set({ shadow: e.target.checked, purified: e.target.checked ? false : m.purified })} /> {t('Shadow')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={!!m.purified} onChange={(e) => set({ purified: e.target.checked, shadow: e.target.checked ? false : m.shadow })} /> Purified
+          <input type="checkbox" checked={!!m.purified} onChange={(e) => set({ purified: e.target.checked, shadow: e.target.checked ? false : m.shadow })} /> {t('Purified')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={!!m.lucky} onChange={(e) => set({ lucky: e.target.checked })} /> Lucky
+          <input type="checkbox" checked={!!m.lucky} onChange={(e) => set({ lucky: e.target.checked })} /> {t('Lucky')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={!!m.shiny} onChange={(e) => set({ shiny: e.target.checked })} /> Shiny
+          <input type="checkbox" checked={!!m.shiny} onChange={(e) => set({ shiny: e.target.checked })} /> {t('Shiny')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={!!m.forTrade} onChange={(e) => set({ forTrade: e.target.checked })} /> For trade
+          <input type="checkbox" checked={!!m.forTrade} onChange={(e) => set({ forTrade: e.target.checked })} /> {t('For trade')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={!!m.bestBuddy} onChange={(e) => set({ bestBuddy: e.target.checked })} /> Best Buddy (Lv 51 cap)
+          <input type="checkbox" checked={!!m.bestBuddy} onChange={(e) => set({ bestBuddy: e.target.checked })} /> {t('Best Buddy (Lv 51 cap)')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={!!m.raidReady} onChange={(e) => set({ raidReady: e.target.checked })} /> Raid-ready
+          <input type="checkbox" checked={!!m.raidReady} onChange={(e) => set({ raidReady: e.target.checked })} /> {t('Raid-ready')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={!!m.pvpReady} onChange={(e) => set({ pvpReady: e.target.checked })} /> PvP-ready
+          <input type="checkbox" checked={!!m.pvpReady} onChange={(e) => set({ pvpReady: e.target.checked })} /> {t('PvP-ready')}
         </label>
       </div>
       <label className="field" style={{ marginTop: 10 }}>
-        Notes
-        <input value={m.notes ?? ''} onChange={(e) => set({ notes: e.target.value || undefined })} placeholder="e.g. needs Elite TM, save for Mega" />
+        {t('Notes')}
+        <input value={m.notes ?? ''} onChange={(e) => set({ notes: e.target.value || undefined })} placeholder={t('e.g. needs Elite TM, save for Mega')} />
       </label>
       <div className="row" style={{ marginTop: 12 }}>
         <button className="primary" disabled={!sp} onClick={() => onSave(m)}>
-          Save
+          {t('Save')}
         </button>
-        <button onClick={onCancel}>Cancel</button>
+        <button onClick={onCancel}>{t('Cancel')}</button>
       </div>
     </div>
   );

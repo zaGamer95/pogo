@@ -83,6 +83,38 @@ export interface NewsItem {
   date: string;
 }
 
+export interface I18nData {
+  pokemon: Record<string, [string, string]>; // id → [ko, ja]
+  moves: Record<string, [string, string]>;
+  types: Record<string, [string, string]>;
+  weather: Record<string, [string, string]>;
+  leagues: Record<string, [string, string]>; // English title → [ko, ja]
+}
+
+export interface JpParty {
+  rank: number;
+  count: number;
+  members: { dex: number; ja: string; shadow: boolean; id: string | null }[];
+}
+
+export interface JpLeague {
+  id: number;
+  ja: string;
+  en: string;
+  cp: number;
+  rule: string;
+  all: JpParty[];
+  high: JpParty[];
+  usage: { id: string; n: number }[];
+}
+
+export interface JpParties {
+  source: string;
+  season: number;
+  fetched: string;
+  leagues: JpLeague[];
+}
+
 export interface GameData {
   pokemon: Species[];
   byId: Map<string, Species>;
@@ -96,6 +128,8 @@ export interface GameData {
   shinies: ShinyEntry[];
   names: Record<string, { en: string; ko: string }>;
   news: NewsItem[];
+  i18n: I18nData;
+  jpParties: JpParties | null;
   meta: { updated: string; pvpokeUpdated: string };
 }
 
@@ -108,7 +142,7 @@ async function load<T>(file: string): Promise<T> {
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [pokemon, moves, typeData, cpm, events, raids, formats, meta, shinies, names, news] = await Promise.all([
+  const [pokemon, moves, typeData, cpm, events, raids, formats, meta, shinies, names, news, i18n, jpParties] = await Promise.all([
     load<Species[]>('pokemon.json'),
     load<Record<string, Move>>('moves.json'),
     load<{ types: string[]; chart: Record<string, Record<string, number>> }>('types.json'),
@@ -120,6 +154,8 @@ export async function loadGameData(): Promise<GameData> {
     load<ShinyEntry[]>('shinies.json').catch(() => []),
     load<GameData['names']>('names.json').catch(() => ({})),
     load<NewsItem[]>('news.json').catch(() => []),
+    load<I18nData>('i18n.json').catch(() => ({ pokemon: {}, moves: {}, types: {}, weather: {}, leagues: {} })),
+    load<JpParties>('jp-parties.json').catch(() => null),
   ]);
   return {
     pokemon,
@@ -134,6 +170,8 @@ export async function loadGameData(): Promise<GameData> {
     shinies,
     names,
     news,
+    i18n,
+    jpParties,
     meta,
   };
 }

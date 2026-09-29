@@ -1,0 +1,23 @@
+// Home (Today) page. Keys = English UI text.
+export default {
+  'ends {date}': '{date} 종료',
+  Shadow: '그림자',
+  Dynamax: '다이맥스',
+  Gigantamax: '거다이맥스',
+  'Happening now': '진행 중',
+  'Calendar →': '캘린더 →',
+  'Nothing special live right now.': '지금 진행 중인 특별한 이벤트가 없습니다.',
+  'Next 7 days': '앞으로 7일',
+  'No announced events in the next week.': '다음 주에 발표된 이벤트가 없습니다.',
+  'Headline raids': '주요 레이드배틀',
+  'Counters →': '카운터 →',
+  'GO Battle League': 'GO배틀리그',
+  'Schedule →': '일정 →',
+  'Until {date}': '{date}까지',
+  'My team': '내 파티',
+  'No GBL week live.': '진행 중인 GO배틀리그 주간이 없습니다.',
+  '{n} Pokémon saved.': '포켓몬 {n}마리 저장됨.',
+  'Manage →': '관리 →',
+  'Official news': '공식 뉴스',
+  'No news in the latest data refresh.': '최근 데이터 갱신에 뉴스가 없습니다.',
+} as Record<string, string>;

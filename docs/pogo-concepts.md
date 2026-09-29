@@ -156,3 +156,30 @@ These filter the Pokémon storage screen:
 - **Safe swap**: flexible second slot in a PvP team.
 - **Meta**: the strongest commonly used Pokémon in a format.
 - **Datamine**: information extracted from game files. Real, but not necessarily released.
+
+## 12. Korean / Japanese terminology (official Pokémon GO text)
+
+Pulled from the game's own ko/ja strings (`data/i18n/*.csv` has every Pokémon, move and type name). Korean GO terms sometimes differ from the main-series games, so always use these.
+
+| English | 한국어 (GO) | 日本語 (GO) |
+| --- | --- | --- |
+| Great / Ultra / Master League | 슈퍼리그 / 하이퍼리그 / 마스터리그 | スーパーリーグ / ハイパーリーグ / マスターリーグ |
+| GO Battle League | GO배틀리그 | GOバトルリーグ |
+| Fast Attack / Charged Attack | 노말어택 / 스페셜 어택 | ノーマルアタック / スペシャルアタック |
+| Elite Fast / Charged TM | 대단한 기술머신노말 / 대단한 기술머신스페셜 | すごいわざマシン ノーマル / スペシャル |
+| Shadow / Purified | 그림자 / 정화 | シャドウ / ライト |
+| Lucky | 반짝반짝 | キラ |
+| Shiny | 색이 다른 (커뮤니티: 이로치) | 色違い |
+| Best Buddy / Best Friend | 베스트 파트너 / 베스트 프렌드 | 最高の相棒 / 大親友 |
+| Stardust / Candy / XL Candy | 별의모래 / 사탕 / XL사탕 | ほしのすな / アメ / アメXL |
+| Raid Battle / Raid Hour | 레이드배틀 / 레이드 아워 | レイドバトル / レイドアワー |
+| Max Battle / Dynamax / Gigantamax | 맥스배틀 / 다이맥스 / 거다이맥스 | マックスバトル / ダイマックス / キョダイマックス |
+| Power Spot / Max Particles | 파워스폿 / 맥스 파티클 | パワースポット / マックスパワー |
+| Community Day | 커뮤니티 데이 | コミュニティ・デイ |
+| Legendary / Mythical | 전설 / 환상 | 伝説 / 幻 |
+| Regional form label | 알로라의 모습 · 가라르의 모습 · 히스이의 모습 · 팔데아의 모습 | アローラのすがた · ガラルのすがた · ヒスイのすがた · パルデアのすがた |
+| PvP roles (community) | 선봉 / 쿠션 / 마무리 | 先発 / 裏 (控え) / 〆 |
+
+Japanese entries not in the extracted CSVs (e.g. キラ, 最高の相棒, マックスパワー) are **(verify)**.
+
+**Type chart reminder:** Pokémon GO uses ×1.6 / ×0.625 / ×0.390625. Main-series immunities (×0) become ×0.390625 in GO, and STAB is ×1.2 (main series ×1.5). See the `/types` page.

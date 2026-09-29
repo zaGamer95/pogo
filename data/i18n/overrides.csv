@@ -1,0 +1,15 @@
+﻿kind,id,ko,en,ja
+# Hand-entered corrections (main-series official names). kind = pokemon | move | type | weather | league,,,,
+pokemon,darmanitan_zen,불비달마(달마모드),,ヒヒダルマ（ダルマモード）
+pokemon,darmanitan_galarian_zen,불비달마(가라르의 모습)(달마모드),,ヒヒダルマ（ガラルのすがた）（ダルマモード）
+pokemon,hoopa_confined,굴레에 빠진 후파,,いましめられしフーパ
+pokemon,hoopa_unbound,굴레를 벗어난 후파,,ときはなたれしフーパ
+pokemon,mime_jr,흉내내,,マネネ
+pokemon,type_null,타입:널,,タイプ：ヌル
+pokemon,keldeo_resolute,케르디오(각오의 모습),,ケルディオ（かくごのすがた）
+pokemon,toxtricity_low_key,스트린더(로우한 모습),,ストリンダー（ローなすがた）
+pokemon,necrozma_ultra,울트라네크로즈마,,ウルトラネクロズマ
+pokemon,eternatus_eternamax,무한다이노(무한다이맥스),,ムゲンダイナ（ムゲンダイマックス）
+pokemon,calyrex_ice_rider,버드렉스(백마 탄 모습),,バドレックス（はくばじょうのすがた）
+pokemon,mewtwo_armored,아머드 뮤츠,,アーマードミュウツー
+pokemon,deoxys_defense,테오키스(디펜스폼),,デオキシス（ディフェンスフォルム）

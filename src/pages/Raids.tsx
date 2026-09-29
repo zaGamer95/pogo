@@ -5,11 +5,25 @@ import { resolveName } from '../lib/names';
 import { bossMovesets, maxAttackers, maxTanks, rankCounters, rankRoster, rosterStats, type CounterOptions, type CounterRow } from '../lib/raid';
 import { useRoster } from '../lib/roster';
 import { withDates } from '../lib/events';
-import { Empty, MoveName, SpeciesPicker, Sprite, Tabs, Types, TypeBadge, fmtDateTime } from '../components/ui';
+import { Empty, MoveName, PokeName, SpeciesPicker, Sprite, Tabs, Types, TypeBadge, fmtDateTime } from '../components/ui';
+import { usePrefs, useT, weatherNames } from '../lib/i18n';
 
 type Mode = 'raids' | 'max';
 
+/** "Shadow " + LeekDuck tier ("5-Star Raids", "Mega Raids", …) in the UI language. */
+function tierLabel(t: (s: string) => string, tier: string, shadow?: boolean) {
+  return (shadow ? t('Shadow ') : '') + t(tier);
+}
+
+/** Weather name in the UI language, with the other two languages in parentheses. */
+function weatherLabel(data: ReturnType<typeof useGameData>, w: string, lang: 'ko' | 'en') {
+  const n = weatherNames(data, w);
+  const others = (['ko', 'en', 'ja'] as const).filter((l) => l !== lang).map((l) => n[l]).filter((x) => x !== n[lang]);
+  return others.length ? `${n[lang]} (${[...new Set(others)].join(' · ')})` : n[lang];
+}
+
 export default function Raids() {
+  const t = useT();
   const [mode, setMode] = useState<Mode>(() => (localStorage.getItem('pogo-raid-mode') as Mode) ?? 'raids');
   const change = (m: Mode) => {
     setMode(m);
@@ -23,10 +37,10 @@ export default function Raids() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Raids &amp; Max Battles</h1>
-          <p className="muted">Current bosses, perfect-IV catch CP, and the best counters, with a separate list for each boss attack.</p>
+          <h1>{t('Raids & Max Battles')}</h1>
+          <p className="muted">{t('Current bosses, perfect-IV catch CP, and the best counters, with a separate list for each boss attack.')}</p>
         </div>
-        <Tabs value={mode} onChange={change} options={[{ value: 'raids', label: 'Raid bosses' }, { value: 'max', label: 'Max Battles' }]} />
+        <Tabs value={mode} onChange={change} options={[{ value: 'raids', label: t('Raid bosses') }, { value: 'max', label: t('Max Battles') }]} />
       </div>
       {mode === 'raids' ? <RaidSection /> : <MaxSection />}
     </div>
@@ -37,6 +51,7 @@ export default function Raids() {
 
 function RaidSection() {
   const data = useGameData();
+  const t = useT();
   const bosses = useMemo(
     () =>
       data.raids.map((r) => ({ raw: r, ...resolveName(data, r.name) })).filter((b): b is typeof b & { species: Species } => !!b.species),
@@ -49,15 +64,16 @@ function RaidSection() {
   return (
     <>
       <div className="card">
-        {tiers.map((t) => (
-          <div key={t} style={{ marginBottom: 10 }}>
-            <h3>{t}</h3>
+        {tiers.map((tr) => (
+          <div key={tr} style={{ marginBottom: 10 }}>
+            <h3>{tr.startsWith('Shadow ') ? tierLabel(t, tr.slice(7), true) : tierLabel(t, tr)}</h3>
             <div className="boss-list">
               {bosses.map((b, i) =>
-                (b.shadow ? 'Shadow ' : '') + b.raw.tier === t ? (
+                (b.shadow ? 'Shadow ' : '') + b.raw.tier === tr ? (
                   <button key={b.raw.name} className={`boss-btn${i === selected ? ' active' : ''}`} onClick={() => setSelected(i)}>
                     <Sprite src={b.raw.image} size={48} />
-                    <span className="mon-name">{b.raw.name}</span>
+                    <PokeName species={b.species} />
+                    {b.shadow && <span className="pill bad">{t('Shadow')}</span>}
                     <Types types={b.raw.types.map((x) => x.name)} small />
                   </button>
                 ) : null,
@@ -65,7 +81,7 @@ function RaidSection() {
             </div>
           </div>
         ))}
-        {bosses.length === 0 && <Empty>No raid bosses in the current data.</Empty>}
+        {bosses.length === 0 && <Empty>{t('No raid bosses in the current data.')}</Empty>}
       </div>
       {boss && <RaidDetail key={boss.raw.name} raid={boss.raw} species={boss.species} shadow={boss.shadow} />}
     </>
@@ -74,6 +90,8 @@ function RaidSection() {
 
 function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Species; shadow: boolean }) {
   const data = useGameData();
+  const { lang } = usePrefs();
+  const t = useT();
   const { roster } = useRoster();
   const tier = useMemo(() => raidTier(raid.tier), [raid.tier]);
   const [opts, setOpts] = useState<CounterOptions>({ level: 40, shadows: true, megas: true, legendaries: true, weather: null });
@@ -97,31 +115,38 @@ function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Specie
       <div className="row" style={{ alignItems: 'flex-start', gap: 14 }}>
         <Sprite src={raid.image} size={88} />
         <div style={{ flex: 1, minWidth: 220 }}>
-          <h2 style={{ marginBottom: 4 }}>{raid.name}</h2>
+          <h2 style={{ marginBottom: 4 }}>
+            <PokeName species={species} />
+            {shadow && (
+              <span className="pill bad" style={{ marginLeft: 6 }}>
+                {t('Shadow')}
+              </span>
+            )}
+          </h2>
           <div className="row">
             <Types types={species.types} />
-            <span className="pill">{raid.tier}</span>
-            {raid.canBeShiny && <span className="pill warn">✨ Shiny available</span>}
-            {shadow && <span className="pill bad">Shadow – catch gets ×1.2 atk</span>}
+            <span className="pill">{tierLabel(t, raid.tier)}</span>
+            {raid.canBeShiny && <span className="pill warn">✨ {t('Shiny available')}</span>}
+            {shadow && <span className="pill bad">{t('Shadow – catch gets ×1.2 atk')}</span>}
           </div>
           <div className="stat-grid">
             <div className="stat">
-              <div className="k">100% CP (Lv 20)</div>
+              <div className="k">{t('100% CP (Lv 20)')}</div>
               <div className="v">{cp20}</div>
             </div>
             <div className="stat">
-              <div className="k">100% CP boosted (Lv 25)</div>
+              <div className="k">{t('100% CP boosted (Lv 25)')}</div>
               <div className="v">{cp25}</div>
             </div>
             <div className="stat">
-              <div className="k">CP range</div>
+              <div className="k">{t('CP range')}</div>
               <div className="v small">
                 {raid.combatPower.normal.min}–{raid.combatPower.normal.max}
               </div>
             </div>
             <div className="stat">
-              <div className="k">Boosted by</div>
-              <div className="v small">{raid.boostedWeather.map((w) => w.name).join(', ') || '—'}</div>
+              <div className="k">{t('Boosted by')}</div>
+              <div className="v small">{raid.boostedWeather.map((w) => weatherLabel(data, w.name, lang)).join(', ') || '—'}</div>
             </div>
           </div>
         </div>
@@ -129,7 +154,7 @@ function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Specie
 
       <div className="grid cols-2" style={{ marginBottom: 12 }}>
         <div>
-          <h3>Weak to</h3>
+          <h3>{t('Weak to')}</h3>
           <div className="row">
             {weak.map((w) => (
               <span key={w.type} className="row" style={{ gap: 3 }}>
@@ -138,7 +163,7 @@ function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Specie
               </span>
             ))}
           </div>
-          <h3 style={{ marginTop: 10 }}>Resists</h3>
+          <h3 style={{ marginTop: 10 }}>{t('Resists')}</h3>
           <div className="row">
             {res.map((w) => (
               <span key={w.type} className="row" style={{ gap: 3 }}>
@@ -149,15 +174,15 @@ function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Specie
           </div>
         </div>
         <div>
-          <h3>Boss moves</h3>
+          <h3>{t('Boss moves')}</h3>
           <div className="row small" style={{ marginBottom: 4 }}>
-            <span className="muted">Fast:</span>
+            <span className="muted">{t('Fast:')}</span>
             {fastMoves.map((m) => (
               <MoveName key={m} id={m} />
             ))}
           </div>
           <div className="row small">
-            <span className="muted">Charged:</span>
+            <span className="muted">{t('Charged:')}</span>
             {chargedMoves.map((m) => (
               <MoveName key={m} id={m} />
             ))}
@@ -167,7 +192,7 @@ function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Specie
 
       <div className="row" style={{ marginBottom: 10 }}>
         <label className="field">
-          Attacker level
+          {t('Attacker level')}
           <select value={opts.level} onChange={(e) => setOpts({ ...opts, level: Number(e.target.value) })}>
             {[30, 35, 40, 45, 50].map((l) => (
               <option key={l}>{l}</option>
@@ -175,50 +200,52 @@ function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Specie
           </select>
         </label>
         <label className="field">
-          Weather
+          {t('Weather')}
           <select value={opts.weather ?? ''} onChange={(e) => setOpts({ ...opts, weather: e.target.value || null })}>
-            <option value="">Extreme / none</option>
+            <option value="">{t('Extreme / none')}</option>
             {Object.keys(WEATHER_TYPES).map((w) => (
-              <option key={w}>{w}</option>
+              <option key={w} value={w}>
+                {weatherLabel(data, w, lang)}
+              </option>
             ))}
           </select>
         </label>
         <label className="check">
-          <input type="checkbox" checked={opts.shadows} onChange={(e) => setOpts({ ...opts, shadows: e.target.checked })} /> Shadows
+          <input type="checkbox" checked={opts.shadows} onChange={(e) => setOpts({ ...opts, shadows: e.target.checked })} /> {t('Shadows')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={opts.megas} onChange={(e) => setOpts({ ...opts, megas: e.target.checked })} /> Megas
+          <input type="checkbox" checked={opts.megas} onChange={(e) => setOpts({ ...opts, megas: e.target.checked })} /> {t('Megas')}
         </label>
         <label className="check">
-          <input type="checkbox" checked={opts.legendaries} onChange={(e) => setOpts({ ...opts, legendaries: e.target.checked })} /> Legendaries
+          <input type="checkbox" checked={opts.legendaries} onChange={(e) => setOpts({ ...opts, legendaries: e.target.checked })} /> {t('Legendaries')}
         </label>
       </div>
 
       <p className="small muted" style={{ marginBottom: 6 }}>
-        Counters vs boss charged move:
+        {t('Counters vs boss charged move:')}
       </p>
       <Tabs
         value={tab}
         onChange={setTab}
-        options={[{ value: 'all', label: 'All movesets' }, ...chargedMoves.map((m) => ({ value: m, label: <MoveName id={m} /> }))]}
+        options={[{ value: 'all', label: t('All movesets') }, ...chargedMoves.map((m) => ({ value: m, label: <MoveName id={m} /> }))]}
       />
 
       <div className="grid cols-2">
         <div>
-          <h3>Top counters (Lv {opts.level}, perfect IVs)</h3>
+          <h3>{t('Top counters (Lv {level}, perfect IVs)', { level: opts.level })}</h3>
           <CounterTable rows={counters} owned={ownedIds} />
         </div>
         <div>
-          <h3>Your best 6</h3>
+          <h3>{t('Your best 6')}</h3>
           {mine.length === 0 ? (
-            <Empty>Add Pokémon on the “My Pokémon” page to see your own best counters here.</Empty>
+            <Empty>{t('Add Pokémon on the “My Pokémon” page to see your own best counters here.')}</Empty>
           ) : (
             <CounterTable rows={mine} showLevel />
           )}
         </div>
       </div>
       <p className="small muted" style={{ marginTop: 10 }}>
-        Score = (DPS³ × TDO)^¼ using an estimate in the style of GamePress/Pokebattler. It doesn't account for dodging, party power, or friend bonuses, so use it to compare counters, not to predict exact results.
+        {t("Score = (DPS³ × TDO)^¼ using an estimate in the style of GamePress/Pokebattler. It doesn't account for dodging, party power, or friend bonuses, so use it to compare counters, not to predict exact results.")}
       </p>
     </div>
   );
@@ -226,17 +253,18 @@ function RaidDetail({ raid, species, shadow }: { raid: LeekRaid; species: Specie
 
 function CounterTable({ rows, owned, showLevel }: { rows: CounterRow[]; owned?: Set<string>; showLevel?: boolean }) {
   const data = useGameData();
+  const t = useT();
   const top = rows[0]?.er ?? 1;
   return (
     <div className="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Pokémon</th>
-            <th>Moves</th>
+            <th>{t('Pokémon')}</th>
+            <th>{t('Moves')}</th>
             <th className="right">DPS</th>
             <th className="right">TDO</th>
-            <th>Score</th>
+            <th>{t('Score')}</th>
           </tr>
         </thead>
         <tbody>
@@ -247,10 +275,10 @@ function CounterTable({ rows, owned, showLevel }: { rows: CounterRow[]; owned?: 
                   <Sprite species={r.species} size={32} />
                   <div>
                     <div className="mon-name">
-                      {r.roster?.nickname || r.species.name}
+                      <PokeName species={r.species} nickname={r.roster?.nickname || undefined} />
                       {owned?.has(r.species.id) && (
                         <span className="pill good" style={{ marginLeft: 4 }}>
-                          owned
+                          {t('owned')}
                         </span>
                       )}
                     </div>
@@ -305,6 +333,7 @@ function loadCustom(): { id: string; gmax: boolean }[] {
 
 function MaxSection() {
   const data = useGameData();
+  const t = useT();
   const [custom, setCustom] = useState(loadCustom);
   const [adding, setAdding] = useState<string | undefined>();
   const [addGmax, setAddGmax] = useState(false);
@@ -343,13 +372,16 @@ function MaxSection() {
     <>
       <div className="card">
         <p className="small muted">
-          LeekDuck doesn't publish a feed of the current Max Battle bosses, so this list is built from Max Monday and Max Battle Day events. Add any other bosses you see at Power Spots below. They're saved in this browser.
+          {t(
+            "LeekDuck doesn't publish a feed of the current Max Battle bosses, so this list is built from Max Monday and Max Battle Day events. Add any other bosses you see at Power Spots below. They're saved in this browser.",
+          )}
         </p>
         <div className="boss-list" style={{ marginBottom: 12 }}>
           {bosses.map((b, i) => (
             <button key={b.name + i} className={`boss-btn${b === boss ? ' active' : ''}`} onClick={() => setSelected(i)}>
               <Sprite species={b.species} size={48} />
-              <span className="mon-name">{b.name}</span>
+              <span className="pill accent">{t(b.gmax ? 'Gigantamax' : 'Dynamax')}</span>
+              <PokeName species={b.species} />
               <Types types={b.species.types} small />
               {b.when && <span className="tier">{b.when}</span>}
               {b.custom && (
@@ -361,16 +393,16 @@ function MaxSection() {
                     saveCustom(custom.filter((c) => !(c.id === b.species.id && c.gmax === b.gmax)));
                   }}
                 >
-                  ✕ remove
+                  ✕ {t('remove')}
                 </span>
               )}
             </button>
           ))}
         </div>
         <div className="row">
-          <SpeciesPicker value={adding} onChange={setAdding} placeholder="Add a Max Battle boss…" />
+          <SpeciesPicker value={adding} onChange={setAdding} placeholder={t('Add a Max Battle boss…')} />
           <label className="check">
-            <input type="checkbox" checked={addGmax} onChange={(e) => setAddGmax(e.target.checked)} /> Gigantamax
+            <input type="checkbox" checked={addGmax} onChange={(e) => setAddGmax(e.target.checked)} /> {t('Gigantamax')}
           </label>
           <button
             className="primary"
@@ -382,17 +414,18 @@ function MaxSection() {
               setSelected(bosses.length);
             }}
           >
-            Add boss
+            {t('Add boss')}
           </button>
         </div>
       </div>
-      {boss ? <MaxDetail key={boss.name} boss={boss} /> : <Empty>No Max Battle bosses yet. Add one above.</Empty>}
+      {boss ? <MaxDetail key={boss.name} boss={boss} /> : <Empty>{t('No Max Battle bosses yet. Add one above.')}</Empty>}
     </>
   );
 }
 
 function MaxDetail({ boss }: { boss: MaxBoss }) {
   const data = useGameData();
+  const t = useT();
   const { roster } = useRoster();
   const [allSpecies, setAllSpecies] = useState(false);
   const sp = boss.species;
@@ -426,26 +459,31 @@ function MaxDetail({ boss }: { boss: MaxBoss }) {
       <div className="row" style={{ alignItems: 'flex-start', gap: 14 }}>
         <Sprite species={sp} size={88} />
         <div style={{ flex: 1 }}>
-          <h2 style={{ marginBottom: 4 }}>{boss.name}</h2>
+          <h2 style={{ marginBottom: 4 }}>
+            <span className="pill accent" style={{ marginRight: 6 }}>
+              {t(boss.gmax ? 'Gigantamax' : 'Dynamax')}
+            </span>
+            <PokeName species={sp} />
+          </h2>
           <div className="row">
             <Types types={sp.types} />
             {boss.link && (
               <a href={boss.link} target="_blank" rel="noreferrer" className="small">
-                Event details ↗
+                {t('Event details')} ↗
               </a>
             )}
           </div>
           <div className="stat-grid">
             <div className="stat">
-              <div className="k">100% catch CP (Lv 20)</div>
+              <div className="k">{t('100% catch CP (Lv 20)')}</div>
               <div className="v">{cpAtLevel(data, sp, [15, 15, 15], 20)}</div>
             </div>
             <div className="stat">
-              <div className="k">Lv 40 max CP</div>
+              <div className="k">{t('Lv 40 max CP')}</div>
               <div className="v">{cpAtLevel(data, sp, [15, 15, 15], 40)}</div>
             </div>
             <div className="stat">
-              <div className="k">Weak to</div>
+              <div className="k">{t('Weak to')}</div>
               <div className="v">
                 <span className="row">
                   {weak.map((w) => (
@@ -455,11 +493,11 @@ function MaxDetail({ boss }: { boss: MaxBoss }) {
               </div>
             </div>
             <div className="stat">
-              <div className="k">Attacks with</div>
+              <div className="k">{t('Attacks with')}</div>
               <div className="v">
                 <span className="row">
-                  {bossChargedTypes.map((t) => (
-                    <TypeBadge key={t} type={t} small />
+                  {bossChargedTypes.map((ty) => (
+                    <TypeBadge key={ty} type={ty} small />
                   ))}
                 </span>
               </div>
@@ -468,31 +506,38 @@ function MaxDetail({ boss }: { boss: MaxBoss }) {
         </div>
       </div>
       <label className="check" style={{ marginBottom: 8 }}>
-        <input type="checkbox" checked={allSpecies} onChange={(e) => setAllSpecies(e.target.checked)} /> Include all species (the game data only flags {data.pokemon.filter((p) => p.dmax).length} Dynamax-capable
-        species)
+        <input type="checkbox" checked={allSpecies} onChange={(e) => setAllSpecies(e.target.checked)} />{' '}
+        {t('Include all species (the game data only flags {n} Dynamax-capable species)', { n: data.pokemon.filter((p) => p.dmax).length })}
       </label>
       <div className="grid cols-2">
-        <MaxTable title="Best Max attackers" rows={attackers} attack />
-        <MaxTable title="Best tanks (Max Guard / Spirit)" rows={tanks} />
+        <MaxTable title={t('Best Max attackers')} rows={attackers} attack />
+        <MaxTable title={t('Best tanks (Max Guard / Spirit)')} rows={tanks} />
       </div>
-      <h3 style={{ marginTop: 16 }}>Your Dynamax Pokémon</h3>
+      <h3 style={{ marginTop: 16 }}>{t('Your Dynamax Pokémon')}</h3>
       {mine.attackers.length === 0 ? (
-        <Empty>Mark Pokémon as Dynamax or Gigantamax on the “My Pokémon” page to rank them here.</Empty>
+        <Empty>{t('Mark Pokémon as Dynamax or Gigantamax on the “My Pokémon” page to rank them here.')}</Empty>
       ) : (
         <div className="grid cols-2">
-          <MaxTable title="Your attackers" rows={mine.attackers} attack />
-          <MaxTable title="Your tanks" rows={mine.tanks} />
+          <MaxTable title={t('Your attackers')} rows={mine.attackers} attack />
+          <MaxTable title={t('Your tanks')} rows={mine.tanks} />
         </div>
       )}
       <p className="small muted" style={{ marginTop: 10 }}>
-        Max Move damage uses the fast move's type (G-Max moves use the Pokémon's own type), so attackers are ranked by Attack × STAB × type effectiveness. Tanks are ranked by Defense × HP against the boss's attack types.
+        {t(
+          "Max Move damage uses the fast move's type (G-Max moves use the Pokémon's own type), so attackers are ranked by Attack × STAB × type effectiveness. Tanks are ranked by Defense × HP against the boss's attack types.",
+        )}
       </p>
     </div>
   );
 }
 
 function MaxTable({ title, rows, attack }: { title: string; rows: ReturnType<typeof maxAttackers>; attack?: boolean }) {
+  const t = useT();
   const top = rows[0]?.score ?? 1;
+  const detail = (d: string) => {
+    const m = d.match(/^takes (\S+) worst-case$/);
+    return m ? t('takes {m} worst-case', { m: m[1] }) : d;
+  };
   return (
     <div>
       <h3>{title}</h3>
@@ -503,17 +548,17 @@ function MaxTable({ title, rows, attack }: { title: string; rows: ReturnType<typ
               <td>
                 <div className="mon">
                   <Sprite species={r.species} size={30} />
-                  <span className="mon-name">{r.roster?.nickname || r.species.name}</span>
-                  {r.species.gmax && <span className="pill accent">G-Max</span>}
+                  <PokeName species={r.species} nickname={r.roster?.nickname || undefined} />
+                  {r.species.gmax && <span className="pill accent">{t('G-Max')}</span>}
                 </div>
               </td>
               <td className="small">
                 {attack ? (
                   <>
-                    <MoveName id={r.fast} /> <span className="muted">{r.detail}</span>
+                    <MoveName id={r.fast} /> <span className="muted">{detail(r.detail)}</span>
                   </>
                 ) : (
-                  <span className="muted">{r.detail}</span>
+                  <span className="muted">{detail(r.detail)}</span>
                 )}
               </td>
               <td style={{ width: 80 }}>

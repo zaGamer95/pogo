@@ -1,12 +1,22 @@
 import { useMemo, useState } from 'react';
 import { useGameData } from '../lib/data';
 import { DAY, durationDays, eventStyle, isActive, overlapsDay, withDates, type TimedEvent } from '../lib/events';
+import { usePrefs, useT } from '../lib/i18n';
 import EventModal from '../components/EventModal';
-import { fmtDate, fmtDateTime } from '../components/ui';
 
 const HIDDEN_BY_DEFAULT = ['go-battle-league', 'season', 'go-pass'];
 const LONG_EVENT_DAYS = 10;
 const MAX_PER_DAY = 4;
+
+const locale = (lang: string) => (lang === 'ko' ? 'ko-KR' : 'en-US');
+
+function fmtDate(d: Date, lang: string) {
+  return d.toLocaleDateString(locale(lang), { month: 'short', day: 'numeric' });
+}
+
+function fmtDateTime(d: Date, lang: string) {
+  return d.toLocaleString(locale(lang), { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+}
 
 function loadHidden(): string[] {
   try {
@@ -17,6 +27,8 @@ function loadHidden(): string[] {
 }
 
 function Month({ year, month, events, onPick }: { year: number; month: number; events: TimedEvent[]; onPick: (e: TimedEvent) => void }) {
+  const { lang } = usePrefs();
+  const t = useT();
   const first = new Date(year, month, 1);
   const gridStart = new Date(year, month, 1 - first.getDay());
   const lastOfMonth = new Date(year, month + 1, 0);
@@ -26,11 +38,11 @@ function Month({ year, month, events, onPick }: { year: number; month: number; e
 
   return (
     <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
-      <h2 style={{ padding: '12px 14px 0' }}>{first.toLocaleDateString(undefined, { month: 'long', year: 'numeric' })}</h2>
+      <h2 style={{ padding: '12px 14px 0' }}>{first.toLocaleDateString(locale(lang), { month: 'long', year: 'numeric' })}</h2>
       <div className="cal" style={{ border: 'none', borderRadius: 0, marginTop: 10 }}>
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => (
-          <div key={d} className="cal-dow">
-            {d}
+        {days.slice(0, 7).map((d) => (
+          <div key={d.getDay()} className="cal-dow">
+            {d.toLocaleDateString(locale(lang), { weekday: 'short' })}
           </div>
         ))}
         {days.map((d) => {
@@ -46,14 +58,14 @@ function Month({ year, month, events, onPick }: { year: number; month: number; e
                     key={e.eventID}
                     className={`cal-ev${cont ? ' cont' : ''}`}
                     style={{ ['--ec' as string]: eventStyle(e.eventType).color }}
-                    title={`${e.name}\n${fmtDateTime(e.startDate)} → ${fmtDateTime(e.endDate)}`}
+                    title={`${e.name}\n${fmtDateTime(e.startDate, lang)} → ${fmtDateTime(e.endDate, lang)}`}
                     onClick={() => onPick(e)}
                   >
                     {e.name}
                   </button>
                 );
               })}
-              {todays.length > MAX_PER_DAY && <span className="cal-more">+{todays.length - MAX_PER_DAY} more</span>}
+              {todays.length > MAX_PER_DAY && <span className="cal-more">{t('+{n} more', { n: todays.length - MAX_PER_DAY })}</span>}
             </div>
           );
         })}
@@ -64,14 +76,16 @@ function Month({ year, month, events, onPick }: { year: number; month: number; e
 
 export default function Calendar() {
   const data = useGameData();
+  const { lang } = usePrefs();
+  const t = useT();
   const [hidden, setHidden] = useState<string[]>(loadHidden);
   const [picked, setPicked] = useState<TimedEvent | null>(null);
   const [offset, setOffset] = useState(0);
   const all = useMemo(() => withDates(data.events), [data.events]);
   const types = useMemo(() => [...new Set(all.map((e) => e.eventType))], [all]);
 
-  const toggle = (t: string) => {
-    const next = hidden.includes(t) ? hidden.filter((x) => x !== t) : [...hidden, t];
+  const toggle = (ty: string) => {
+    const next = hidden.includes(ty) ? hidden.filter((x) => x !== ty) : [...hidden, ty];
     setHidden(next);
     try {
       localStorage.setItem('pogo-cal-hidden', JSON.stringify(next));
@@ -95,36 +109,41 @@ export default function Calendar() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Event Calendar</h1>
-          <p className="muted">Featured events for {base.toLocaleDateString(undefined, { month: 'long' })} and {next.toLocaleDateString(undefined, { month: 'long' })}. Only announced events appear, so later weeks fill in over time.</p>
+          <h1>{t('Event Calendar')}</h1>
+          <p className="muted">
+            {t('Featured events for {a} and {b}. Only announced events appear, so later weeks fill in over time.', {
+              a: base.toLocaleDateString(locale(lang), { month: 'long' }),
+              b: next.toLocaleDateString(locale(lang), { month: 'long' }),
+            })}
+          </p>
         </div>
         <div className="row">
-          <button onClick={() => setOffset(offset - 1)}>← Prev</button>
+          <button onClick={() => setOffset(offset - 1)}>{t('← Prev')}</button>
           <button onClick={() => setOffset(0)} disabled={offset === 0}>
-            This month
+            {t('This month')}
           </button>
-          <button onClick={() => setOffset(offset + 1)}>Next →</button>
+          <button onClick={() => setOffset(offset + 1)}>{t('Next →')}</button>
         </div>
       </div>
 
       <div className="legend">
-        {types.map((t) => (
-          <button key={t} className={hidden.includes(t) ? 'off' : ''} onClick={() => toggle(t)} style={{ ['--ec' as string]: eventStyle(t).color }}>
+        {types.map((ty) => (
+          <button key={ty} className={hidden.includes(ty) ? 'off' : ''} onClick={() => toggle(ty)} style={{ ['--ec' as string]: eventStyle(ty).color }}>
             <span className="dot" />
-            {eventStyle(t).label}
+            {t(eventStyle(ty).label)}
           </button>
         ))}
       </div>
 
       {longEvents.filter((e) => e.endDate >= base && e.startDate < rangeEnd).length > 0 && (
         <div className="card">
-          <h3>Ongoing / long-running</h3>
+          <h3>{t('Ongoing / long-running')}</h3>
           <div className="row">
             {longEvents
               .filter((e) => e.endDate >= base && e.startDate < rangeEnd)
               .map((e) => (
                 <button key={e.eventID} className="pill" style={{ borderColor: eventStyle(e.eventType).color }} onClick={() => setPicked(e)}>
-                  {e.name} · {fmtDate(e.startDate)}–{fmtDate(e.endDate)}
+                  {e.name} · {fmtDate(e.startDate, lang)}–{fmtDate(e.endDate, lang)}
                 </button>
               ))}
           </div>
@@ -135,19 +154,19 @@ export default function Calendar() {
       <Month year={next.getFullYear()} month={next.getMonth()} events={shortEvents} onPick={setPicked} />
 
       <div className="card">
-        <h2>List view</h2>
+        <h2>{t('List view')}</h2>
         <div className="event-list">
-          {upcoming.length === 0 && <div className="empty">No events in this range.</div>}
+          {upcoming.length === 0 && <div className="empty">{t('No events in this range.')}</div>}
           {upcoming.map((e) => (
             <div key={e.eventID} className="event" style={{ ['--ec' as string]: eventStyle(e.eventType).color }} onClick={() => setPicked(e)} role="button">
               <img src={e.image} alt="" loading="lazy" />
               <div className="ev-body">
                 <div className="ev-name">{e.name}</div>
                 <div className="muted small">
-                  {eventStyle(e.eventType).label} · {fmtDateTime(e.startDate)} → {fmtDateTime(e.endDate)}
-                  {isActive(e) && <span className="pill good" style={{ marginLeft: 6 }}>Live</span>}
+                  {t(eventStyle(e.eventType).label)} · {fmtDateTime(e.startDate, lang)} → {fmtDateTime(e.endDate, lang)}
+                  {isActive(e) && <span className="pill good" style={{ marginLeft: 6 }}>{t('Live')}</span>}
                   {!isActive(e) && e.startDate.getTime() - now.getTime() < 2 * DAY && e.startDate > now && (
-                    <span className="pill warn" style={{ marginLeft: 6 }}>Soon</span>
+                    <span className="pill warn" style={{ marginLeft: 6 }}>{t('Soon')}</span>
                   )}
                 </div>
               </div>

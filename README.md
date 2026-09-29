@@ -13,7 +13,10 @@ A personal Pokémon GO helper that pulls the bits I actually use from LeekDuck, 
 | **Leagues** | The live GBL week and upcoming rotations, each linked to its meta. |
 | **Meta** | PvPoke rankings for any league (overall, leads, switches, closers, …) and suggested lead / swap / closer cores. |
 | **Trade** | Pokédex, shiny and lucky tracker (tap grid, paste dex ranges, or fill from My Pokémon), missing dex entries, missing released shinies, spare Pokémon to give, and a copyable LF/FT post (English or Korean). |
+| **Type chart** | The Pokémon GO type chart (×1.6 / ×0.625 / ×0.39, which is not the main-series 2× / ½× / 0×), how it differs from the main series, defender and attacker lookups, and weather boosts. |
 | **My Teams** | Your best PvP team for a league (meta score × IV rank, shared-weakness penalty) and your best 6-Pokémon raid party against a chosen boss. |
+
+**Languages:** you can switch the interface between 한국어 and English. Pokémon names always appear in Korean, English and Japanese, using official in-game text. The name tables are in [`data/i18n/`](data/i18n) as CSV files; to correct a name, add a row to `overrides.csv`. The Meta page also shows popular teams from real battles, taken from [pokemongo-get.com](https://pokemongo-get.com/taimanparty/).
 
 See [`pokego_claude.md`](pokego_claude.md) for the site structure and data schemas, and [`docs/pogo-concepts.md`](docs/pogo-concepts.md) for game mechanics.
 

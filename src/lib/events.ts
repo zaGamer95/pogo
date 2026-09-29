@@ -1,5 +1,6 @@
 import type { LeekEvent } from './data';
 
+// Labels are English i18n keys; components render them with t(label) (Korean in src/i18n/ko/calendar.ts).
 export const EVENT_TYPES: Record<string, { label: string; color: string }> = {
   'community-day': { label: 'Community Day', color: '#2f9e44' },
   'raid-day': { label: 'Raid Day', color: '#d9480f' },

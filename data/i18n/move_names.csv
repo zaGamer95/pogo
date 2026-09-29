@@ -1,0 +1,353 @@
+﻿id,type,ko,en,ja,source
+ACID,poison,용해액,Acid,ようかいえき,game
+ACID_SPRAY,poison,애시드봄,Acid Spray,アシッドボム,game
+ACID_SPRAY_PLUS,poison,애시드봄+,Acid Spray+,アシッドボム+,game
+ACROBATICS,flying,애크러뱃,Acrobatics,アクロバット,game
+AEGISLASH_CHARGE_AIR_SLASH,flying,Air Slash,Air Slash,Air Slash,english
+AEGISLASH_CHARGE_PSYCHO_CUT,psychic,Psycho Cut,Psycho Cut,Psycho Cut,english
+AERIAL_ACE,flying,제비반환,Aerial Ace,つばめがえし,game
+AEROBLAST,flying,에어로블라스트,Aeroblast,エアロブラスト,game
+AIR_CUTTER,flying,에어커터,Air Cutter,エアカッター,game
+AIR_SLASH,flying,에어슬래시,Air Slash,エアスラッシュ,game
+ANCIENT_POWER,rock,원시의힘,Ancient Power,げんしのちから,game
+AQUA_JET,water,아쿠아제트,Aqua Jet,アクアジェット,game
+AQUA_STEP,water,아쿠아스텝,Aqua Step,アクアステップ,game
+AQUA_TAIL,water,아쿠아테일,Aqua Tail,アクアテール,game
+ASTONISH,ghost,놀래키기,Astonish,おどろかす,game
+AURA_SPHERE,fighting,파동탄,Aura Sphere,はどうだん,game
+AURA_WHEEL_DARK,dark,오라휠,Aura Wheel,オーラぐるま,game
+AURA_WHEEL_ELECTRIC,electric,오라휠,Aura Wheel,オーラぐるま,game
+AURORA_BEAM,ice,오로라빔,Aurora Beam,オーロラビーム,game
+AVALANCHE,ice,눈사태,Avalanche,ゆきなだれ,game
+BEAK_BLAST,flying,부리캐논,Beak Blast,くちばしキャノン,pokeapi
+BEHEMOTH_BASH,steel,거수탄,Behemoth Bash,きょじゅうだん,game
+BEHEMOTH_BLADE,steel,거수참,Behemoth Blade,きょじゅうざん,game
+BITE,dark,물기,Bite,かみつく,game
+BLAST_BURN,fire,블라스트번,Blast Burn,ブラストバーン,game
+BLAZE_KICK,fire,블레이즈킥,Blaze Kick,ブレイズキック,game
+BLEAKWIND_STORM,flying,찬바람폭풍,Bleakwind Storm,こがらしあらし,game
+BLIZZARD,ice,눈보라,Blizzard,ふぶき,game
+BODY_SLAM,normal,누르기,Body Slam,のしかかり,game
+BONE_CLUB,ground,뼈다귀치기,Bone Club,ホネこんぼう,game
+BOOMBURST,normal,폭음파,Boomburst,ばくおんぱ,game
+BRAVE_BIRD,flying,브레이브버드,Brave Bird,ブレイブバード,game
+BRAVE_BIRD_PLUS,flying,브레이브버드+,Brave Bird+,ブレイブバード+,game
+BREAKING_SWIPE,dragon,와이드브레이커,Breaking Swipe,ワイドブレイカー,game
+BRICK_BREAK,fighting,깨트리기,Brick Break,かわらわり,game
+BRICK_BREAK_PLUS,fighting,깨트리기+,Brick Break+,かわらわり+,game
+BRINE,water,소금물,Brine,しおみず,game
+BRUTAL_SWING,dark,세차게휘두르기,Brutal Swing,ぶんまわす,game
+BUBBLE,water,거품,Bubble,あわ,game
+BUBBLE_BEAM,water,거품광선,Bubble Beam,バブルこうせん,game
+BUG_BITE,bug,벌레먹기,Bug Bite,むしくい,game
+BUG_BUZZ,bug,벌레의야단법석,Bug Buzz,むしのさざめき,game
+BULLDOZE,ground,땅고르기,Bulldoze,じならし,game
+BULLET_PUNCH,steel,불릿펀치,Bullet Punch,バレットパンチ,game
+BULLET_SEED,grass,씨기관총,Bullet Seed,タネマシンガン,game
+CHARGE_BEAM,electric,차지빔,Charge Beam,チャージビーム,game
+CHARM,fairy,애교부리기,Charm,あまえる,game
+CHILLING_WATER,water,찬물끼얹기,Chilling Water,ひやみず,pokeapi
+CLANGING_SCALES,dragon,스케일노이즈,Clanging Scales,スケイルノイズ,game
+CLOSE_COMBAT,fighting,인파이트,Close Combat,インファイト,game
+CONFUSION,psychic,염동력,Confusion,ねんりき,game
+COUNTER,fighting,카운터,Counter,カウンター,game
+CRABHAMMER,water,집게해머,Crabhammer,クラブハンマー,game
+CROSS_CHOP,fighting,크로스촙,Cross Chop,クロスチョップ,game
+CROSS_POISON,poison,크로스포이즌,Cross Poison,クロスポイズン,game
+CRUNCH,dark,깨물어부수기,Crunch,かみくだく,game
+CRUSH_GRIP,normal,묵사발,Crush Grip,にぎりつぶす,game
+CUT,normal,풀베기,Cut,いあいぎり,game
+DARK_PULSE,dark,악의파동,Dark Pulse,あくのはどう,game
+DARK_PULSE_PLUS,dark,악의파동+,Dark Pulse+,あくのはどう+,game
+DARKEST_LARIAT,dark,DD래리어트,Darkest Lariat,ＤＤラリアット,game
+DAZZLING_GLEAM,fairy,매지컬샤인,Dazzling Gleam,マジカルシャイン,game
+DIG,ground,구멍파기,Dig,あなをほる,game
+DISARMING_VOICE,fairy,차밍보이스,Disarming Voice,チャームボイス,game
+DISCHARGE,electric,방전,Discharge,ほうでん,game
+DIVE,water,다이빙,Dive,ダイビング,pokeapi
+DOOM_DESIRE,steel,파멸의소원,Doom Desire,はめつのねがい,game
+DOUBLE_IRON_BASH,steel,더블펀처,Double Iron Bash,ダブルパンツァー,game
+DOUBLE_KICK,fighting,두번차기,Double Kick,にどげり,game
+DRACO_METEOR,dragon,용성군,Draco Meteor,りゅうせいぐん,game
+DRAGON_ASCENT,flying,화룡점정,Dragon Ascent,ガリョウテンセイ,game
+DRAGON_BREATH,dragon,용의숨결,Dragon Breath,りゅうのいぶき,game
+DRAGON_CLAW,dragon,드래곤클로,Dragon Claw,ドラゴンクロー,game
+DRAGON_ENERGY,dragon,드래곤에너지,Dragon Energy,ドラゴンエナジー,game
+DRAGON_PULSE,dragon,용의파동,Dragon Pulse,りゅうのはどう,game
+DRAGON_TAIL,dragon,드래곤테일,Dragon Tail,ドラゴンテール,game
+DRAIN_PUNCH,fighting,드레인펀치,Drain Punch,ドレインパンチ,game
+DRAINING_KISS,fairy,드레인키스,Draining Kiss,ドレインキッス,game
+DRILL_PECK,flying,회전부리,Drill Peck,ドリルくちばし,game
+DRILL_PECK_PLUS,flying,회전부리+,Drill Peck+,ドリルくちばし+,game
+DRILL_RUN,ground,드릴라이너,Drill Run,ドリルライナー,game
+DRUM_BEATING,grass,드럼어택,Drum Beating,ドラムアタック,pokeapi
+DYNAMAX_CANNON,dragon,다이맥스포,Dynamax Cannon,ダイマックスほう,game
+DYNAMIC_PUNCH,fighting,폭발펀치,Dynamic Punch,ばくれつパンチ,game
+DYNAMIC_PUNCH_PLUS,fighting,폭발펀치+,Dynamic Punch+,ばくれつパンチ+,game
+EARTH_POWER,ground,대지의힘,Earth Power,だいちのちから,game
+EARTHQUAKE,ground,지진,Earthquake,じしん,game
+EMBER,fire,불꽃세례,Ember,ひのこ,game
+ENERGY_BALL,grass,에너지볼,Energy Ball,エナジーボール,game
+EXTRASENSORY,psychic,신통력,Extrasensory,じんつうりき,game
+FAIRY_WIND,fairy,요정의바람,Fairy Wind,ようせいのかぜ,game
+FEATHER_DANCE,flying,깃털댄스,Feather Dance,フェザーダンス,game
+FEINT_ATTACK,dark,속여때리기,Feint Attack,だましうち,game
+FELL_STINGER,bug,마지막일침,Fell Stinger,とどめばり,game
+FELL_STINGER_PLUS,bug,마지막일침+,Fell Stinger+,とどめばり+,game
+FIRE_BLAST,fire,불대문자,Fire Blast,だいもんじ,game
+FIRE_FANG,fire,불꽃엄니,Fire Fang,ほのおのキバ,game
+FIRE_PUNCH,fire,불꽃펀치,Fire Punch,ほのおのパンチ,game
+FIRE_SPIN,fire,회오리불꽃,Fire Spin,ほのおのうず,game
+FLAME_BURST,fire,불꽃튀기기,Flame Burst,はじけるほのお,game
+FLAME_CHARGE,fire,니트로차지,Flame Charge,ニトロチャージ,game
+FLAME_WHEEL,fire,화염바퀴,Flame Wheel,かえんぐるま,game
+FLAMETHROWER,fire,화염방사,Flamethrower,かえんほうしゃ,game
+FLASH_CANNON,steel,러스터캐논,Flash Cannon,ラスターカノン,game
+FLOWER_TRICK,grass,트릭플라워,Flower Trick,トリックフラワー,game
+FLY,flying,공중날기,Fly,そらをとぶ,game
+FLYING_PRESS,fighting,플라잉프레스,Flying Press,フライングプレス,game
+FOCUS_BLAST,fighting,기합구슬,Focus Blast,きあいだま,game
+FORCE_PALM,fighting,발경,Force Palm,はっけい,game
+FOUL_PLAY,dark,속임수,Foul Play,イカサマ,game
+FREEZE_SHOCK,ice,프리즈볼트,Freeze Shock,フリーズボルト,game
+FRENZY_PLANT,grass,하드플랜트,Frenzy Plant,ハードプラント,game
+FROST_BREATH,ice,얼음숨결,Frost Breath,こおりのいぶき,game
+FRUSTRATION,normal,화풀이,Frustration,やつあたり,game
+FURY_CUTTER,bug,연속자르기,Fury Cutter,れんぞくぎり,game
+FUSION_BOLT,electric,크로스썬더,Fusion Bolt,クロスサンダー,game
+FUSION_FLARE,fire,크로스플레임,Fusion Flare,クロスフレイム,game
+FUTURE_SIGHT,psychic,미래예지,Future Sight,みらいよち,pokeapi
+FUTURE_SIGHT_PLUS,psychic,미래예지+,Future Sight+,みらいよち+,pokeapi
+GEOMANCY,fairy,지오컨트롤,Geomancy,ジオコントロール,game
+GIGA_DRAIN,grass,기가드레인,Giga Drain,ギガドレイン,game
+GIGA_IMPACT,normal,기가임팩트,Giga Impact,ギガインパクト,game
+GIGATON_HAMMER,steel,거대해머,Gigaton Hammer,デカハンマー,pokeapi
+GLACIATE,ice,얼어붙은세계,Glaciate,こごえるせかい,game
+GLAIVE_RUSH,dragon,대검돌격,Glaive Rush,きょけんとつげき,pokeapi
+GRASS_KNOT,grass,풀묶기,Grass Knot,くさむすび,game
+GULP_MISSILE_ARROKUDA,water,Gulp Missile (Arrokuda),Gulp Missile (Arrokuda),Gulp Missile (Arrokuda),english
+GULP_MISSILE_PIKACHU,water,Gulp Missile (Pikachu),Gulp Missile (Pikachu),Gulp Missile (Pikachu),english
+GUNK_SHOT,poison,더스트슈트,Gunk Shot,ダストシュート,game
+GUST,flying,바람일으키기,Gust,かぜおこし,game
+GYRO_BALL,steel,자이로볼,Gyro Ball,ジャイロボール,game
+HEART_STAMP,psychic,하트스탬프,Heart Stamp,ハートスタンプ,game
+HEAT_WAVE,fire,열풍,Heat Wave,ねっぷう,game
+HEAVY_SLAM,steel,헤비봄버,Heavy Slam,ヘビーボンバー,game
+HEX,ghost,병상첨병,Hex,たたりめ,game
+HIDDEN_POWER_BUG,bug,잠재파워(벌레),Hidden Power (Bug),めざめるパワー（むし）,game
+HIDDEN_POWER_DARK,dark,잠재파워(악),Hidden Power (Dark),めざめるパワー（あく）,game
+HIDDEN_POWER_DRAGON,dragon,잠재파워(드래곤),Hidden Power (Dragon),めざめるパワー（ドラゴン）,game
+HIDDEN_POWER_ELECTRIC,electric,잠재파워(전기),Hidden Power (Electric),めざめるパワー（でんき）,game
+HIDDEN_POWER_FIGHTING,fighting,잠재파워(격투),Hidden Power (Fighting),めざめるパワー（かくとう）,game
+HIDDEN_POWER_FIRE,fire,잠재파워(불꽃),Hidden Power (Fire),めざめるパワー（ほのお）,game
+HIDDEN_POWER_FLYING,flying,잠재파워(비행),Hidden Power (Flying),めざめるパワー（ひこう）,game
+HIDDEN_POWER_GHOST,ghost,잠재파워(고스트),Hidden Power (Ghost),めざめるパワー（ゴースト）,game
+HIDDEN_POWER_GRASS,grass,잠재파워(풀),Hidden Power (Grass),めざめるパワー（くさ）,game
+HIDDEN_POWER_GROUND,ground,잠재파워(땅),Hidden Power (Ground),めざめるパワー（じめん）,game
+HIDDEN_POWER_ICE,ice,잠재파워(얼음),Hidden Power (Ice),めざめるパワー（こおり）,game
+HIDDEN_POWER_NORMAL,normal,잠재파워(노말),Hidden Power,めざめるパワー（ノーマル）,game
+HIDDEN_POWER_POISON,poison,잠재파워(독),Hidden Power (Poison),めざめるパワー（どく）,game
+HIDDEN_POWER_PSYCHIC,psychic,잠재파워(에스퍼),Hidden Power (Psychic),めざめるパワー（エスパー）,game
+HIDDEN_POWER_ROCK,rock,잠재파워(바위),Hidden Power (Rock),めざめるパワー（いわ）,game
+HIDDEN_POWER_STEEL,steel,잠재파워(강철),Hidden Power (Steel),めざめるパワー（はがね）,game
+HIDDEN_POWER_WATER,water,잠재파워(물),Hidden Power (Water),めざめるパワー（みず）,game
+HIGH_HORSEPOWER,ground,10만마력,High Horsepower,１０まんばりき,game
+HIGH_JUMP_KICK,fighting,무릎차기,High Jump Kick,とびひざげり,game
+HORN_ATTACK,normal,뿔찌르기,Horn Attack,つのでつく,game
+HURRICANE,flying,폭풍,Hurricane,ぼうふう,game
+HYDRO_CANNON,water,하이드로캐논,Hydro Cannon,ハイドロカノン,game
+HYDRO_PUMP,water,하이드로펌프,Hydro Pump,ハイドロポンプ,game
+HYDRO_PUMP_BLASTOISE,water,하이드로펌프,Hydro Pump Blastoise,ハイドロポンプ,game
+HYPER_BEAM,normal,파괴광선,Hyper Beam,はかいこうせん,game
+HYPER_FANG,normal,필살앞니,Hyper Fang,ひっさつまえば,game
+ICE_BEAM,ice,냉동빔,Ice Beam,れいとうビーム,game
+ICE_BURN,ice,콜드플레어,Ice Burn,コールドフレア,game
+ICE_FANG,ice,얼음엄니,Ice Fang,こおりのキバ,game
+ICE_PUNCH,ice,냉동펀치,Ice Punch,れいとうパンチ,game
+ICE_SHARD,ice,얼음뭉치,Ice Shard,こおりのつぶて,game
+ICICLE_SPEAR,ice,고드름침,Icicle Spear,つららばり,game
+ICY_WIND,ice,얼어붙은바람,Icy Wind,こごえるかぜ,game
+INCINERATE,fire,불태우기,Incinerate,やきつくす,game
+INFESTATION,bug,엉겨붙기,Infestation,まとわりつく,game
+IRON_HEAD,steel,아이언헤드,Iron Head,アイアンヘッド,game
+IRON_TAIL,steel,아이언테일,Iron Tail,アイアンテール,game
+KARATE_CHOP,fighting,태권당수,Karate Chop,からてチョップ,game
+LAST_RESORT,normal,비장의무기,Last Resort,とっておき,game
+LEAF_BLADE,grass,리프블레이드,Leaf Blade,リーフブレード,game
+LEAF_STORM,grass,리프스톰,Leaf Storm,リーフストーム,game
+LEAF_TORNADO,grass,그래스믹서,Leaf Tornado,グラスミキサー,game
+LEAFAGE,grass,나뭇잎,Leafage,このは,game
+LICK,ghost,핥기,Lick,したでなめる,game
+LIQUIDATION,water,아쿠아브레이크,Liquidation,アクアブレイク,game
+LIQUIDATION_PLUS,water,아쿠아브레이크+,Liquidation+,アクアブレイク+,game
+LOCK_ON,normal,록온,Lock On,ロックオン,game
+LOW_KICK,fighting,안다리걸기,Low Kick,けたぐり,game
+LOW_SWEEP,fighting,로킥,Low Sweep,ローキック,game
+LUNGE,bug,덤벼들기,Lunge,とびかかる,game
+LUSTER_PURGE,psychic,러스터퍼지,Luster Purge,ラスターパージ,game
+MAGICAL_LEAF,grass,매지컬리프,Magical Leaf,マジカルリーフ,game
+MAGMA_STORM,fire,마그마스톰,Magma Storm,マグマストーム,game
+MAGNET_BOMB,steel,마그넷봄,Magnet Bomb,マグネットボム,game
+MEGA_DRAIN,grass,메가드레인,Mega Drain,メガドレイン,game
+MEGAHORN,bug,메가혼,Megahorn,メガホーン,game
+METAL_CLAW,steel,메탈클로,Metal Claw,メタルクロー,game
+METAL_SOUND,steel,금속음,Metal Sound,きんぞくおん,game
+METEOR_BEAM,rock,메테오빔,Meteor Beam,メテオビーム,game
+METEOR_MASH,steel,코멧펀치,Meteor Mash,コメットパンチ,game
+MIND_BLOWN,fire,깜짝헤드,Mind Blown,ビックリヘッド,pokeapi
+MIRROR_COAT,psychic,미러코트,Mirror Coat,ミラーコート,game
+MIRROR_SHOT,steel,미러샷,Mirror Shot,ミラーショット,game
+MIST_BALL,psychic,미스트볼,Mist Ball,ミストボール,game
+MOONBLAST,fairy,문포스,Moonblast,ムーンフォース,game
+MOONGEIST_BEAM,ghost,섀도레이,Moongeist Beam,シャドーレイ,game
+MUD_BOMB,ground,진흙폭탄,Mud Bomb,どろばくだん,game
+MUD_SHOT,ground,머드샷,Mud Shot,マッドショット,game
+MUD_SLAP,ground,진흙뿌리기,Mud Slap,どろかけ,game
+MUDDY_WATER,water,탁류,Muddy Water,だくりゅう,game
+MYSTICAL_FIRE,fire,매지컬플레임,Mystical Fire,マジカルフレイム,game
+MYSTICAL_FIRE_PLUS,fire,매지컬플레임+,Mystical Fire+,マジカルフレイム+,game
+NATURES_MADNESS,fairy,자연의분노,Nature's Madness,しぜんのいかり,game
+NIGHT_SHADE,ghost,나이트헤드,Night Shade,ナイトヘッド,game
+NIGHT_SLASH,dark,깜짝베기,Night Slash,つじぎり,game
+OBLIVION_WING,flying,데스윙,Oblivion Wing,デスウイング,game
+OBSTRUCT,dark,블로킹,Obstruct,ブロッキング,game
+OCTAZOOKA,water,대포무노포,Octazooka,オクタンほう,game
+OMINOUS_WIND,ghost,괴상한바람,Ominous Wind,あやしいかぜ,game
+ORIGIN_PULSE,water,근원의파동,Origin Pulse,こんげんのはどう,game
+OUTRAGE,dragon,역린,Outrage,げきりん,game
+OUTRAGE_PLUS,dragon,역린+,Outrage+,げきりん+,game
+OVERHEAT,fire,오버히트,Overheat,オーバーヒート,game
+PARABOLIC_CHARGE,electric,파라볼라차지,Parabolic Charge,パラボラチャージ,game
+PAYBACK,dark,보복,Payback,しっぺがえし,game
+PECK,flying,쪼기,Peck,つつく,game
+PETAL_BLIZZARD,grass,꽃보라,Petal Blizzard,はなふぶき,game
+PLASMA_FISTS,electric,플라스마피스트,Plasma Fists,プラズマフィスト,pokeapi
+PLAY_ROUGH,fairy,치근거리기,Play Rough,じゃれつく,game
+POISON_FANG,poison,맹독엄니,Poison Fang,どくどくのキバ,game
+POISON_JAB,poison,독찌르기,Poison Jab,どくづき,game
+POISON_STING,poison,독침,Poison Sting,どくばり,game
+POLTERGEIST,ghost,폴터가이스트,Poltergeist,ポルターガイスト,game
+POUND,normal,막치기,Pound,はたく,game
+POWDER_SNOW,ice,눈싸라기,Powder Snow,こなゆき,game
+POWER_GEM,rock,파워젬,Power Gem,パワージェム,game
+POWER_UP_PUNCH,fighting,그로우펀치,Power-Up Punch,グロウパンチ,game
+POWER_WHIP,grass,파워휩,Power Whip,パワーウィップ,game
+PRECIPICE_BLADES,ground,단애의칼,Precipice Blades,だんがいのつるぎ,game
+PRESENT,normal,프레젠트,Present,プレゼント,game
+PSYBEAM,psychic,환상빔,Psybeam,サイケこうせん,game
+PSYBEAM_PLUS,psychic,환상빔+,Psybeam+,サイケこうせん+,game
+PSYCHIC,psychic,사이코키네시스,Psychic,サイコキネシス,game
+PSYCHIC_FANGS,psychic,사이코팽,Psychic Fangs,サイコファング,game
+PSYCHO_BOOST,psychic,사이코부스트,Psycho Boost,サイコブースト,game
+PSYCHO_CUT,psychic,사이코커터,Psycho Cut,サイコカッター,game
+PSYSHOCK,psychic,사이코쇼크,Psyshock,サイコショック,game
+PSYSTRIKE,psychic,사이코브레이크,Psystrike,サイコブレイク,game
+PSYWAVE,psychic,사이코웨이브,Psywave,サイコウェーブ,game
+PYRO_BALL,fire,화염볼,Pyro Ball,かえんボール,pokeapi
+QUICK_ATTACK,normal,전광석화,Quick Attack,でんこうせっか,game
+RAGE_FIST,ghost,분노의주먹,Rage Fist,ふんどのこぶし,game
+RAZOR_LEAF,grass,잎날가르기,Razor Leaf,はっぱカッター,game
+RAZOR_SHELL,water,셸블레이드,Razor Shell,シェルブレード,game
+REST,normal,잠자기,Rest,ねむる,game
+RETURN,normal,은혜갚기,Return,おんがえし,game
+ROAR_OF_TIME,dragon,시간의포효,Roar of Time,ときのほうこう,game
+ROCK_BLAST,rock,록블라스트,Rock Blast,ロックブラスト,game
+ROCK_SLIDE,rock,스톤샤워,Rock Slide,いわなだれ,game
+ROCK_SMASH,fighting,바위깨기,Rock Smash,いわくだき,game
+ROCK_THROW,rock,돌떨구기,Rock Throw,いわおとし,game
+ROCK_TOMB,rock,암석봉인,Rock Tomb,がんせきふうじ,game
+ROCK_WRECKER,rock,암석포,Rock Wrecker,がんせきほう,game
+ROLLOUT,rock,구르기,Rollout,ころがる,game
+SACRED_FIRE,fire,성스러운불꽃,Sacred Fire,せいなるほのお,game
+SACRED_SWORD,fighting,성스러운칼,Sacred Sword,せいなるつるぎ,game
+SAND_ATTACK,ground,모래뿌리기,Sand Attack,すなかけ,game
+SAND_TOMB,ground,모래지옥,Sand Tomb,すなじごく,game
+SANDSEAR_STORM,ground,열사의폭풍,Sandsear Storm,ねっさのあらし,game
+SCALD,water,열탕,Scald,ねっとう,game
+SCORCHING_SANDS,ground,열사의대지,Scorching Sands,ねっさのだいち,game
+SCRATCH,normal,할퀴기,Scratch,ひっかく,game
+SECRET_SWORD,fighting,신비의칼,Secret Sword,しんぴのつるぎ,pokeapi
+SEED_BOMB,grass,씨폭탄,Seed Bomb,タネばくだん,game
+SEED_BOMB_PLUS,grass,씨폭탄+,Seed Bomb+,タネばくだん+,game
+SEED_FLARE,grass,시드플레어,Seed Flare,シードフレア,game
+SHADOW_BALL,ghost,섀도볼,Shadow Ball,シャドーボール,game
+SHADOW_BONE,ghost,섀도본,Shadow Bone,シャドーボーン,game
+SHADOW_CLAW,ghost,섀도클로,Shadow Claw,シャドークロー,game
+SHADOW_FORCE,ghost,섀도다이브,Shadow Force,シャドーダイブ,game
+SHADOW_PUNCH,ghost,섀도펀치,Shadow Punch,シャドーパンチ,game
+SHADOW_SNEAK,ghost,야습,Shadow Sneak,かげうち,game
+SIGNAL_BEAM,bug,시그널빔,Signal Beam,シグナルビーム,game
+SILVER_WIND,bug,은빛바람,Silver Wind,ぎんいろのかぜ,game
+SKULL_BASH,normal,로켓박치기,Skull Bash,ロケットずつき,game
+SKY_ATTACK,flying,불새,Sky Attack,ゴッドバード,game
+SLUDGE,poison,오물공격,Sludge,ヘドロこうげき,game
+SLUDGE_BOMB,poison,오물폭탄,Sludge Bomb,ヘドロばくだん,game
+SLUDGE_WAVE,poison,오물웨이브,Sludge Wave,ヘドロウェーブ,game
+SMACK_DOWN,rock,떨어뜨리기,Smack Down,うちおとす,game
+SNARL,dark,바크아웃,Snarl,バークアウト,game
+SNIPE_SHOT,water,노려맞히기,Snipe Shot,ねらいうち,pokeapi
+SOLAR_BEAM,grass,솔라빔,Solar Beam,ソーラービーム,game
+SPACIAL_REND,dragon,공간절단,Spacial Rend,あくうせつだん,game
+SPARK,electric,스파크,Spark,スパーク,game
+SPARKLING_ARIA,water,물거품아리아,Sparkling Aria,うたかたのアリア,game
+SPIRIT_SHACKLE,ghost,그림자꿰매기,Spirit Shackle,かげぬい,game
+SPLASH,water,튀어오르기,Splash,はねる,game
+SPRINGTIDE_STORM,fairy,봄의폭풍,Springtide Storm (Speculative),はるのあらし,pokeapi
+STEEL_WING,steel,강철날개,Steel Wing,はがねのつばさ,game
+STOMP,normal,짓밟기,Stomp,ふみつけ,game
+STONE_EDGE,rock,스톤에지,Stone Edge,ストーンエッジ,game
+STRUGGLE,normal,발버둥,Struggle,わるあがき,game
+STRUGGLE_BUG,bug,벌레의저항,Struggle Bug,むしのていこう,game
+SUBMISSION,fighting,지옥의바퀴,Submission,じごくぐるま,game
+SUCKER_PUNCH,dark,기습,Sucker Punch,ふいうち,game
+SUNSTEEL_STRIKE,steel,메테오드라이브,Sunsteel Strike,メテオドライブ,game
+SUPER_POWER,fighting,엄청난힘,Superpower,ばかぢから,game
+SURF,water,파도타기,Surf,なみのり,game
+SURF_PLUS,water,파도타기+,Surf+,なみのり+,game
+SWIFT,normal,스피드스타,Swift,スピードスター,game
+SYNCHRONOISE,psychic,싱크로노이즈,Synchronoise,シンクロノイズ,game
+TACKLE,normal,몸통박치기,Tackle,たいあたり,game
+TAKE_DOWN,normal,돌진,Take Down,とっしん,game
+TECHNO_BLAST_BURN,fire,테크노버스터,Techno Blast (Burn),テクノバスター,game
+TECHNO_BLAST_CHILL,ice,테크노버스터,Techno Blast (Chill),テクノバスター,game
+TECHNO_BLAST_DOUSE,water,Techno Blast (Douse),Techno Blast (Douse),Techno Blast (Douse),english
+TECHNO_BLAST_NORMAL,normal,테크노버스터,Techno Blast (Normal),テクノバスター,game
+TECHNO_BLAST_SHOCK,electric,테크노버스터,Techno Blast (Shock),テクノバスター,game
+THUNDER,electric,번개,Thunder,かみなり,game
+THUNDER_CAGE,electric,썬더프리즌,Thunder Cage,サンダープリズン,game
+THUNDER_FANG,electric,번개엄니,Thunder Fang,かみなりのキバ,game
+THUNDER_PUNCH,electric,번개펀치,Thunder Punch,かみなりパンチ,game
+THUNDER_SHOCK,electric,전기쇼크,Thunder Shock,でんきショック,game
+THUNDERBOLT,electric,10만볼트,Thunderbolt,１０まんボルト,game
+TORCH_SONG,fire,플레어송,Torch Song,フレアソング,game
+TRAILBLAZE,grass,개척하기,Trailblaze,くさわけ,game
+TRANSFORM,normal,변신,Transform,へんしん,game
+TRI_ATTACK,normal,트라이어택,Tri Attack,トライアタック,game
+TRIPLE_AXEL,ice,트리플악셀,Triple Axel,トリプルアクセル,game
+TWISTER,dragon,회오리,Twister,たつまき,game
+UPPER_HAND,fighting,기선제압,Upper Hand,はやてがえし,game
+V_CREATE,fire,V제너레이트,V-Create,Ｖジェネレート,game
+VICE_GRIP,normal,찝기,Vise Grip,はさむ,game
+VINE_WHIP,grass,덩굴채찍,Vine Whip,つるのムチ,game
+VOLT_SWITCH,electric,볼트체인지,Volt Switch,ボルトチェンジ,game
+VOLT_TACKLE,electric,볼트태클,Volt Tackle,ボルテッカー,game
+VOLT_TACKLE_PLUS,electric,볼트태클+,Volt Tackle+,ボルテッカー+,game
+WATER_GUN,water,물대포,Water Gun,みずでっぽう,game
+WATER_GUN_FAST_BLASTOISE,water,물대포,Water Gun Fast Blastoise,みずでっぽう,game
+WATER_PULSE,water,물의파동,Water Pulse,みずのはどう,game
+WATER_SHURIKEN,water,물수리검,Water Shuriken,みずしゅりけん,game
+WATERFALL,water,폭포오르기,Waterfall,たきのぼり,game
+WEATHER_BALL_FIRE,fire,웨더볼,Weather Ball (Fire),ウェザーボール,game
+WEATHER_BALL_ICE,ice,웨더볼,Weather Ball (Ice),ウェザーボール,game
+WEATHER_BALL_NORMAL,normal,웨더볼,Weather Ball (Normal),ウェザーボール,game
+WEATHER_BALL_ROCK,rock,웨더볼,Weather Ball (Rock),ウェザーボール,game
+WEATHER_BALL_WATER,water,웨더볼,Weather Ball (Water),ウェザーボール,game
+WILD_CHARGE,electric,와일드볼트,Wild Charge,ワイルドボルト,game
+WILDBOLT_STORM,electric,번개폭풍,Wildbolt Storm,かみなりあらし,game
+WING_ATTACK,flying,날개치기,Wing Attack,つばさでうつ,game
+WRAP,normal,김밥말이,Wrap,まきつく,game
+X_SCISSOR,bug,시저크로스,X-Scissor,シザークロス,game
+YAWN,normal,하품,Yawn,あくび,game
+ZAP_CANNON,electric,전자포,Zap Cannon,でんじほう,game
+ZAP_CANNON_PLUS,electric,전자포+,Zap Cannon+,でんじほう+,game
+ZEN_HEADBUTT,psychic,사념의박치기,Zen Headbutt,しねんのずつき,game

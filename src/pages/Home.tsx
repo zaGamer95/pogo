@@ -1,28 +1,65 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useGameData } from '../lib/data';
+import { useGameData, type GameData, type LeekRaid } from '../lib/data';
 import { DAY, eventStyle, isActive, withDates, type TimedEvent } from '../lib/events';
-import { gblSchedule } from '../lib/names';
+import { leagueNames, ordered, usePrefs, useT } from '../lib/i18n';
+import { gblSchedule, resolveName } from '../lib/names';
 import { useRoster } from '../lib/roster';
 import EventModal from '../components/EventModal';
-import { Sprite, Types, fmtDateTime } from '../components/ui';
+import { PokeName, Sprite, Types } from '../components/ui';
+
+const locale = (lang: string) => (lang === 'ko' ? 'ko-KR' : 'en-US');
+
+function fmtDateTimeL(d: Date, lang: string) {
+  return d.toLocaleString(locale(lang), { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+}
 
 function EventRow({ e, onPick }: { e: TimedEvent; onPick: (e: TimedEvent) => void }) {
+  const { lang } = usePrefs();
+  const t = useT();
   return (
     <div className="event" style={{ ['--ec' as string]: eventStyle(e.eventType).color }} onClick={() => onPick(e)} role="button">
       <img src={e.image} alt="" loading="lazy" />
       <div className="ev-body">
         <div className="ev-name">{e.name}</div>
         <div className="muted small">
-          {eventStyle(e.eventType).label} · {isActive(e) ? `ends ${fmtDateTime(e.endDate)}` : fmtDateTime(e.startDate)}
+          {t(eventStyle(e.eventType).label)} · {isActive(e) ? t('ends {date}', { date: fmtDateTimeL(e.endDate, lang) }) : fmtDateTimeL(e.startDate, lang)}
         </div>
       </div>
     </div>
   );
 }
 
+/** LeekDuck boss name ("Shadow Alolan Sandslash") → three-language name, raw string if unresolved. */
+function BossName({ data, raid }: { data: GameData; raid: LeekRaid }) {
+  const t = useT();
+  const r = resolveName(data, raid.name);
+  if (!r.species) return <span className="mon-name">{raid.name}</span>;
+  return (
+    <span>
+      {r.shadow && <span className="small muted">{t('Shadow')} </span>}
+      {r.dynamax && <span className="small muted">{t(r.dynamax === 'gmax' ? 'Gigantamax' : 'Dynamax')} </span>}
+      <PokeName species={r.species} />
+    </span>
+  );
+}
+
+function LeagueName({ label }: { label: string }) {
+  const data = useGameData();
+  const { lang } = usePrefs();
+  const { primary, others } = ordered(leagueNames(data, label), lang);
+  return (
+    <span title={label}>
+      <strong>{primary}</strong>
+      {others.length > 0 && <span className="small muted"> {others.join(' · ')}</span>}
+    </span>
+  );
+}
+
 export default function Home() {
   const data = useGameData();
+  const { lang } = usePrefs();
+  const t = useT();
   const { roster } = useRoster();
   const [picked, setPicked] = useState<TimedEvent | null>(null);
   const now = new Date();
@@ -36,30 +73,30 @@ export default function Home() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Today</h1>
-          <p className="muted">{now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
+          <h1>{t('Today')}</h1>
+          <p className="muted">{now.toLocaleDateString(locale(lang), { weekday: 'long', month: 'long', day: 'numeric' })}</p>
         </div>
       </div>
       <div className="grid cols-2">
         <div className="card">
           <div className="row">
-            <h2>Happening now</h2>
+            <h2>{t('Happening now')}</h2>
             <span className="spacer" />
             <Link to="/calendar" className="small">
-              Calendar →
+              {t('Calendar →')}
             </Link>
           </div>
           <div className="event-list">
-            {live.length === 0 && <div className="muted">Nothing special live right now.</div>}
+            {live.length === 0 && <div className="muted">{t('Nothing special live right now.')}</div>}
             {live.map((e) => (
               <EventRow key={e.eventID} e={e} onPick={setPicked} />
             ))}
           </div>
         </div>
         <div className="card">
-          <h2>Next 7 days</h2>
+          <h2>{t('Next 7 days')}</h2>
           <div className="event-list">
-            {soon.length === 0 && <div className="muted">No announced events in the next week.</div>}
+            {soon.length === 0 && <div className="muted">{t('No announced events in the next week.')}</div>}
             {soon.map((e) => (
               <EventRow key={e.eventID} e={e} onPick={setPicked} />
             ))}
@@ -67,18 +104,18 @@ export default function Home() {
         </div>
         <div className="card">
           <div className="row">
-            <h2>Headline raids</h2>
+            <h2>{t('Headline raids')}</h2>
             <span className="spacer" />
             <Link to="/raids" className="small">
-              Counters →
+              {t('Counters →')}
             </Link>
           </div>
           <div className="boss-list">
             {topRaids.map((r) => (
               <Link key={r.name} to="/raids" className="card boss-btn" style={{ margin: 0 }}>
                 <Sprite src={r.image} size={48} />
-                <span className="mon-name">{r.name}</span>
-                <Types types={r.types.map((t) => t.name)} small />
+                <BossName data={data} raid={r} />
+                <Types types={r.types.map((ty) => ty.name)} small />
                 <span className="tier">
                   100%: {r.combatPower.normal.max} / {r.combatPower.boosted.max}
                 </span>
@@ -88,27 +125,27 @@ export default function Home() {
         </div>
         <div className="card">
           <div className="row">
-            <h2>GO Battle League</h2>
+            <h2>{t('GO Battle League')}</h2>
             <span className="spacer" />
             <Link to="/leagues" className="small">
-              Schedule →
+              {t('Schedule →')}
             </Link>
           </div>
           {gbl ? (
             <>
-              <p className="muted small">Until {fmtDateTime(gbl.end)}</p>
+              <p className="muted small">{t('Until {date}', { date: fmtDateTimeL(gbl.end, lang) })}</p>
               <div className="stack">
                 {gbl.leagues.map((l) => (
                   <div key={l.label} className="row">
-                    <strong>{l.label}</strong>
+                    <LeagueName label={l.label} />
                     <span className="spacer" />
                     {l.format && (
                       <>
                         <Link className="small" to={`/meta/${l.format.key}`}>
-                          Meta
+                          {t('Meta')}
                         </Link>
                         <Link className="small" to={`/teams?league=${l.format.key}`}>
-                          My team
+                          {t('My team')}
                         </Link>
                       </>
                     )}
@@ -117,28 +154,28 @@ export default function Home() {
               </div>
             </>
           ) : (
-            <p className="muted">No GBL week live.</p>
+            <p className="muted">{t('No GBL week live.')}</p>
           )}
           <p className="small muted" style={{ marginTop: 12 }}>
-            {roster.length} Pokémon saved. <Link to="/roster">Manage →</Link>
+            {t('{n} Pokémon saved.', { n: roster.length })} <Link to="/roster">{t('Manage →')}</Link>
           </p>
         </div>
         <div className="card">
           <div className="row">
-            <h2>Official news</h2>
+            <h2>{t('Official news')}</h2>
             <span className="spacer" />
             <a className="small" href="https://pokemongolive.com/news" target="_blank" rel="noreferrer">
               pokemongolive.com ↗
             </a>
           </div>
-          {data.news.length === 0 && <p className="muted">No news in the latest data refresh.</p>}
+          {data.news.length === 0 && <p className="muted">{t('No news in the latest data refresh.')}</p>}
           <ul className="news">
             {data.news.slice(0, 8).map((n) => (
               <li key={n.link}>
                 <a href={n.link} target="_blank" rel="noreferrer">
                   {n.title}
                 </a>
-                <span className="small muted"> · {new Date(n.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</span>
+                <span className="small muted"> · {new Date(n.date).toLocaleDateString(locale(lang), { month: 'short', day: 'numeric' })}</span>
               </li>
             ))}
           </ul>

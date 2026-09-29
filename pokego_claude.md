@@ -21,16 +21,28 @@ Game concepts (CP, IVs, leagues, Max Battles, trading…) live in [`docs/pogo-co
 | `/raids` | `pages/Raids.tsx` | **Raid bosses** tab: tier groups → boss detail (100% CP L20/L25, weak/resist, moves, counters per boss charged move, "Your best 6"). **Max Battles** tab: bosses from max events + user-added, Max attackers/tanks, your Dynamax mons | raids, events, pokemon, moves, roster | `pogo-raid-mode`, `pogo-max-custom` |
 | `/roster` | `pages/Roster.tsx` | My Pokémon: add/edit, flags, GL/UL IV rank, search/filter/sort, paging (100 rows + show more), Poke Genie CSV import (merge), JSON backup | pokemon, moves, cpm | `pogo-roster-v1` |
 | `/leagues` | `pages/Leagues.tsx` | Live GBL week (rules, links) + upcoming/past rotations | events (`go-battle-league`), formats | — |
-| `/meta`, `/meta/:key` | `pages/Meta.tsx` | PvPoke rankings by category + algorithmic lead/swap/closer cores | `pvp/<key>.json`, roster (owned highlight) | — |
+| `/meta`, `/meta/:key` | `pages/Meta.tsx` | **Popular teams in real battles** (pokemongo-get.com, all ranks / rank 21+, most-used), PvPoke rankings by category + algorithmic lead/swap/closer cores. `key` = PvPoke `<cup>-<cp>` or `jp-<id>` for cups only the JP site has (e.g. Fantasy, Mega Halloween) | `pvp/<key>.json`, `jp-parties.json`, roster (owned highlight) | — |
 | `/teams?mode=pvp\|raid&league=<key>` | `pages/Teams.tsx` | Best 3 PvP teams from the roster for a league; best 6 raid party vs a boss | rankings, roster, raids | — |
+| `/types` | `pages/TypeChart.tsx` | **Pokémon GO** type chart (×1.6 / ×0.625 / ×0.390625 — *not* main-series 2/0.5/0), main-series vs GO comparison, defender & attacker lookups, 18×18 matrix, weather-boost table; all labels ko/en/ja | types, i18n | — |
 | `/trade` | `pages/Trade.tsx` | Tabs: **My Pokédex** (caught/shiny/lucky/want/want-shiny grid + bulk ranges + fill from roster), **Wants** (missing dex, missing released shinies, "raid now"), **Can give** (spares from roster), **Share list** (LF/FT text, en/ko, dex backup) | shinies, names, raids, roster | `pogo-dex-v1`, roster `forTrade` |
 
-Nav order is defined in `src/App.tsx` (`NAV`). Footer shows data refresh time + attributions.
+Nav order is defined in `src/App.tsx` (`NAV`). Footer shows data refresh time + attributions. The top bar has the **한국어 / EN** UI switch and "기술 3" (show move names in 3 languages).
+
+### Language rules (important)
+- **Pokémon names are always shown in Korean, English and Japanese** → render with `<PokeName species|id nickname? inline? />` (UI language first, other two small). Never print `species.name` directly in UI.
+- Move names → `<MoveName id />` (UI language; the other two underneath when "기술 3" is on, always in the tooltip). Type → `<TypeBadge>`; weather → `weatherNames()`; league titles → `leagueNames()`.
+- In `<option>`/textarea text use `pokeNames(data, sp)[lang]` etc.
+- UI strings: `const t = useT(); t('English text', {vars})`. Korean lives in `src/i18n/ko/<area>.ts` (`Record<English, Korean>`, auto-loaded with `import.meta.glob`). Missing keys fall back to English.
+- Use official Korean GO terms (from game text): 슈퍼리그/하이퍼리그/마스터리그, 노말어택/스페셜 어택, 반짝반짝(Lucky), 색이 다른(Shiny), 그림자/정화, 베스트 파트너, 대단한 기술머신, 맥스배틀/다이맥스/거다이맥스 — see `docs/pogo-concepts.md` §12.
 
 ## 3. Source layout
 
 ```
 scripts/fetch-data.mjs     data pipeline (Node 22+, no deps)
+scripts/i18n.mjs           ko/en/ja names from official game text → data/i18n/*.csv + public/data/i18n.json
+scripts/jp-parties.mjs     popular GBL teams from pokemongo-get.com → public/data/jp-parties.json
+data/i18n/                 COMMITTED name tables (CSV, UTF-8 BOM for Excel): pokemon_names, move_names, type_names,
+                           weather_names, league_names, overrides.csv (hand fixes, always win), _untranslated.txt
 src/main.tsx               entry (HashRouter)
 src/App.tsx                shell, nav, routes, loads GameData into DataContext
 src/styles.css             all styles (type colours .t-<type>/.m-<type>)
@@ -39,7 +51,9 @@ src/components/
   EventModal.tsx           event detail popup (spawns/bosses/bonuses from extraData)
   LeaguePicker.tsx         league <select> with live GBL leagues pinned; defaultLeague()
   useRankings.ts           lazy-load pvp/<key>.json
+src/i18n/ko/*.ts          Korean UI strings per area (English text → Korean)
 src/lib/
+  i18n.ts                  UI language prefs (usePrefs/setLang), useT(), pokeNames/moveNames/typeNames/weatherNames/leagueNames, searchText
   data.ts                  types + loadGameData(), loadRankings(), useGameData(), spriteUrl(dex, shiny)
   calc.ts                  CPM/CP/stats, bestLevelUnderCap, pvpIvRank (4096-spread table, cached), levelFromCP,
                            type effectiveness, raid tiers, WEATHER_TYPES, simulate() DPS/TDO, bestMoveset()
@@ -66,6 +80,8 @@ src/lib/
 | `news.json` | Official RSS `pokemongolive.com/feed` | `{ title, link, date }[]` |
 | `pvp/formats.json` | PvPoke formats + cups that have rankings | `PvpFormat[]` (`key = "<cup>-<cp>"`) |
 | `pvp/<cup>-<cp>.json` | PvPoke rankings | `{ overall?, leads?, closers?, switches?, attackers?, chargers?: RankEntry[] }` (overall top 200, others top 60) |
+| `i18n.json` | PokeMiners `pogo_assets` i18n (ko/ja/en game text) → fallbacks LeekDuck names, PokeAPI (newest species/moves) → `data/i18n/overrides.csv` | `{ pokemon, moves, types, weather: Record<id, [ko, ja]>, leagues: Record<EnglishTitle, [ko, ja]> }` |
+| `jp-parties.json` | pokemongo-get.com `人気のバトルパーティ検索` (battle-log tool) | `{ source, season, fetched, leagues: { id, ja, en, cp, rule, all: JpParty[], high: JpParty[] /* rank 21–24 */, usage: {id, n}[] }[] }`; `JpParty = { rank, count, members: {dex, ja, shadow, id}[3] }` (member 0 = lead) |
 | `meta.json` | pipeline | `{ updated, pvpokeUpdated, counts }` |
 
 ### Key types (see `src/lib/data.ts`)
@@ -83,6 +99,9 @@ LeekEvent{ eventID, name, eventType, heading, link, image, start, end /* no 'Z' 
 LeekRaid { name /* "Shadow Alolan Sandslash", "Mega Malamar" */, tier /* "5-Star Raids" */, canBeShiny, types[], combatPower, boostedWeather[], image }
 ```
 
+### Name tables (`data/i18n/*.csv`)
+Columns `id, dex?, ko, en, ja, source` where `source` = `game` (official in-game text) · `leekduck` · `pokeapi` (main-series name, used only when the game text lacks it — newest species/moves) · `override`. Forms follow the game's style: `블레이범(히스이의 모습)` / `バクフーン（ヒスイのすがた）`, shadows `(그림자)` / `（シャドウ）`, megas `메가리자몽X` / `メガリザードンＸ`. To fix a name, add a row to `overrides.csv` (`kind,id,ko,en,ja`; kind = pokemon | move | type | weather | league) and run `npm run data`. `_untranslated.txt` lists what still falls back to English.
+
 ### ID conventions
 - Species ids = PvPoke `speciesId`. Shadow = `<id>_shadow` (separate entry, same base stats; apply ×1.2 atk / ×5/6 def in maths). Mega = `<id>_mega`, `_mega_x`, `_mega_y`. Regional = `_alolan`, `_galarian`, `_hisuian`, `_paldean`.
 - Move ids = PvPoke `moveId` (fast moves have **no** `_FAST` suffix; PokeMiners does, stripped in the pipeline). Hidden Power is split per type by PvPoke.
@@ -97,6 +116,8 @@ LeekRaid { name /* "Shadow Alolan Sandslash", "Mega Malamar" */, tier /* "5-Star
 | `pogo-max-custom` | `{ id, gmax }[]` | user-added Max Battle bosses |
 | `pogo-cal-hidden` | `string[]` | hidden event types |
 | `pogo-raid-mode` | `'raids' \| 'max'` | last tab |
+| `pogo-lang` | `'ko' \| 'en'` | UI language (default from browser) |
+| `pogo-move-langs` | `'all' \| 'compact'` | show 3-language move names |
 
 ```ts
 RosterMon { uid, speciesId /* NON-shadow id */, nickname?, shadow?, purified?, lucky?, shiny?,
@@ -126,6 +147,7 @@ Goal: official data first, community data only when it's *backed*. Speculation n
 | **T0 Official** | Niantic/TPC announcements | `pokemongolive.com/feed` RSS & news posts, official in-game news | Facts about events/dates/bonuses. Always wins over lower tiers. |
 | **T1 Datamined (structured)** | Game files | PokeMiners `game_masters/latest.json` (+ its git history for diffs), PokeMiners APK text | Stats, moves, forms, flags. Factual about *files*, but **unreleased ≠ confirmed** → mark `datamined`. |
 | **T2 Curated aggregators** | Sites that cite T0/T1 | LeekDuck (via ScrapedDuck), PvPoke rankings | Structured feeds we already consume. |
+| **T2 Observed usage** | Aggregated player logs | pokemongo-get.com battle-log party stats (JP) | Consumed as *usage counts* (what people actually run), never as claims about mechanics. Shown with source + date. |
 | **T3 Community research** | Posts with method + data | r/TheSilphRoad posts flaired *Research*/*Datamine*/*Verified*, Silph-style studies, known datamining accounts | Only as **remarks**, only when they meet the evidence rules below. |
 | **T4 Speculation** | Hopes, guesses, "leaks" without files, "I think…" | random Reddit/Twitter/YouTube comments, AI-generated sites | **Never ingested.** |
 

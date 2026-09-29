@@ -1,7 +1,12 @@
 import { useGameData } from '../lib/data';
 import { eventStyle, type TimedEvent } from '../lib/events';
+import { usePrefs, useT } from '../lib/i18n';
 import { resolveName } from '../lib/names';
-import { Sprite, fmtDateTime } from './ui';
+import { PokeName, Sprite } from './ui';
+
+function fmtDateTime(d: Date, lang: string) {
+  return d.toLocaleString(lang === 'ko' ? 'ko-KR' : 'en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+}
 
 interface Named {
   name: string;
@@ -22,6 +27,8 @@ function namedList(extra: Record<string, unknown> | undefined): { title: string;
 
 export default function EventModal({ event, onClose }: { event: TimedEvent; onClose: () => void }) {
   const data = useGameData();
+  const { lang } = usePrefs();
+  const t = useT();
   const style = eventStyle(event.eventType);
   const lists = namedList(event.extraData);
   const cd = event.extraData?.communityday as { bonuses?: { text: string }[] } | undefined;
@@ -33,35 +40,44 @@ export default function EventModal({ event, onClose }: { event: TimedEvent; onCl
         <img className="hero" src={event.image} alt="" />
         <div className="row">
           <span className="pill" style={{ borderColor: style.color, color: style.color }}>
-            {style.label}
+            {t(style.label)}
           </span>
           <span className="spacer" />
-          <button onClick={onClose}>Close</button>
+          <button onClick={onClose}>{t('Close')}</button>
         </div>
         <h2 style={{ marginTop: 8 }}>{event.name}</h2>
         <p className="muted">
-          {fmtDateTime(event.startDate)} → {fmtDateTime(event.endDate)}
+          {fmtDateTime(event.startDate, lang)} → {fmtDateTime(event.endDate, lang)}
         </p>
         {lists.map((l) => (
           <div key={l.title} style={{ marginBottom: 10 }}>
-            <h3>{l.title}</h3>
+            <h3>{t(l.title)}</h3>
             <div className="row">
               {l.items.map((i) => {
-                const sp = resolveName(data, i.name).species ?? undefined;
+                const r = resolveName(data, i.name);
+                const sp = r.species ?? undefined;
                 return (
                   <span key={i.name} className="mon pill">
                     <Sprite src={i.image} species={sp} size={28} />
-                    {i.name}
+                    {sp ? (
+                      <>
+                        {r.shadow && <span className="muted">{t('Shadow')} </span>}
+                        {r.dynamax && <span className="muted">{t(r.dynamax === 'gmax' ? 'Gigantamax' : 'Dynamax')} </span>}
+                        <PokeName species={sp} inline />
+                      </>
+                    ) : (
+                      i.name
+                    )}
                   </span>
                 );
               })}
             </div>
           </div>
         ))}
-        {spot?.bonus && <p>Bonus: {spot.bonus}</p>}
+        {spot?.bonus && <p>{t('Bonus: {text}', { text: spot.bonus })}</p>}
         {cd?.bonuses?.length ? (
           <>
-            <h3>Bonuses</h3>
+            <h3>{t('Bonuses')}</h3>
             <ul>
               {cd.bonuses.map((b) => (
                 <li key={b.text}>{b.text}</li>
@@ -70,7 +86,7 @@ export default function EventModal({ event, onClose }: { event: TimedEvent; onCl
           </>
         ) : null}
         <a href={event.link} target="_blank" rel="noreferrer">
-          Full details on LeekDuck ↗
+          {t('Full details on LeekDuck ↗')}
         </a>
       </div>
     </div>

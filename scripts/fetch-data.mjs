@@ -9,6 +9,8 @@
 
 import { access, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { buildI18n } from './i18n.mjs';
+import { fetchJpParties } from './jp-parties.mjs';
 
 const OUT = path.resolve(import.meta.dirname, '../public/data');
 const POKEMINERS = 'https://raw.githubusercontent.com/PokeMiners/game_masters/master/latest/latest.json';
@@ -83,7 +85,7 @@ async function main() {
     return { dex: s.dex, form: form && form.replace(/^_/, ''), released: s.released_date?.replace(/\//g, '-') ?? null };
   });
   // Dex number -> localized names (en + ko), useful for searching in either language
-  const names = Object.fromEntries(Object.entries(namesRaw).map(([dex, n]) => [dex, { en: n.en, ko: n.ko }]));
+  const names = Object.fromEntries(Object.entries(namesRaw).map(([dex, n]) => [dex, { en: n.en, ko: n.ko, ja: n.ja }]));
   const news = feed ? parseRss(feed) : [];
 
   // ---- CP multipliers (levels 1 … 55 in 0.5 steps) ----
@@ -221,7 +223,21 @@ async function main() {
     await write(`pvp/${key}.json`, rankings);
   }
 
+  // ---- Korean / English / Japanese names (official in-game text) ----
+  console.log('Building ko/en/ja names…');
+  const i18n = await buildI18n({ gm, pv, dexNames: namesRaw });
+  console.log(`  ${i18n.missing.length} names fell back to English (see data/i18n/_untranslated.txt)`);
+
+  // ---- Observed GBL teams from pokemongo-get.com (Japanese community battle logs) ----
+  console.log('Fetching popular parties from pokemongo-get.com…');
+  const jpParties = await fetchJpParties({ i18n, byId: new Map(pokemon.map((p) => [p.id, p])) }).catch((e) => {
+    console.warn('  jp parties unavailable:', e.message);
+    return null;
+  });
+
   await Promise.all([
+    write('i18n.json', i18n.json),
+    jpParties && write('jp-parties.json', jpParties),
     write('pokemon.json', pokemon),
     write('moves.json', moves),
     write('types.json', { types: TYPES, chart }),

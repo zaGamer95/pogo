@@ -1,0 +1,1743 @@
+﻿id,dex,ko,en,ja,source
+bulbasaur,1,이상해씨,Bulbasaur,フシギダネ,game
+bulbasaur_shadow,1,이상해씨(그림자),Bulbasaur (Shadow),フシギダネ（シャドウ）,game
+ivysaur,2,이상해풀,Ivysaur,フシギソウ,game
+ivysaur_shadow,2,이상해풀(그림자),Ivysaur (Shadow),フシギソウ（シャドウ）,game
+venusaur,3,이상해꽃,Venusaur,フシギバナ,game
+venusaur_mega,3,메가이상해꽃,Venusaur (Mega),メガフシギバナ,game
+venusaur_shadow,3,이상해꽃(그림자),Venusaur (Shadow),フシギバナ（シャドウ）,game
+charmander,4,파이리,Charmander,ヒトカゲ,game
+charmander_shadow,4,파이리(그림자),Charmander (Shadow),ヒトカゲ（シャドウ）,game
+charmeleon,5,리자드,Charmeleon,リザード,game
+charmeleon_shadow,5,리자드(그림자),Charmeleon (Shadow),リザード（シャドウ）,game
+charizard,6,리자몽,Charizard,リザードン,game
+charizard_mega_x,6,메가리자몽X,Charizard (Mega X),メガリザードンＸ,game
+charizard_mega_y,6,메가리자몽Y,Charizard (Mega Y),メガリザードンＹ,game
+charizard_shadow,6,리자몽(그림자),Charizard (Shadow),リザードン（シャドウ）,game
+squirtle,7,꼬부기,Squirtle,ゼニガメ,game
+squirtle_shadow,7,꼬부기(그림자),Squirtle (Shadow),ゼニガメ（シャドウ）,game
+wartortle,8,어니부기,Wartortle,カメール,game
+wartortle_shadow,8,어니부기(그림자),Wartortle (Shadow),カメール（シャドウ）,game
+blastoise,9,거북왕,Blastoise,カメックス,game
+blastoise_mega,9,메가거북왕,Blastoise (Mega),メガカメックス,game
+blastoise_shadow,9,거북왕(그림자),Blastoise (Shadow),カメックス（シャドウ）,game
+caterpie,10,캐터피,Caterpie,キャタピー,game
+caterpie_shadow,10,캐터피(그림자),Caterpie (Shadow),キャタピー（シャドウ）,game
+metapod,11,단데기,Metapod,トランセル,game
+metapod_shadow,11,단데기(그림자),Metapod (Shadow),トランセル（シャドウ）,game
+butterfree,12,버터플,Butterfree,バタフリー,game
+butterfree_shadow,12,버터플(그림자),Butterfree (Shadow),バタフリー（シャドウ）,game
+weedle,13,뿔충이,Weedle,ビードル,game
+weedle_shadow,13,뿔충이(그림자),Weedle (Shadow),ビードル（シャドウ）,game
+kakuna,14,딱충이,Kakuna,コクーン,game
+kakuna_shadow,14,딱충이(그림자),Kakuna (Shadow),コクーン（シャドウ）,game
+beedrill,15,독침붕,Beedrill,スピアー,game
+beedrill_mega,15,메가독침붕,Beedrill (Mega),メガスピアー,game
+beedrill_shadow,15,독침붕(그림자),Beedrill (Shadow),スピアー（シャドウ）,game
+pidgey,16,구구,Pidgey,ポッポ,game
+pidgey_shadow,16,구구(그림자),Pidgey (Shadow),ポッポ（シャドウ）,game
+pidgeotto,17,피죤,Pidgeotto,ピジョン,game
+pidgeotto_shadow,17,피죤(그림자),Pidgeotto (Shadow),ピジョン（シャドウ）,game
+pidgeot,18,피죤투,Pidgeot,ピジョット,game
+pidgeot_mega,18,메가피죤투,Pidgeot (Mega),メガピジョット,game
+pidgeot_shadow,18,피죤투(그림자),Pidgeot (Shadow),ピジョット（シャドウ）,game
+rattata,19,꼬렛,Rattata,コラッタ,game
+rattata_alolan,19,꼬렛(알로라의 모습),Rattata (Alolan),コラッタ（アローラのすがた）,game
+rattata_alolan_shadow,19,꼬렛(알로라의 모습)(그림자),Rattata (Alolan) (Shadow),コラッタ（アローラのすがた）（シャドウ）,game
+rattata_shadow,19,꼬렛(그림자),Rattata (Shadow),コラッタ（シャドウ）,game
+raticate,20,레트라,Raticate,ラッタ,game
+raticate_alolan,20,레트라(알로라의 모습),Raticate (Alolan),ラッタ（アローラのすがた）,game
+raticate_alolan_shadow,20,레트라(알로라의 모습)(그림자),Raticate (Alolan) (Shadow),ラッタ（アローラのすがた）（シャドウ）,game
+raticate_shadow,20,레트라(그림자),Raticate (Shadow),ラッタ（シャドウ）,game
+spearow,21,깨비참,Spearow,オニスズメ,game
+fearow,22,깨비드릴조,Fearow,オニドリル,game
+ekans,23,아보,Ekans,アーボ,game
+ekans_shadow,23,아보(그림자),Ekans (Shadow),アーボ（シャドウ）,game
+arbok,24,아보크,Arbok,アーボック,game
+arbok_shadow,24,아보크(그림자),Arbok (Shadow),アーボック（シャドウ）,game
+pikachu,25,피카츄,Pikachu,ピカチュウ,game
+pikachu_5th_anniversary,25,피카츄(5th Anniversary),Pikachu (5th Anniversary),ピカチュウ（5th Anniversary）,game
+pikachu_flying,25,피카츄(비행),Pikachu (Flying),ピカチュウ（ひこう）,game
+pikachu_horizons,25,피카츄(Horizons),Pikachu (Horizons),ピカチュウ（Horizons）,game
+pikachu_kariyushi,25,피카츄(Kariyushi),Pikachu (Kariyushi),ピカチュウ（Kariyushi）,game
+pikachu_libre,25,피카츄(Libre),Pikachu (Libre),ピカチュウ（Libre）,game
+pikachu_pop_star,25,피카츄(Pop Star),Pikachu (Pop Star),ピカチュウ（Pop Star）,game
+pikachu_rock_star,25,피카츄(Rock Star),Pikachu (Rock Star),ピカチュウ（Rock Star）,game
+pikachu_shaymin,25,피카츄(Shaymin Scarf),Pikachu (Shaymin Scarf),ピカチュウ（Shaymin Scarf）,game
+raichu,26,라이츄,Raichu,ライチュウ,game
+raichu_alolan,26,라이츄(알로라의 모습),Raichu (Alolan),ライチュウ（アローラのすがた）,game
+raichu_mega_x,26,메가라이츄,Raichu (Mega X),メガライチュウ,game
+raichu_mega_y,26,메가라이츄,Raichu (Mega Y),メガライチュウ,game
+sandshrew,27,모래두지,Sandshrew,サンド,game
+sandshrew_alolan,27,모래두지(알로라의 모습),Sandshrew (Alolan),サンド（アローラのすがた）,game
+sandshrew_alolan_shadow,27,모래두지(알로라의 모습)(그림자),Sandshrew (Alolan) (Shadow),サンド（アローラのすがた）（シャドウ）,game
+sandshrew_shadow,27,모래두지(그림자),Sandshrew (Shadow),サンド（シャドウ）,game
+sandslash,28,고지,Sandslash,サンドパン,game
+sandslash_alolan,28,고지(알로라의 모습),Sandslash (Alolan),サンドパン（アローラのすがた）,game
+sandslash_alolan_shadow,28,고지(알로라의 모습)(그림자),Sandslash (Alolan) (Shadow),サンドパン（アローラのすがた）（シャドウ）,game
+sandslash_shadow,28,고지(그림자),Sandslash (Shadow),サンドパン（シャドウ）,game
+nidoran_female,29,니드런♀,Nidoran Female,ニドラン♀,game
+nidoran_female_shadow,29,니드런♀(그림자),Nidoran Female (Shadow),ニドラン♀（シャドウ）,game
+nidorina,30,니드리나,Nidorina,ニドリーナ,game
+nidorina_shadow,30,니드리나(그림자),Nidorina (Shadow),ニドリーナ（シャドウ）,game
+nidoqueen,31,니드퀸,Nidoqueen,ニドクイン,game
+nidoqueen_shadow,31,니드퀸(그림자),Nidoqueen (Shadow),ニドクイン（シャドウ）,game
+nidoran_male,32,니드런♂,Nidoran Male,ニドラン♂,game
+nidoran_male_shadow,32,니드런♂(그림자),Nidoran Male (Shadow),ニドラン♂（シャドウ）,game
+nidorino,33,니드리노,Nidorino,ニドリーノ,game
+nidorino_shadow,33,니드리노(그림자),Nidorino (Shadow),ニドリーノ（シャドウ）,game
+nidoking,34,니드킹,Nidoking,ニドキング,game
+nidoking_shadow,34,니드킹(그림자),Nidoking (Shadow),ニドキング（シャドウ）,game
+clefairy,35,삐삐,Clefairy,ピッピ,game
+clefable,36,픽시,Clefable,ピクシー,game
+vulpix,37,식스테일,Vulpix,ロコン,game
+vulpix_alolan,37,식스테일(알로라의 모습),Vulpix (Alolan),ロコン（アローラのすがた）,game
+vulpix_alolan_shadow,37,식스테일(알로라의 모습)(그림자),Vulpix (Alolan) (Shadow),ロコン（アローラのすがた）（シャドウ）,game
+vulpix_shadow,37,식스테일(그림자),Vulpix (Shadow),ロコン（シャドウ）,game
+ninetales,38,나인테일,Ninetales,キュウコン,game
+ninetales_alolan,38,나인테일(알로라의 모습),Ninetales (Alolan),キュウコン（アローラのすがた）,game
+ninetales_alolan_shadow,38,나인테일(알로라의 모습)(그림자),Ninetales (Alolan) (Shadow),キュウコン（アローラのすがた）（シャドウ）,game
+ninetales_shadow,38,나인테일(그림자),Ninetales (Shadow),キュウコン（シャドウ）,game
+jigglypuff,39,푸린,Jigglypuff,プリン,game
+wigglytuff,40,푸크린,Wigglytuff,プクリン,game
+zubat,41,주뱃,Zubat,ズバット,game
+zubat_shadow,41,주뱃(그림자),Zubat (Shadow),ズバット（シャドウ）,game
+golbat,42,골뱃,Golbat,ゴルバット,game
+golbat_shadow,42,골뱃(그림자),Golbat (Shadow),ゴルバット（シャドウ）,game
+oddish,43,뚜벅쵸,Oddish,ナゾノクサ,game
+oddish_shadow,43,뚜벅쵸(그림자),Oddish (Shadow),ナゾノクサ（シャドウ）,game
+gloom,44,냄새꼬,Gloom,クサイハナ,game
+gloom_shadow,44,냄새꼬(그림자),Gloom (Shadow),クサイハナ（シャドウ）,game
+vileplume,45,라플레시아,Vileplume,ラフレシア,game
+vileplume_shadow,45,라플레시아(그림자),Vileplume (Shadow),ラフレシア（シャドウ）,game
+paras,46,파라스,Paras,パラス,game
+parasect,47,파라섹트,Parasect,パラセクト,game
+venonat,48,콘팡,Venonat,コンパン,game
+venonat_shadow,48,콘팡(그림자),Venonat (Shadow),コンパン（シャドウ）,game
+venomoth,49,도나리,Venomoth,モルフォン,game
+venomoth_shadow,49,도나리(그림자),Venomoth (Shadow),モルフォン（シャドウ）,game
+diglett,50,디그다,Diglett,ディグダ,game
+diglett_alolan,50,디그다(알로라의 모습),Diglett (Alolan),ディグダ（アローラのすがた）,game
+diglett_alolan_shadow,50,디그다(알로라의 모습)(그림자),Diglett (Alolan) (Shadow),ディグダ（アローラのすがた）（シャドウ）,game
+diglett_shadow,50,디그다(그림자),Diglett (Shadow),ディグダ（シャドウ）,game
+dugtrio,51,닥트리오,Dugtrio,ダグトリオ,game
+dugtrio_alolan,51,닥트리오(알로라의 모습),Dugtrio (Alolan),ダグトリオ（アローラのすがた）,game
+dugtrio_alolan_shadow,51,닥트리오(알로라의 모습)(그림자),Dugtrio (Alolan) (Shadow),ダグトリオ（アローラのすがた）（シャドウ）,game
+dugtrio_shadow,51,닥트리오(그림자),Dugtrio (Shadow),ダグトリオ（シャドウ）,game
+meowth,52,나옹,Meowth,ニャース,game
+meowth_alolan,52,나옹(알로라의 모습),Meowth (Alolan),ニャース（アローラのすがた）,game
+meowth_galarian,52,나옹(가라르의 모습),Meowth (Galarian),ニャース（ガラルのすがた）,game
+meowth_shadow,52,나옹(그림자),Meowth (Shadow),ニャース（シャドウ）,game
+persian,53,페르시온,Persian,ペルシアン,game
+persian_alolan,53,페르시온(알로라의 모습),Persian (Alolan),ペルシアン（アローラのすがた）,game
+persian_shadow,53,페르시온(그림자),Persian (Shadow),ペルシアン（シャドウ）,game
+psyduck,54,고라파덕,Psyduck,コダック,game
+psyduck_shadow,54,고라파덕(그림자),Psyduck (Shadow),コダック（シャドウ）,game
+golduck,55,골덕,Golduck,ゴルダック,game
+golduck_shadow,55,골덕(그림자),Golduck (Shadow),ゴルダック（シャドウ）,game
+mankey,56,망키,Mankey,マンキー,game
+mankey_shadow,56,망키(그림자),Mankey (Shadow),マンキー（シャドウ）,game
+primeape,57,성원숭,Primeape,オコリザル,game
+primeape_shadow,57,성원숭(그림자),Primeape (Shadow),オコリザル（シャドウ）,game
+growlithe,58,가디,Growlithe,ガーディ,game
+growlithe_hisuian,58,가디(히스이의 모습),Growlithe (Hisuian),ガーディ（ヒスイのすがた）,game
+growlithe_shadow,58,가디(그림자),Growlithe (Shadow),ガーディ（シャドウ）,game
+arcanine,59,윈디,Arcanine,ウインディ,game
+arcanine_hisuian,59,윈디(히스이의 모습),Arcanine (Hisuian),ウインディ（ヒスイのすがた）,game
+arcanine_shadow,59,윈디(그림자),Arcanine (Shadow),ウインディ（シャドウ）,game
+poliwag,60,발챙이,Poliwag,ニョロモ,game
+poliwag_shadow,60,발챙이(그림자),Poliwag (Shadow),ニョロモ（シャドウ）,game
+poliwhirl,61,슈륙챙이,Poliwhirl,ニョロゾ,game
+poliwhirl_shadow,61,슈륙챙이(그림자),Poliwhirl (Shadow),ニョロゾ（シャドウ）,game
+poliwrath,62,강챙이,Poliwrath,ニョロボン,game
+poliwrath_shadow,62,강챙이(그림자),Poliwrath (Shadow),ニョロボン（シャドウ）,game
+abra,63,캐이시,Abra,ケーシィ,game
+abra_shadow,63,캐이시(그림자),Abra (Shadow),ケーシィ（シャドウ）,game
+kadabra,64,윤겔라,Kadabra,ユンゲラー,game
+kadabra_shadow,64,윤겔라(그림자),Kadabra (Shadow),ユンゲラー（シャドウ）,game
+alakazam,65,후딘,Alakazam,フーディン,game
+alakazam_mega,65,메가후딘,Alakazam (Mega),メガフーディン,game
+alakazam_shadow,65,후딘(그림자),Alakazam (Shadow),フーディン（シャドウ）,game
+machop,66,알통몬,Machop,ワンリキー,game
+machop_shadow,66,알통몬(그림자),Machop (Shadow),ワンリキー（シャドウ）,game
+machoke,67,근육몬,Machoke,ゴーリキー,game
+machoke_shadow,67,근육몬(그림자),Machoke (Shadow),ゴーリキー（シャドウ）,game
+machamp,68,괴력몬,Machamp,カイリキー,game
+machamp_shadow,68,괴력몬(그림자),Machamp (Shadow),カイリキー（シャドウ）,game
+bellsprout,69,모다피,Bellsprout,マダツボミ,game
+bellsprout_shadow,69,모다피(그림자),Bellsprout (Shadow),マダツボミ（シャドウ）,game
+weepinbell,70,우츠동,Weepinbell,ウツドン,game
+weepinbell_shadow,70,우츠동(그림자),Weepinbell (Shadow),ウツドン（シャドウ）,game
+victreebel,71,우츠보트,Victreebel,ウツボット,game
+victreebel_mega,71,메가우츠보트,Victreebel (Mega),メガウツボット,game
+victreebel_shadow,71,우츠보트(그림자),Victreebel (Shadow),ウツボット（シャドウ）,game
+tentacool,72,왕눈해,Tentacool,メノクラゲ,game
+tentacool_shadow,72,왕눈해(그림자),Tentacool (Shadow),メノクラゲ（シャドウ）,game
+tentacruel,73,독파리,Tentacruel,ドククラゲ,game
+tentacruel_shadow,73,독파리(그림자),Tentacruel (Shadow),ドククラゲ（シャドウ）,game
+geodude,74,꼬마돌,Geodude,イシツブテ,game
+geodude_alolan,74,꼬마돌(알로라의 모습),Geodude (Alolan),イシツブテ（アローラのすがた）,game
+geodude_alolan_shadow,74,꼬마돌(알로라의 모습)(그림자),Geodude (Alolan) (Shadow),イシツブテ（アローラのすがた）（シャドウ）,game
+geodude_shadow,74,꼬마돌(그림자),Geodude (Shadow),イシツブテ（シャドウ）,game
+graveler,75,데구리,Graveler,ゴローン,game
+graveler_alolan,75,데구리(알로라의 모습),Graveler (Alolan),ゴローン（アローラのすがた）,game
+graveler_alolan_shadow,75,데구리(알로라의 모습)(그림자),Graveler (Alolan) (Shadow),ゴローン（アローラのすがた）（シャドウ）,game
+graveler_shadow,75,데구리(그림자),Graveler (Shadow),ゴローン（シャドウ）,game
+golem,76,딱구리,Golem,ゴローニャ,game
+golem_alolan,76,딱구리(알로라의 모습),Golem (Alolan),ゴローニャ（アローラのすがた）,game
+golem_alolan_shadow,76,딱구리(알로라의 모습)(그림자),Golem (Alolan) (Shadow),ゴローニャ（アローラのすがた）（シャドウ）,game
+golem_shadow,76,딱구리(그림자),Golem (Shadow),ゴローニャ（シャドウ）,game
+ponyta,77,포니타,Ponyta,ポニータ,game
+ponyta_galarian,77,포니타(가라르의 모습),Ponyta (Galarian),ポニータ（ガラルのすがた）,game
+ponyta_shadow,77,포니타(그림자),Ponyta (Shadow),ポニータ（シャドウ）,game
+rapidash,78,날쌩마,Rapidash,ギャロップ,game
+rapidash_galarian,78,날쌩마(가라르의 모습),Rapidash (Galarian),ギャロップ（ガラルのすがた）,game
+rapidash_shadow,78,날쌩마(그림자),Rapidash (Shadow),ギャロップ（シャドウ）,game
+slowpoke,79,야돈,Slowpoke,ヤドン,game
+slowpoke_galarian,79,야돈(가라르의 모습),Slowpoke (Galarian),ヤドン（ガラルのすがた）,game
+slowpoke_shadow,79,야돈(그림자),Slowpoke (Shadow),ヤドン（シャドウ）,game
+slowbro,80,야도란,Slowbro,ヤドラン,game
+slowbro_galarian,80,야도란(가라르의 모습),Slowbro (Galarian),ヤドラン（ガラルのすがた）,game
+slowbro_mega,80,메가야도란,Slowbro (Mega),メガヤドラン,game
+slowbro_shadow,80,야도란(그림자),Slowbro (Shadow),ヤドラン（シャドウ）,game
+magnemite,81,코일,Magnemite,コイル,game
+magnemite_shadow,81,코일(그림자),Magnemite (Shadow),コイル（シャドウ）,game
+magneton,82,레어코일,Magneton,レアコイル,game
+magneton_shadow,82,레어코일(그림자),Magneton (Shadow),レアコイル（シャドウ）,game
+farfetchd,83,파오리,Farfetch'd,カモネギ,game
+farfetchd_galarian,83,파오리(가라르의 모습),Farfetch'd (Galarian),カモネギ（ガラルのすがた）,game
+doduo,84,두두,Doduo,ドードー,game
+dodrio,85,두트리오,Dodrio,ドードリオ,game
+seel,86,쥬쥬,Seel,パウワウ,game
+seel_shadow,86,쥬쥬(그림자),Seel (Shadow),パウワウ（シャドウ）,game
+dewgong,87,쥬레곤,Dewgong,ジュゴン,game
+dewgong_shadow,87,쥬레곤(그림자),Dewgong (Shadow),ジュゴン（シャドウ）,game
+grimer,88,질퍽이,Grimer,ベトベター,game
+grimer_alolan,88,질퍽이(알로라의 모습),Grimer (Alolan),ベトベター（アローラのすがた）,game
+grimer_alolan_shadow,88,질퍽이(알로라의 모습)(그림자),Grimer (Alolan) (Shadow),ベトベター（アローラのすがた）（シャドウ）,game
+grimer_shadow,88,질퍽이(그림자),Grimer (Shadow),ベトベター（シャドウ）,game
+muk,89,질뻐기,Muk,ベトベトン,game
+muk_alolan,89,질뻐기(알로라의 모습),Muk (Alolan),ベトベトン（アローラのすがた）,game
+muk_alolan_shadow,89,질뻐기(알로라의 모습)(그림자),Muk (Alolan) (Shadow),ベトベトン（アローラのすがた）（シャドウ）,game
+muk_shadow,89,질뻐기(그림자),Muk (Shadow),ベトベトン（シャドウ）,game
+shellder,90,셀러,Shellder,シェルダー,game
+shellder_shadow,90,셀러(그림자),Shellder (Shadow),シェルダー（シャドウ）,game
+cloyster,91,파르셀,Cloyster,パルシェン,game
+cloyster_shadow,91,파르셀(그림자),Cloyster (Shadow),パルシェン（シャドウ）,game
+gastly,92,고오스,Gastly,ゴース,game
+gastly_shadow,92,고오스(그림자),Gastly (Shadow),ゴース（シャドウ）,game
+haunter,93,고우스트,Haunter,ゴースト,game
+haunter_shadow,93,고우스트(그림자),Haunter (Shadow),ゴースト（シャドウ）,game
+gengar,94,팬텀,Gengar,ゲンガー,game
+gengar_mega,94,메가팬텀,Gengar (Mega),メガゲンガー,game
+gengar_shadow,94,팬텀(그림자),Gengar (Shadow),ゲンガー（シャドウ）,game
+onix,95,롱스톤,Onix,イワーク,game
+onix_shadow,95,롱스톤(그림자),Onix (Shadow),イワーク（シャドウ）,game
+drowzee,96,슬리프,Drowzee,スリープ,game
+drowzee_shadow,96,슬리프(그림자),Drowzee (Shadow),スリープ（シャドウ）,game
+hypno,97,슬리퍼,Hypno,スリーパー,game
+hypno_shadow,97,슬리퍼(그림자),Hypno (Shadow),スリーパー（シャドウ）,game
+krabby,98,크랩,Krabby,クラブ,game
+krabby_shadow,98,크랩(그림자),Krabby (Shadow),クラブ（シャドウ）,game
+kingler,99,킹크랩,Kingler,キングラー,game
+kingler_shadow,99,킹크랩(그림자),Kingler (Shadow),キングラー（シャドウ）,game
+voltorb,100,찌리리공,Voltorb,ビリリダマ,game
+voltorb_hisuian,100,찌리리공(히스이의 모습),Voltorb (Hisuian),ビリリダマ（ヒスイのすがた）,game
+voltorb_shadow,100,찌리리공(그림자),Voltorb (Shadow),ビリリダマ（シャドウ）,game
+electrode,101,붐볼,Electrode,マルマイン,game
+electrode_hisuian,101,붐볼(히스이의 모습),Electrode (Hisuian),マルマイン（ヒスイのすがた）,game
+electrode_shadow,101,붐볼(그림자),Electrode (Shadow),マルマイン（シャドウ）,game
+exeggcute,102,아라리,Exeggcute,タマタマ,game
+exeggcute_shadow,102,아라리(그림자),Exeggcute (Shadow),タマタマ（シャドウ）,game
+exeggutor,103,나시,Exeggutor,ナッシー,game
+exeggutor_alolan,103,나시(알로라의 모습),Exeggutor (Alolan),ナッシー（アローラのすがた）,game
+exeggutor_alolan_shadow,103,나시(알로라의 모습)(그림자),Exeggutor (Alolan) (Shadow),ナッシー（アローラのすがた）（シャドウ）,game
+exeggutor_shadow,103,나시(그림자),Exeggutor (Shadow),ナッシー（シャドウ）,game
+cubone,104,탕구리,Cubone,カラカラ,game
+cubone_shadow,104,탕구리(그림자),Cubone (Shadow),カラカラ（シャドウ）,game
+marowak,105,텅구리,Marowak,ガラガラ,game
+marowak_alolan,105,텅구리(알로라의 모습),Marowak (Alolan),ガラガラ（アローラのすがた）,game
+marowak_alolan_shadow,105,텅구리(알로라의 모습)(그림자),Marowak (Alolan) (Shadow),ガラガラ（アローラのすがた）（シャドウ）,game
+marowak_shadow,105,텅구리(그림자),Marowak (Shadow),ガラガラ（シャドウ）,game
+hitmonlee,106,시라소몬,Hitmonlee,サワムラー,game
+hitmonlee_shadow,106,시라소몬(그림자),Hitmonlee (Shadow),サワムラー（シャドウ）,game
+hitmonchan,107,홍수몬,Hitmonchan,エビワラー,game
+hitmonchan_shadow,107,홍수몬(그림자),Hitmonchan (Shadow),エビワラー（シャドウ）,game
+lickitung,108,내루미,Lickitung,ベロリンガ,game
+koffing,109,또가스,Koffing,ドガース,game
+koffing_shadow,109,또가스(그림자),Koffing (Shadow),ドガース（シャドウ）,game
+weezing,110,또도가스,Weezing,マタドガス,game
+weezing_galarian,110,또도가스(가라르의 모습),Weezing (Galarian),マタドガス（ガラルのすがた）,game
+weezing_galarian_shadow,110,또도가스(가라르의 모습)(그림자),Weezing (Galarian) (Shadow),マタドガス（ガラルのすがた）（シャドウ）,game
+weezing_shadow,110,또도가스(그림자),Weezing (Shadow),マタドガス（シャドウ）,game
+rhyhorn,111,뿔카노,Rhyhorn,サイホーン,game
+rhyhorn_shadow,111,뿔카노(그림자),Rhyhorn (Shadow),サイホーン（シャドウ）,game
+rhydon,112,코뿌리,Rhydon,サイドン,game
+rhydon_shadow,112,코뿌리(그림자),Rhydon (Shadow),サイドン（シャドウ）,game
+chansey,113,럭키,Chansey,ラッキー,game
+tangela,114,덩쿠리,Tangela,モンジャラ,game
+tangela_shadow,114,덩쿠리(그림자),Tangela (Shadow),モンジャラ（シャドウ）,game
+kangaskhan,115,캥카,Kangaskhan,ガルーラ,game
+kangaskhan_mega,115,메가캥카,Kangaskhan (Mega),メガガルーラ,game
+horsea,116,쏘드라,Horsea,タッツー,game
+horsea_shadow,116,쏘드라(그림자),Horsea (Shadow),タッツー（シャドウ）,game
+seadra,117,시드라,Seadra,シードラ,game
+seadra_shadow,117,시드라(그림자),Seadra (Shadow),シードラ（シャドウ）,game
+goldeen,118,콘치,Goldeen,トサキント,game
+seaking,119,왕콘치,Seaking,アズマオウ,game
+staryu,120,별가사리,Staryu,ヒトデマン,game
+staryu_shadow,120,별가사리(그림자),Staryu (Shadow),ヒトデマン（シャドウ）,game
+starmie,121,아쿠스타,Starmie,スターミー,game
+starmie_mega,121,메가아쿠스타,Starmie (Mega),メガスターミー,game
+starmie_shadow,121,아쿠스타(그림자),Starmie (Shadow),スターミー（シャドウ）,game
+mr_mime,122,마임맨,Mr. Mime,バリヤード,game
+mr_mime_galarian,122,마임맨(가라르의 모습),Mr. Mime (Galarian),バリヤード（ガラルのすがた）,game
+scyther,123,스라크,Scyther,ストライク,game
+scyther_shadow,123,스라크(그림자),Scyther (Shadow),ストライク（シャドウ）,game
+jynx,124,루주라,Jynx,ルージュラ,game
+electabuzz,125,에레브,Electabuzz,エレブー,game
+electabuzz_shadow,125,에레브(그림자),Electabuzz (Shadow),エレブー（シャドウ）,game
+magmar,126,마그마,Magmar,ブーバー,game
+magmar_shadow,126,마그마(그림자),Magmar (Shadow),ブーバー（シャドウ）,game
+pinsir,127,쁘사이저,Pinsir,カイロス,game
+pinsir_mega,127,메가쁘사이저,Pinsir (Mega),メガカイロス,game
+pinsir_shadow,127,쁘사이저(그림자),Pinsir (Shadow),カイロス（シャドウ）,game
+tauros,128,켄타로스,Tauros,ケンタロス,game
+tauros_aqua,128,켄타로스(워터종),Tauros (Aqua),ケンタロス（ウォーターしゅ）,game
+tauros_blaze,128,켄타로스(블레이즈종),Tauros (Blaze),ケンタロス（ブレイズしゅ）,game
+tauros_combat,128,켄타로스(컴뱃종),Tauros (Combat),ケンタロス（コンバットしゅ）,game
+magikarp,129,잉어킹,Magikarp,コイキング,game
+magikarp_shadow,129,잉어킹(그림자),Magikarp (Shadow),コイキング（シャドウ）,game
+gyarados,130,갸라도스,Gyarados,ギャラドス,game
+gyarados_mega,130,메가갸라도스,Gyarados (Mega),メガギャラドス,game
+gyarados_shadow,130,갸라도스(그림자),Gyarados (Shadow),ギャラドス（シャドウ）,game
+lapras,131,라프라스,Lapras,ラプラス,game
+lapras_shadow,131,라프라스(그림자),Lapras (Shadow),ラプラス（シャドウ）,game
+ditto,132,메타몽,Ditto,メタモン,game
+eevee,133,이브이,Eevee,イーブイ,game
+vaporeon,134,샤미드,Vaporeon,シャワーズ,game
+jolteon,135,쥬피썬더,Jolteon,サンダース,game
+flareon,136,부스터,Flareon,ブースター,game
+porygon,137,폴리곤,Porygon,ポリゴン,game
+porygon_shadow,137,폴리곤(그림자),Porygon (Shadow),ポリゴン（シャドウ）,game
+omanyte,138,암나이트,Omanyte,オムナイト,game
+omanyte_shadow,138,암나이트(그림자),Omanyte (Shadow),オムナイト（シャドウ）,game
+omastar,139,암스타,Omastar,オムスター,game
+omastar_shadow,139,암스타(그림자),Omastar (Shadow),オムスター（シャドウ）,game
+kabuto,140,투구,Kabuto,カブト,game
+kabuto_shadow,140,투구(그림자),Kabuto (Shadow),カブト（シャドウ）,game
+kabutops,141,투구푸스,Kabutops,カブトプス,game
+kabutops_shadow,141,투구푸스(그림자),Kabutops (Shadow),カブトプス（シャドウ）,game
+aerodactyl,142,프테라,Aerodactyl,プテラ,game
+aerodactyl_mega,142,메가프테라,Aerodactyl (Mega),メガプテラ,game
+aerodactyl_shadow,142,프테라(그림자),Aerodactyl (Shadow),プテラ（シャドウ）,game
+snorlax,143,잠만보,Snorlax,カビゴン,game
+snorlax_shadow,143,잠만보(그림자),Snorlax (Shadow),カビゴン（シャドウ）,game
+articuno,144,프리져,Articuno,フリーザー,game
+articuno_galarian,144,프리져(가라르의 모습),Articuno (Galarian),フリーザー（ガラルのすがた）,game
+articuno_shadow,144,프리져(그림자),Articuno (Shadow),フリーザー（シャドウ）,game
+zapdos,145,썬더,Zapdos,サンダー,game
+zapdos_galarian,145,썬더(가라르의 모습),Zapdos (Galarian),サンダー（ガラルのすがた）,game
+zapdos_shadow,145,썬더(그림자),Zapdos (Shadow),サンダー（シャドウ）,game
+moltres,146,파이어,Moltres,ファイヤー,game
+moltres_galarian,146,파이어(가라르의 모습),Moltres (Galarian),ファイヤー（ガラルのすがた）,game
+moltres_shadow,146,파이어(그림자),Moltres (Shadow),ファイヤー（シャドウ）,game
+dratini,147,미뇽,Dratini,ミニリュウ,game
+dratini_shadow,147,미뇽(그림자),Dratini (Shadow),ミニリュウ（シャドウ）,game
+dragonair,148,신뇽,Dragonair,ハクリュー,game
+dragonair_shadow,148,신뇽(그림자),Dragonair (Shadow),ハクリュー（シャドウ）,game
+dragonite,149,망나뇽,Dragonite,カイリュー,game
+dragonite_mega,149,메가망나뇽,Dragonite (Mega),メガカイリュー,game
+dragonite_shadow,149,망나뇽(그림자),Dragonite (Shadow),カイリュー（シャドウ）,game
+mewtwo,150,뮤츠,Mewtwo,ミュウツー,game
+mewtwo_armored,150,아머드 뮤츠,Mewtwo (Armored),アーマードミュウツー,override
+mewtwo_mega_x,150,메가뮤츠X,Mewtwo (Mega X),メガミュウツーＸ,game
+mewtwo_mega_y,150,메가뮤츠Y,Mewtwo (Mega Y),メガミュウツーＹ,game
+mewtwo_shadow,150,뮤츠(그림자),Mewtwo (Shadow),ミュウツー（シャドウ）,game
+mew,151,뮤,Mew,ミュウ,game
+chikorita,152,치코리타,Chikorita,チコリータ,game
+chikorita_shadow,152,치코리타(그림자),Chikorita (Shadow),チコリータ（シャドウ）,game
+bayleef,153,베이리프,Bayleef,ベイリーフ,game
+bayleef_shadow,153,베이리프(그림자),Bayleef (Shadow),ベイリーフ（シャドウ）,game
+meganium,154,메가니움,Meganium,メガニウム,game
+meganium_shadow,154,메가니움(그림자),Meganium (Shadow),メガニウム（シャドウ）,game
+cyndaquil,155,브케인,Cyndaquil,ヒノアラシ,game
+cyndaquil_shadow,155,브케인(그림자),Cyndaquil (Shadow),ヒノアラシ（シャドウ）,game
+quilava,156,마그케인,Quilava,マグマラシ,game
+quilava_shadow,156,마그케인(그림자),Quilava (Shadow),マグマラシ（シャドウ）,game
+typhlosion,157,블레이범,Typhlosion,バクフーン,game
+typhlosion_hisuian,157,블레이범(히스이의 모습),Typhlosion (Hisuian),バクフーン（ヒスイのすがた）,game
+typhlosion_shadow,157,블레이범(그림자),Typhlosion (Shadow),バクフーン（シャドウ）,game
+totodile,158,리아코,Totodile,ワニノコ,game
+totodile_shadow,158,리아코(그림자),Totodile (Shadow),ワニノコ（シャドウ）,game
+croconaw,159,엘리게이,Croconaw,アリゲイツ,game
+croconaw_shadow,159,엘리게이(그림자),Croconaw (Shadow),アリゲイツ（シャドウ）,game
+feraligatr,160,장크로다일,Feraligatr,オーダイル,game
+feraligatr_shadow,160,장크로다일(그림자),Feraligatr (Shadow),オーダイル（シャドウ）,game
+sentret,161,꼬리선,Sentret,オタチ,game
+furret,162,다꼬리,Furret,オオタチ,game
+hoothoot,163,부우부,Hoothoot,ホーホー,game
+hoothoot_shadow,163,부우부(그림자),Hoothoot (Shadow),ホーホー（シャドウ）,game
+noctowl,164,야부엉,Noctowl,ヨルノズク,game
+noctowl_shadow,164,야부엉(그림자),Noctowl (Shadow),ヨルノズク（シャドウ）,game
+ledyba,165,레디바,Ledyba,レディバ,game
+ledyba_shadow,165,레디바(그림자),Ledyba (Shadow),レディバ（シャドウ）,game
+ledian,166,레디안,Ledian,レディアン,game
+ledian_shadow,166,레디안(그림자),Ledian (Shadow),レディアン（シャドウ）,game
+spinarak,167,페이검,Spinarak,イトマル,game
+ariados,168,아리아도스,Ariados,アリアドス,game
+crobat,169,크로뱃,Crobat,クロバット,game
+crobat_shadow,169,크로뱃(그림자),Crobat (Shadow),クロバット（シャドウ）,game
+chinchou,170,초라기,Chinchou,チョンチー,game
+lanturn,171,랜턴,Lanturn,ランターン,game
+lanturnw,171,랜턴,Lanturn,ランターン,game
+pichu,172,피츄,Pichu,ピチュー,game
+cleffa,173,삐,Cleffa,ピィ,game
+igglybuff,174,푸푸린,Igglybuff,ププリン,game
+togepi,175,토게피,Togepi,トゲピー,game
+togetic,176,토게틱,Togetic,トゲチック,game
+natu,177,네이티,Natu,ネイティ,game
+natu_shadow,177,네이티(그림자),Natu (Shadow),ネイティ（シャドウ）,game
+xatu,178,네이티오,Xatu,ネイティオ,game
+xatu_shadow,178,네이티오(그림자),Xatu (Shadow),ネイティオ（シャドウ）,game
+mareep,179,메리프,Mareep,メリープ,game
+mareep_shadow,179,메리프(그림자),Mareep (Shadow),メリープ（シャドウ）,game
+flaaffy,180,보송송,Flaaffy,モココ,game
+flaaffy_shadow,180,보송송(그림자),Flaaffy (Shadow),モココ（シャドウ）,game
+ampharos,181,전룡,Ampharos,デンリュウ,game
+ampharos_mega,181,메가전룡,Ampharos (Mega),メガデンリュウ,game
+ampharos_shadow,181,전룡(그림자),Ampharos (Shadow),デンリュウ（シャドウ）,game
+bellossom,182,아르코,Bellossom,キレイハナ,game
+bellossom_shadow,182,아르코(그림자),Bellossom (Shadow),キレイハナ（シャドウ）,game
+marill,183,마릴,Marill,マリル,game
+azumarill,184,마릴리,Azumarill,マリルリ,game
+sudowoodo,185,꼬지모,Sudowoodo,ウソッキー,game
+sudowoodo_shadow,185,꼬지모(그림자),Sudowoodo (Shadow),ウソッキー（シャドウ）,game
+politoed,186,왕구리,Politoed,ニョロトノ,game
+politoed_shadow,186,왕구리(그림자),Politoed (Shadow),ニョロトノ（シャドウ）,game
+hoppip,187,통통코,Hoppip,ハネッコ,game
+hoppip_shadow,187,통통코(그림자),Hoppip (Shadow),ハネッコ（シャドウ）,game
+skiploom,188,두코,Skiploom,ポポッコ,game
+skiploom_shadow,188,두코(그림자),Skiploom (Shadow),ポポッコ（シャドウ）,game
+jumpluff,189,솜솜코,Jumpluff,ワタッコ,game
+jumpluff_shadow,189,솜솜코(그림자),Jumpluff (Shadow),ワタッコ（シャドウ）,game
+aipom,190,에이팜,Aipom,エイパム,game
+aipom_shadow,190,에이팜(그림자),Aipom (Shadow),エイパム（シャドウ）,game
+sunkern,191,해너츠,Sunkern,ヒマナッツ,game
+sunflora,192,해루미,Sunflora,キマワリ,game
+yanma,193,왕자리,Yanma,ヤンヤンマ,game
+wooper,194,우파,Wooper,ウパー,game
+wooper_paldean,194,우파(팔데아의 모습),Wooper (Paldean),ウパー（パルデアのすがた）,game
+wooper_shadow,194,우파(그림자),Wooper (Shadow),ウパー（シャドウ）,game
+quagsire,195,누오,Quagsire,ヌオー,game
+quagsire_shadow,195,누오(그림자),Quagsire (Shadow),ヌオー（シャドウ）,game
+espeon,196,에브이,Espeon,エーフィ,game
+umbreon,197,블래키,Umbreon,ブラッキー,game
+murkrow,198,니로우,Murkrow,ヤミカラス,game
+murkrow_shadow,198,니로우(그림자),Murkrow (Shadow),ヤミカラス（シャドウ）,game
+slowking,199,야도킹,Slowking,ヤドキング,game
+slowking_galarian,199,야도킹(가라르의 모습),Slowking (Galarian),ヤドキング（ガラルのすがた）,game
+slowking_shadow,199,야도킹(그림자),Slowking (Shadow),ヤドキング（シャドウ）,game
+misdreavus,200,무우마,Misdreavus,ムウマ,game
+misdreavus_shadow,200,무우마(그림자),Misdreavus (Shadow),ムウマ（シャドウ）,game
+unown,201,안농,Unown,アンノーン,game
+wobbuffet,202,마자용,Wobbuffet,ソーナンス,game
+wobbuffet_shadow,202,마자용(그림자),Wobbuffet (Shadow),ソーナンス（シャドウ）,game
+girafarig,203,키링키,Girafarig,キリンリキ,game
+girafarig_shadow,203,키링키(그림자),Girafarig (Shadow),キリンリキ（シャドウ）,game
+pineco,204,피콘,Pineco,クヌギダマ,game
+pineco_shadow,204,피콘(그림자),Pineco (Shadow),クヌギダマ（シャドウ）,game
+forretress,205,쏘콘,Forretress,フォレトス,game
+forretress_shadow,205,쏘콘(그림자),Forretress (Shadow),フォレトス（シャドウ）,game
+dunsparce,206,노고치,Dunsparce,ノコッチ,game
+gligar,207,글라이거,Gligar,グライガー,game
+gligar_shadow,207,글라이거(그림자),Gligar (Shadow),グライガー（シャドウ）,game
+steelix,208,강철톤,Steelix,ハガネール,game
+steelix_mega,208,메가강철톤,Steelix (Mega),メガハガネール,game
+steelix_shadow,208,강철톤(그림자),Steelix (Shadow),ハガネール（シャドウ）,game
+snubbull,209,블루,Snubbull,ブルー,game
+snubbull_shadow,209,블루(그림자),Snubbull (Shadow),ブルー（シャドウ）,game
+granbull,210,그랑블루,Granbull,グランブル,game
+granbull_shadow,210,그랑블루(그림자),Granbull (Shadow),グランブル（シャドウ）,game
+qwilfish,211,침바루,Qwilfish,ハリーセン,game
+qwilfish_hisuian,211,침바루(히스이의 모습),Qwilfish (Hisuian),ハリーセン（ヒスイのすがた）,game
+qwilfish_shadow,211,침바루(그림자),Qwilfish (Shadow),ハリーセン（シャドウ）,game
+scizor,212,핫삼,Scizor,ハッサム,game
+scizor_mega,212,메가핫삼,Scizor (Mega),メガハッサム,game
+scizor_shadow,212,핫삼(그림자),Scizor (Shadow),ハッサム（シャドウ）,game
+shuckle,213,단단지,Shuckle,ツボツボ,game
+shuckle_shadow,213,단단지(그림자),Shuckle (Shadow),ツボツボ（シャドウ）,game
+heracross,214,헤라크로스,Heracross,ヘラクロス,game
+heracross_mega,214,메가헤라크로스,Heracross (Mega),メガヘラクロス,game
+sneasel,215,포푸니,Sneasel,ニューラ,game
+sneasel_hisuian,215,포푸니(히스이의 모습),Sneasel (Hisuian),ニューラ（ヒスイのすがた）,game
+sneasel_hisuian_shadow,215,포푸니(히스이의 모습)(그림자),Sneasel (Hisuian) (Shadow),ニューラ（ヒスイのすがた）（シャドウ）,game
+sneasel_shadow,215,포푸니(그림자),Sneasel (Shadow),ニューラ（シャドウ）,game
+teddiursa,216,깜지곰,Teddiursa,ヒメグマ,game
+teddiursa_shadow,216,깜지곰(그림자),Teddiursa (Shadow),ヒメグマ（シャドウ）,game
+ursaring,217,링곰,Ursaring,リングマ,game
+ursaring_shadow,217,링곰(그림자),Ursaring (Shadow),リングマ（シャドウ）,game
+slugma,218,마그마그,Slugma,マグマッグ,game
+magcargo,219,마그카르고,Magcargo,マグカルゴ,game
+swinub,220,꾸꾸리,Swinub,ウリムー,game
+swinub_shadow,220,꾸꾸리(그림자),Swinub (Shadow),ウリムー（シャドウ）,game
+piloswine,221,메꾸리,Piloswine,イノムー,game
+piloswine_shadow,221,메꾸리(그림자),Piloswine (Shadow),イノムー（シャドウ）,game
+corsola,222,코산호,Corsola,サニーゴ,game
+corsola_galarian,222,코산호(가라르의 모습),Corsola (Galarian),サニーゴ（ガラルのすがた）,game
+remoraid,223,총어,Remoraid,テッポウオ,game
+octillery,224,대포무노,Octillery,オクタン,game
+delibird,225,딜리버드,Delibird,デリバード,game
+delibird_shadow,225,딜리버드(그림자),Delibird (Shadow),デリバード（シャドウ）,game
+mantine,226,만타인,Mantine,マンタイン,game
+skarmory,227,무장조,Skarmory,エアームド,game
+skarmory_mega,227,메가무장조,Skarmory (Mega),メガエアームド,game
+skarmory_shadow,227,무장조(그림자),Skarmory (Shadow),エアームド（シャドウ）,game
+houndour,228,델빌,Houndour,デルビル,game
+houndour_shadow,228,델빌(그림자),Houndour (Shadow),デルビル（シャドウ）,game
+houndoom,229,헬가,Houndoom,ヘルガー,game
+houndoom_mega,229,메가헬가,Houndoom (Mega),メガヘルガー,game
+houndoom_shadow,229,헬가(그림자),Houndoom (Shadow),ヘルガー（シャドウ）,game
+kingdra,230,킹드라,Kingdra,キングドラ,game
+kingdra_shadow,230,킹드라(그림자),Kingdra (Shadow),キングドラ（シャドウ）,game
+phanpy,231,코코리,Phanpy,ゴマゾウ,game
+phanpy_shadow,231,코코리(그림자),Phanpy (Shadow),ゴマゾウ（シャドウ）,game
+donphan,232,코리갑,Donphan,ドンファン,game
+donphan_shadow,232,코리갑(그림자),Donphan (Shadow),ドンファン（シャドウ）,game
+porygon2,233,폴리곤2,Porygon2,ポリゴン２,game
+porygon2_shadow,233,폴리곤2(그림자),Porygon2 (Shadow),ポリゴン２（シャドウ）,game
+stantler,234,노라키,Stantler,オドシシ,game
+stantler_shadow,234,노라키(그림자),Stantler (Shadow),オドシシ（シャドウ）,game
+smeargle,235,루브도,Smeargle,ドーブル,game
+tyrogue,236,배루키,Tyrogue,バルキー,game
+hitmontop,237,카포에라,Hitmontop,カポエラー,game
+hitmontop_shadow,237,카포에라(그림자),Hitmontop (Shadow),カポエラー（シャドウ）,game
+smoochum,238,뽀뽀라,Smoochum,ムチュール,game
+elekid,239,에레키드,Elekid,エレキッド,game
+magby,240,마그비,Magby,ブビィ,game
+miltank,241,밀탱크,Miltank,ミルタンク,game
+blissey,242,해피너스,Blissey,ハピナス,game
+raikou,243,라이코,Raikou,ライコウ,game
+raikou_shadow,243,라이코(그림자),Raikou (Shadow),ライコウ（シャドウ）,game
+entei,244,앤테이,Entei,エンテイ,game
+entei_shadow,244,앤테이(그림자),Entei (Shadow),エンテイ（シャドウ）,game
+suicune,245,스이쿤,Suicune,スイクン,game
+suicune_shadow,245,스이쿤(그림자),Suicune (Shadow),スイクン（シャドウ）,game
+larvitar,246,애버라스,Larvitar,ヨーギラス,game
+larvitar_shadow,246,애버라스(그림자),Larvitar (Shadow),ヨーギラス（シャドウ）,game
+pupitar,247,데기라스,Pupitar,サナギラス,game
+pupitar_shadow,247,데기라스(그림자),Pupitar (Shadow),サナギラス（シャドウ）,game
+tyranitar,248,마기라스,Tyranitar,バンギラス,game
+tyranitar_mega,248,메가마기라스,Tyranitar (Mega),メガバンギラス,game
+tyranitar_shadow,248,마기라스(그림자),Tyranitar (Shadow),バンギラス（シャドウ）,game
+lugia,249,루기아,Lugia,ルギア,game
+lugia_shadow,249,루기아(그림자),Lugia (Shadow),ルギア（シャドウ）,game
+ho_oh,250,칠색조,Ho-Oh,ホウオウ,game
+ho_oh_shadow,250,칠색조(그림자),Ho-Oh (Shadow),ホウオウ（シャドウ）,game
+celebi,251,세레비,Celebi,セレビィ,game
+treecko,252,나무지기,Treecko,キモリ,game
+treecko_shadow,252,나무지기(그림자),Treecko (Shadow),キモリ（シャドウ）,game
+grovyle,253,나무돌이,Grovyle,ジュプトル,game
+grovyle_shadow,253,나무돌이(그림자),Grovyle (Shadow),ジュプトル（シャドウ）,game
+sceptile,254,나무킹,Sceptile,ジュカイン,game
+sceptile_mega,254,메가나무킹,Sceptile (Mega),メガジュカイン,game
+sceptile_shadow,254,나무킹(그림자),Sceptile (Shadow),ジュカイン（シャドウ）,game
+torchic,255,아차모,Torchic,アチャモ,game
+torchic_shadow,255,아차모(그림자),Torchic (Shadow),アチャモ（シャドウ）,game
+combusken,256,영치코,Combusken,ワカシャモ,game
+combusken_shadow,256,영치코(그림자),Combusken (Shadow),ワカシャモ（シャドウ）,game
+blaziken,257,번치코,Blaziken,バシャーモ,game
+blaziken_mega,257,메가번치코,Blaziken (Mega),メガバシャーモ,game
+blaziken_shadow,257,번치코(그림자),Blaziken (Shadow),バシャーモ（シャドウ）,game
+mudkip,258,물짱이,Mudkip,ミズゴロウ,game
+mudkip_shadow,258,물짱이(그림자),Mudkip (Shadow),ミズゴロウ（シャドウ）,game
+marshtomp,259,늪짱이,Marshtomp,ヌマクロー,game
+marshtomp_shadow,259,늪짱이(그림자),Marshtomp (Shadow),ヌマクロー（シャドウ）,game
+swampert,260,대짱이,Swampert,ラグラージ,game
+swampert_mega,260,메가대짱이,Swampert (Mega),メガラグラージ,game
+swampert_shadow,260,대짱이(그림자),Swampert (Shadow),ラグラージ（シャドウ）,game
+poochyena,261,포챠나,Poochyena,ポチエナ,game
+poochyena_shadow,261,포챠나(그림자),Poochyena (Shadow),ポチエナ（シャドウ）,game
+mightyena,262,그라에나,Mightyena,グラエナ,game
+mightyena_shadow,262,그라에나(그림자),Mightyena (Shadow),グラエナ（シャドウ）,game
+zigzagoon,263,지그제구리,Zigzagoon,ジグザグマ,game
+zigzagoon_galarian,263,지그제구리(가라르의 모습),Zigzagoon (Galarian),ジグザグマ（ガラルのすがた）,game
+zigzagoon_galarian_shadow,263,지그제구리(가라르의 모습)(그림자),Zigzagoon (Galarian) (Shadow),ジグザグマ（ガラルのすがた）（シャドウ）,game
+linoone,264,직구리,Linoone,マッスグマ,game
+linoone_galarian,264,직구리(가라르의 모습),Linoone (Galarian),マッスグマ（ガラルのすがた）,game
+linoone_galarian_shadow,264,직구리(가라르의 모습)(그림자),Linoone (Galarian) (Shadow),マッスグマ（ガラルのすがた）（シャドウ）,game
+wurmple,265,개무소,Wurmple,ケムッソ,game
+silcoon,266,실쿤,Silcoon,カラサリス,game
+beautifly,267,뷰티플라이,Beautifly,アゲハント,game
+cascoon,268,카스쿤,Cascoon,マユルド,game
+dustox,269,독케일,Dustox,ドクケイル,game
+lotad,270,연꽃몬,Lotad,ハスボー,game
+lombre,271,로토스,Lombre,ハスブレロ,game
+ludicolo,272,로파파,Ludicolo,ルンパッパ,game
+seedot,273,도토링,Seedot,タネボー,game
+seedot_shadow,273,도토링(그림자),Seedot (Shadow),タネボー（シャドウ）,game
+nuzleaf,274,잎새코,Nuzleaf,コノハナ,game
+nuzleaf_shadow,274,잎새코(그림자),Nuzleaf (Shadow),コノハナ（シャドウ）,game
+shiftry,275,다탱구,Shiftry,ダーテング,game
+shiftry_shadow,275,다탱구(그림자),Shiftry (Shadow),ダーテング（シャドウ）,game
+taillow,276,테일로,Taillow,スバメ,game
+taillow_shadow,276,테일로(그림자),Taillow (Shadow),スバメ（シャドウ）,game
+swellow,277,스왈로,Swellow,オオスバメ,game
+swellow_shadow,277,스왈로(그림자),Swellow (Shadow),オオスバメ（シャドウ）,game
+wingull,278,갈모매,Wingull,キャモメ,game
+pelipper,279,패리퍼,Pelipper,ペリッパー,game
+ralts,280,랄토스,Ralts,ラルトス,game
+ralts_shadow,280,랄토스(그림자),Ralts (Shadow),ラルトス（シャドウ）,game
+kirlia,281,킬리아,Kirlia,キルリア,game
+kirlia_shadow,281,킬리아(그림자),Kirlia (Shadow),キルリア（シャドウ）,game
+gardevoir,282,가디안,Gardevoir,サーナイト,game
+gardevoir_mega,282,메가가디안,Gardevoir (Mega),メガサーナイト,game
+gardevoir_shadow,282,가디안(그림자),Gardevoir (Shadow),サーナイト（シャドウ）,game
+surskit,283,비구술,Surskit,アメタマ,game
+masquerain,284,비나방,Masquerain,アメモース,game
+shroomish,285,버섯꼬,Shroomish,キノココ,game
+breloom,286,버섯모,Breloom,キノガッサ,game
+slakoth,287,게을로,Slakoth,ナマケロ,game
+slakoth_shadow,287,게을로(그림자),Slakoth (Shadow),ナマケロ（シャドウ）,game
+vigoroth,288,발바로,Vigoroth,ヤルキモノ,game
+vigoroth_shadow,288,발바로(그림자),Vigoroth (Shadow),ヤルキモノ（シャドウ）,game
+slaking,289,게을킹,Slaking,ケッキング,game
+slaking_shadow,289,게을킹(그림자),Slaking (Shadow),ケッキング（シャドウ）,game
+nincada,290,토중몬,Nincada,ツチニン,game
+ninjask,291,아이스크,Ninjask,テッカニン,game
+shedinja,292,껍질몬,Shedinja,ヌケニン,game
+whismur,293,소곤룡,Whismur,ゴニョニョ,game
+whismur_shadow,293,소곤룡(그림자),Whismur (Shadow),ゴニョニョ（シャドウ）,game
+loudred,294,노공룡,Loudred,ドゴーム,game
+loudred_shadow,294,노공룡(그림자),Loudred (Shadow),ドゴーム（シャドウ）,game
+exploud,295,폭음룡,Exploud,バクオング,game
+exploud_shadow,295,폭음룡(그림자),Exploud (Shadow),バクオング（シャドウ）,game
+makuhita,296,마크탕,Makuhita,マクノシタ,game
+makuhita_shadow,296,마크탕(그림자),Makuhita (Shadow),マクノシタ（シャドウ）,game
+hariyama,297,하리뭉,Hariyama,ハリテヤマ,game
+hariyama_shadow,297,하리뭉(그림자),Hariyama (Shadow),ハリテヤマ（シャドウ）,game
+azurill,298,루리리,Azurill,ルリリ,game
+nosepass,299,코코파스,Nosepass,ノズパス,game
+nosepass_shadow,299,코코파스(그림자),Nosepass (Shadow),ノズパス（シャドウ）,game
+skitty,300,에나비,Skitty,エネコ,game
+delcatty,301,델케티,Delcatty,エネコロロ,game
+sableye,302,깜까미,Sableye,ヤミラミ,game
+sableye_mega,302,메가깜까미,Sableye (Mega),メガヤミラミ,game
+sableye_shadow,302,깜까미(그림자),Sableye (Shadow),ヤミラミ（シャドウ）,game
+mawile,303,입치트,Mawile,クチート,game
+mawile_mega,303,메가입치트,Mawile (Mega),メガクチート,game
+mawile_shadow,303,입치트(그림자),Mawile (Shadow),クチート（シャドウ）,game
+aron,304,가보리,Aron,ココドラ,game
+aron_shadow,304,가보리(그림자),Aron (Shadow),ココドラ（シャドウ）,game
+lairon,305,갱도라,Lairon,コドラ,game
+lairon_shadow,305,갱도라(그림자),Lairon (Shadow),コドラ（シャドウ）,game
+aggron,306,보스로라,Aggron,ボスゴドラ,game
+aggron_mega,306,메가보스로라,Aggron (Mega),メガボスゴドラ,game
+aggron_shadow,306,보스로라(그림자),Aggron (Shadow),ボスゴドラ（シャドウ）,game
+meditite,307,요가랑,Meditite,アサナン,game
+medicham,308,요가램,Medicham,チャーレム,game
+medicham_mega,308,메가요가램,Medicham (Mega),メガチャーレム,game
+electrike,309,썬더라이,Electrike,ラクライ,game
+electrike_shadow,309,썬더라이(그림자),Electrike (Shadow),ラクライ（シャドウ）,game
+manectric,310,썬더볼트,Manectric,ライボルト,game
+manectric_mega,310,메가썬더볼트,Manectric (Mega),メガライボルト,game
+manectric_shadow,310,썬더볼트(그림자),Manectric (Shadow),ライボルト（シャドウ）,game
+plusle,311,플러시,Plusle,プラスル,game
+minun,312,마이농,Minun,マイナン,game
+volbeat,313,볼비트,Volbeat,バルビート,game
+illumise,314,네오비트,Illumise,イルミーゼ,game
+roselia,315,로젤리아,Roselia,ロゼリア,game
+gulpin,316,꼴깍몬,Gulpin,ゴクリン,game
+swalot,317,꿀꺽몬,Swalot,マルノーム,game
+carvanha,318,샤프니아,Carvanha,キバニア,game
+carvanha_shadow,318,샤프니아(그림자),Carvanha (Shadow),キバニア（シャドウ）,game
+sharpedo,319,샤크니아,Sharpedo,サメハダー,game
+sharpedo_mega,319,메가샤크니아,Sharpedo (Mega),メガサメハダー,game
+sharpedo_shadow,319,샤크니아(그림자),Sharpedo (Shadow),サメハダー（シャドウ）,game
+wailmer,320,고래왕자,Wailmer,ホエルコ,game
+wailmer_shadow,320,고래왕자(그림자),Wailmer (Shadow),ホエルコ（シャドウ）,game
+wailord,321,고래왕,Wailord,ホエルオー,game
+wailord_shadow,321,고래왕(그림자),Wailord (Shadow),ホエルオー（シャドウ）,game
+numel,322,둔타,Numel,ドンメル,game
+numel_shadow,322,둔타(그림자),Numel (Shadow),ドンメル（シャドウ）,game
+camerupt,323,폭타,Camerupt,バクーダ,game
+camerupt_mega,323,메가폭타,Camerupt (Mega),メガバクーダ,game
+camerupt_shadow,323,폭타(그림자),Camerupt (Shadow),バクーダ（シャドウ）,game
+torkoal,324,코터스,Torkoal,コータス,game
+spoink,325,피그점프,Spoink,バネブー,game
+spoink_shadow,325,피그점프(그림자),Spoink (Shadow),バネブー（シャドウ）,game
+grumpig,326,피그킹,Grumpig,ブーピッグ,game
+grumpig_shadow,326,피그킹(그림자),Grumpig (Shadow),ブーピッグ（シャドウ）,game
+spinda,327,얼루기,Spinda,パッチール,game
+trapinch,328,톱치,Trapinch,ナックラー,game
+trapinch_shadow,328,톱치(그림자),Trapinch (Shadow),ナックラー（シャドウ）,game
+vibrava,329,비브라바,Vibrava,ビブラーバ,game
+vibrava_shadow,329,비브라바(그림자),Vibrava (Shadow),ビブラーバ（シャドウ）,game
+flygon,330,플라이곤,Flygon,フライゴン,game
+flygon_shadow,330,플라이곤(그림자),Flygon (Shadow),フライゴン（シャドウ）,game
+cacnea,331,선인왕,Cacnea,サボネア,game
+cacnea_shadow,331,선인왕(그림자),Cacnea (Shadow),サボネア（シャドウ）,game
+cacturne,332,밤선인,Cacturne,ノクタス,game
+cacturne_shadow,332,밤선인(그림자),Cacturne (Shadow),ノクタス（シャドウ）,game
+swablu,333,파비코,Swablu,チルット,game
+swablu_shadow,333,파비코(그림자),Swablu (Shadow),チルット（シャドウ）,game
+altaria,334,파비코리,Altaria,チルタリス,game
+altaria_mega,334,메가파비코리,Altaria (Mega),メガチルタリス,game
+altaria_shadow,334,파비코리(그림자),Altaria (Shadow),チルタリス（シャドウ）,game
+zangoose,335,쟝고,Zangoose,ザングース,game
+seviper,336,세비퍼,Seviper,ハブネーク,game
+lunatone,337,루나톤,Lunatone,ルナトーン,game
+solrock,338,솔록,Solrock,ソルロック,game
+barboach,339,미꾸리,Barboach,ドジョッチ,game
+barboach_shadow,339,미꾸리(그림자),Barboach (Shadow),ドジョッチ（シャドウ）,game
+whiscash,340,메깅,Whiscash,ナマズン,game
+whiscash_shadow,340,메깅(그림자),Whiscash (Shadow),ナマズン（シャドウ）,game
+corphish,341,가재군,Corphish,ヘイガニ,game
+corphish_shadow,341,가재군(그림자),Corphish (Shadow),ヘイガニ（シャドウ）,game
+crawdaunt,342,가재장군,Crawdaunt,シザリガー,game
+crawdaunt_shadow,342,가재장군(그림자),Crawdaunt (Shadow),シザリガー（シャドウ）,game
+baltoy,343,오뚝군,Baltoy,ヤジロン,game
+baltoy_shadow,343,오뚝군(그림자),Baltoy (Shadow),ヤジロン（シャドウ）,game
+claydol,344,점토도리,Claydol,ネンドール,game
+claydol_shadow,344,점토도리(그림자),Claydol (Shadow),ネンドール（シャドウ）,game
+lileep,345,릴링,Lileep,リリーラ,game
+lileep_shadow,345,릴링(그림자),Lileep (Shadow),リリーラ（シャドウ）,game
+cradily,346,릴리요,Cradily,ユレイドル,game
+cradily_shadow,346,릴리요(그림자),Cradily (Shadow),ユレイドル（シャドウ）,game
+anorith,347,아노딥스,Anorith,アノプス,game
+anorith_shadow,347,아노딥스(그림자),Anorith (Shadow),アノプス（シャドウ）,game
+armaldo,348,아말도,Armaldo,アーマルド,game
+armaldo_shadow,348,아말도(그림자),Armaldo (Shadow),アーマルド（シャドウ）,game
+feebas,349,빈티나,Feebas,ヒンバス,game
+feebas_shadow,349,빈티나(그림자),Feebas (Shadow),ヒンバス（シャドウ）,game
+milotic,350,밀로틱,Milotic,ミロカロス,game
+milotic_shadow,350,밀로틱(그림자),Milotic (Shadow),ミロカロス（シャドウ）,game
+castform,351,캐스퐁,Castform,ポワルン,game
+castform_rainy,351,캐스퐁(빗방울의 모습),Castform (Rainy),ポワルン（あまみずのすがた）,game
+castform_snowy,351,캐스퐁(설운의 모습),Castform (Snowy),ポワルン（ゆきぐものすがた）,game
+castform_sunny,351,캐스퐁(태양의 모습),Castform (Sunny),ポワルン（たいようのすがた）,game
+kecleon,352,켈리몬,Kecleon,カクレオン,game
+shuppet,353,어둠대신,Shuppet,カゲボウズ,game
+shuppet_shadow,353,어둠대신(그림자),Shuppet (Shadow),カゲボウズ（シャドウ）,game
+banette,354,다크펫,Banette,ジュペッタ,game
+banette_mega,354,메가다크펫,Banette (Mega),メガジュペッタ,game
+banette_shadow,354,다크펫(그림자),Banette (Shadow),ジュペッタ（シャドウ）,game
+duskull,355,해골몽,Duskull,ヨマワル,game
+duskull_shadow,355,해골몽(그림자),Duskull (Shadow),ヨマワル（シャドウ）,game
+dusclops,356,미라몽,Dusclops,サマヨール,game
+dusclops_shadow,356,미라몽(그림자),Dusclops (Shadow),サマヨール（シャドウ）,game
+tropius,357,트로피우스,Tropius,トロピウス,game
+chimecho,358,치렁,Chimecho,チリーン,game
+absol,359,앱솔,Absol,アブソル,game
+absol_mega,359,메가앱솔,Absol (Mega),メガアブソル,game
+absol_shadow,359,앱솔(그림자),Absol (Shadow),アブソル（シャドウ）,game
+wynaut,360,마자,Wynaut,ソーナノ,game
+snorunt,361,눈꼬마,Snorunt,ユキワラシ,game
+snorunt_shadow,361,눈꼬마(그림자),Snorunt (Shadow),ユキワラシ（シャドウ）,game
+glalie,362,얼음귀신,Glalie,オニゴーリ,game
+glalie_mega,362,메가얼음귀신,Glalie (Mega),メガオニゴーリ,game
+glalie_shadow,362,얼음귀신(그림자),Glalie (Shadow),オニゴーリ（シャドウ）,game
+spheal,363,대굴레오,Spheal,タマザラシ,game
+spheal_shadow,363,대굴레오(그림자),Spheal (Shadow),タマザラシ（シャドウ）,game
+sealeo,364,씨레오,Sealeo,トドグラー,game
+sealeo_shadow,364,씨레오(그림자),Sealeo (Shadow),トドグラー（シャドウ）,game
+walrein,365,씨카이저,Walrein,トドゼルガ,game
+walrein_shadow,365,씨카이저(그림자),Walrein (Shadow),トドゼルガ（シャドウ）,game
+clamperl,366,진주몽,Clamperl,パールル,game
+huntail,367,헌테일,Huntail,ハンテール,game
+gorebyss,368,분홍장이,Gorebyss,サクラビス,game
+relicanth,369,시라칸,Relicanth,ジーランス,game
+luvdisc,370,사랑동이,Luvdisc,ラブカス,game
+bagon,371,아공이,Bagon,タツベイ,game
+bagon_shadow,371,아공이(그림자),Bagon (Shadow),タツベイ（シャドウ）,game
+shelgon,372,쉘곤,Shelgon,コモルー,game
+shelgon_shadow,372,쉘곤(그림자),Shelgon (Shadow),コモルー（シャドウ）,game
+salamence,373,보만다,Salamence,ボーマンダ,game
+salamence_mega,373,메가보만다,Salamence (Mega),メガボーマンダ,game
+salamence_shadow,373,보만다(그림자),Salamence (Shadow),ボーマンダ（シャドウ）,game
+beldum,374,메탕,Beldum,ダンバル,game
+beldum_shadow,374,메탕(그림자),Beldum (Shadow),ダンバル（シャドウ）,game
+metang,375,메탕구,Metang,メタング,game
+metang_shadow,375,메탕구(그림자),Metang (Shadow),メタング（シャドウ）,game
+metagross,376,메타그로스,Metagross,メタグロス,game
+metagross_mega,376,메가메타그로스,Metagross (Mega),メガメタグロス,game
+metagross_shadow,376,메타그로스(그림자),Metagross (Shadow),メタグロス（シャドウ）,game
+regirock,377,레지락,Regirock,レジロック,game
+regirock_shadow,377,레지락(그림자),Regirock (Shadow),レジロック（シャドウ）,game
+regice,378,레지아이스,Regice,レジアイス,game
+regice_shadow,378,레지아이스(그림자),Regice (Shadow),レジアイス（シャドウ）,game
+registeel,379,레지스틸,Registeel,レジスチル,game
+registeel_shadow,379,레지스틸(그림자),Registeel (Shadow),レジスチル（シャドウ）,game
+latias,380,라티아스,Latias,ラティアス,game
+latias_mega,380,메가라티아스,Latias (Mega),メガラティアス,game
+latias_shadow,380,라티아스(그림자),Latias (Shadow),ラティアス（シャドウ）,game
+latios,381,라티오스,Latios,ラティオス,game
+latios_mega,381,메가라티오스,Latios (Mega),メガラティオス,game
+latios_shadow,381,라티오스(그림자),Latios (Shadow),ラティオス（シャドウ）,game
+kyogre,382,가이오가,Kyogre,カイオーガ,game
+kyogre_primal,382,원시가이오가,Kyogre (Primal),ゲンシカイオーガ,game
+kyogre_shadow,382,가이오가(그림자),Kyogre (Shadow),カイオーガ（シャドウ）,game
+groudon,383,그란돈,Groudon,グラードン,game
+groudon_primal,383,원시그란돈,Groudon (Primal),ゲンシグラードン,game
+groudon_shadow,383,그란돈(그림자),Groudon (Shadow),グラードン（シャドウ）,game
+rayquaza,384,레쿠쟈,Rayquaza,レックウザ,game
+rayquaza_mega,384,메가레쿠쟈,Rayquaza (Mega),メガレックウザ,game
+jirachi,385,지라치,Jirachi,ジラーチ,game
+deoxys,386,테오키스,Deoxys,デオキシス,game
+deoxys_attack,386,테오키스(어택폼),Deoxys (Attack),デオキシス（Aアタックフォルム）,game
+deoxys_defense,386,테오키스(디펜스폼),Deoxys (Defense),デオキシス（ディフェンスフォルム）,override
+deoxys_speed,386,테오키스(스피드폼),Deoxys (Speed),デオキシス（Sスピードフォルム）,game
+turtwig,387,모부기,Turtwig,ナエトル,game
+turtwig_shadow,387,모부기(그림자),Turtwig (Shadow),ナエトル（シャドウ）,game
+grotle,388,수풀부기,Grotle,ハヤシガメ,game
+grotle_shadow,388,수풀부기(그림자),Grotle (Shadow),ハヤシガメ（シャドウ）,game
+torterra,389,토대부기,Torterra,ドダイトス,game
+torterra_shadow,389,토대부기(그림자),Torterra (Shadow),ドダイトス（シャドウ）,game
+chimchar,390,불꽃숭이,Chimchar,ヒコザル,game
+chimchar_shadow,390,불꽃숭이(그림자),Chimchar (Shadow),ヒコザル（シャドウ）,game
+monferno,391,파이숭이,Monferno,モウカザル,game
+monferno_shadow,391,파이숭이(그림자),Monferno (Shadow),モウカザル（シャドウ）,game
+infernape,392,초염몽,Infernape,ゴウカザル,game
+infernape_shadow,392,초염몽(그림자),Infernape (Shadow),ゴウカザル（シャドウ）,game
+piplup,393,팽도리,Piplup,ポッチャマ,game
+piplup_shadow,393,팽도리(그림자),Piplup (Shadow),ポッチャマ（シャドウ）,game
+prinplup,394,팽태자,Prinplup,ポッタイシ,game
+prinplup_shadow,394,팽태자(그림자),Prinplup (Shadow),ポッタイシ（シャドウ）,game
+empoleon,395,엠페르트,Empoleon,エンペルト,game
+empoleon_shadow,395,엠페르트(그림자),Empoleon (Shadow),エンペルト（シャドウ）,game
+starly,396,찌르꼬,Starly,ムックル,game
+starly_shadow,396,찌르꼬(그림자),Starly (Shadow),ムックル（シャドウ）,game
+staravia,397,찌르버드,Staravia,ムクバード,game
+staravia_shadow,397,찌르버드(그림자),Staravia (Shadow),ムクバード（シャドウ）,game
+staraptor,398,찌르호크,Staraptor,ムクホーク,game
+staraptor_mega,398,메가찌르호크,Staraptor (Mega),メガムクホーク,game
+staraptor_shadow,398,찌르호크(그림자),Staraptor (Shadow),ムクホーク（シャドウ）,game
+bidoof,399,비버니,Bidoof,ビッパ,game
+bidoof_shadow,399,비버니(그림자),Bidoof (Shadow),ビッパ（シャドウ）,game
+bibarel,400,비버통,Bibarel,ビーダル,game
+bibarel_shadow,400,비버통(그림자),Bibarel (Shadow),ビーダル（シャドウ）,game
+kricketot,401,귀뚤뚜기,Kricketot,コロボーシ,game
+kricketune,402,귀뚤톡크,Kricketune,コロトック,game
+shinx,403,꼬링크,Shinx,コリンク,game
+shinx_shadow,403,꼬링크(그림자),Shinx (Shadow),コリンク（シャドウ）,game
+luxio,404,럭시오,Luxio,ルクシオ,game
+luxio_shadow,404,럭시오(그림자),Luxio (Shadow),ルクシオ（シャドウ）,game
+luxray,405,렌트라,Luxray,レントラー,game
+luxray_shadow,405,렌트라(그림자),Luxray (Shadow),レントラー（シャドウ）,game
+budew,406,꼬몽울,Budew,スボミー,game
+roserade,407,로즈레이드,Roserade,ロズレイド,game
+cranidos,408,두개도스,Cranidos,ズガイドス,game
+cranidos_shadow,408,두개도스(그림자),Cranidos (Shadow),ズガイドス（シャドウ）,game
+rampardos,409,램펄드,Rampardos,ラムパルド,game
+rampardos_shadow,409,램펄드(그림자),Rampardos (Shadow),ラムパルド（シャドウ）,game
+shieldon,410,방패톱스,Shieldon,タテトプス,game
+shieldon_shadow,410,방패톱스(그림자),Shieldon (Shadow),タテトプス（シャドウ）,game
+bastiodon,411,바리톱스,Bastiodon,トリデプス,game
+bastiodon_shadow,411,바리톱스(그림자),Bastiodon (Shadow),トリデプス（シャドウ）,game
+burmy_plant,412,도롱충이(초목도롱),Burmy (Plant),ミノムッチ（くさきのミノ）,game
+burmy_sandy,412,도롱충이(모래땅도롱),Burmy (Sandy),ミノムッチ（すなちのミノ）,game
+burmy_trash,412,도롱충이(슈레도롱),Burmy (Trash),ミノムッチ（ゴミのミノ）,game
+wormadam_plant,413,도롱마담(초목도롱),Wormadam (Plant),ミノマダム（くさきのミノ）,game
+wormadam_sandy,413,도롱마담(모래땅도롱),Wormadam (Sandy),ミノマダム（すなちのミノ）,game
+wormadam_trash,413,도롱마담(슈레도롱),Wormadam (Trash),ミノマダム（ゴミのミノ）,game
+mothim,414,나메일,Mothim,ガーメイル,game
+combee,415,세꿀버리,Combee,ミツハニー,game
+vespiquen,416,비퀸,Vespiquen,ビークイン,game
+pachirisu,417,파치리스,Pachirisu,パチリス,game
+buizel,418,브이젤,Buizel,ブイゼル,game
+floatzel,419,플로젤,Floatzel,フローゼル,game
+cherubi,420,체리버,Cherubi,チェリンボ,game
+cherrim_overcast,421,체리꼬(네거폼),Cherrim (Overcast),チェリム（ネガフォルム）,game
+cherrim_sunny,421,체리꼬(포지폼),Cherrim (Sunshine),チェリム（ポジフォルム）,game
+shellos,422,깝질무,Shellos,カラナクシ,game
+gastrodon,423,트리토돈,Gastrodon,トリトドン,game
+ambipom,424,겟핸보숭,Ambipom,エテボース,game
+ambipom_shadow,424,겟핸보숭(그림자),Ambipom (Shadow),エテボース（シャドウ）,game
+drifloon,425,흔들풍손,Drifloon,フワンテ,game
+drifloon_shadow,425,흔들풍손(그림자),Drifloon (Shadow),フワンテ（シャドウ）,game
+drifblim,426,둥실라이드,Drifblim,フワライド,game
+drifblim_shadow,426,둥실라이드(그림자),Drifblim (Shadow),フワライド（シャドウ）,game
+buneary,427,이어롤,Buneary,ミミロル,game
+lopunny,428,이어롭,Lopunny,ミミロップ,game
+lopunny_mega,428,메가이어롭,Lopunny (Mega),メガミミロップ,game
+mismagius,429,무우마직,Mismagius,ムウマージ,game
+mismagius_shadow,429,무우마직(그림자),Mismagius (Shadow),ムウマージ（シャドウ）,game
+honchkrow,430,돈크로우,Honchkrow,ドンカラス,game
+honchkrow_shadow,430,돈크로우(그림자),Honchkrow (Shadow),ドンカラス（シャドウ）,game
+glameow,431,나옹마,Glameow,ニャルマー,game
+glameow_shadow,431,나옹마(그림자),Glameow (Shadow),ニャルマー（シャドウ）,game
+purugly,432,몬냥이,Purugly,ブニャット,game
+purugly_shadow,432,몬냥이(그림자),Purugly (Shadow),ブニャット（シャドウ）,game
+chingling,433,랑딸랑,Chingling,リーシャン,game
+stunky,434,스컹뿡,Stunky,スカンプー,game
+stunky_shadow,434,스컹뿡(그림자),Stunky (Shadow),スカンプー（シャドウ）,game
+skuntank,435,스컹탱크,Skuntank,スカタンク,game
+skuntank_shadow,435,스컹탱크(그림자),Skuntank (Shadow),スカタンク（シャドウ）,game
+bronzor,436,동미러,Bronzor,ドーミラー,game
+bronzong,437,동탁군,Bronzong,ドータクン,game
+bonsly,438,꼬지지,Bonsly,ウソハチ,game
+mime_jr,439,흉내내,Mime (Jr),マネネ,override
+happiny,440,핑복,Happiny,ピンプク,game
+chatot,441,페라페,Chatot,ペラップ,game
+spiritomb,442,화강돌,Spiritomb,ミカルゲ,game
+gible,443,딥상어동,Gible,フカマル,game
+gible_shadow,443,딥상어동(그림자),Gible (Shadow),フカマル（シャドウ）,game
+gabite,444,한바이트,Gabite,ガバイト,game
+gabite_shadow,444,한바이트(그림자),Gabite (Shadow),ガバイト（シャドウ）,game
+garchomp,445,한카리아스,Garchomp,ガブリアス,game
+garchomp_mega,445,메가한카리아스,Garchomp (Mega),メガガブリアス,game
+garchomp_shadow,445,한카리아스(그림자),Garchomp (Shadow),ガブリアス（シャドウ）,game
+munchlax,446,먹고자,Munchlax,ゴンベ,game
+riolu,447,리오르,Riolu,リオル,game
+lucario,448,루카리오,Lucario,ルカリオ,game
+lucario_mega,448,메가루카리오,Lucario (Mega),メガルカリオ,game
+hippopotas,449,히포포타스,Hippopotas,ヒポポタス,game
+hippopotas_shadow,449,히포포타스(그림자),Hippopotas (Shadow),ヒポポタス（シャドウ）,game
+hippowdon,450,하마돈,Hippowdon,カバルドン,game
+hippowdon_shadow,450,하마돈(그림자),Hippowdon (Shadow),カバルドン（シャドウ）,game
+skorupi,451,스콜피,Skorupi,スコルピ,game
+skorupi_shadow,451,스콜피(그림자),Skorupi (Shadow),スコルピ（シャドウ）,game
+drapion,452,드래피온,Drapion,ドラピオン,game
+drapion_shadow,452,드래피온(그림자),Drapion (Shadow),ドラピオン（シャドウ）,game
+croagunk,453,삐딱구리,Croagunk,グレッグル,game
+croagunk_shadow,453,삐딱구리(그림자),Croagunk (Shadow),グレッグル（シャドウ）,game
+toxicroak,454,독개굴,Toxicroak,ドクロッグ,game
+toxicroak_shadow,454,독개굴(그림자),Toxicroak (Shadow),ドクロッグ（シャドウ）,game
+carnivine,455,무스틈니,Carnivine,マスキッパ,game
+finneon,456,형광어,Finneon,ケイコウオ,game
+lumineon,457,네오라이트,Lumineon,ネオラント,game
+mantyke,458,타만타,Mantyke,タマンタ,game
+snover,459,눈쓰개,Snover,ユキカブリ,game
+snover_shadow,459,눈쓰개(그림자),Snover (Shadow),ユキカブリ（シャドウ）,game
+abomasnow,460,눈설왕,Abomasnow,ユキノオー,game
+abomasnow_mega,460,메가눈설왕,Abomasnow (Mega),メガユキノオー,game
+abomasnow_shadow,460,눈설왕(그림자),Abomasnow (Shadow),ユキノオー（シャドウ）,game
+weavile,461,포푸니라,Weavile,マニューラ,game
+weavile_shadow,461,포푸니라(그림자),Weavile (Shadow),マニューラ（シャドウ）,game
+magnezone,462,자포코일,Magnezone,ジバコイル,game
+magnezone_shadow,462,자포코일(그림자),Magnezone (Shadow),ジバコイル（シャドウ）,game
+lickilicky,463,내룸벨트,Lickilicky,ベロベルト,game
+rhyperior,464,거대코뿌리,Rhyperior,ドサイドン,game
+rhyperior_shadow,464,거대코뿌리(그림자),Rhyperior (Shadow),ドサイドン（シャドウ）,game
+tangrowth,465,덩쿠림보,Tangrowth,モジャンボ,game
+tangrowth_shadow,465,덩쿠림보(그림자),Tangrowth (Shadow),モジャンボ（シャドウ）,game
+electivire,466,에레키블,Electivire,エレキブル,game
+electivire_shadow,466,에레키블(그림자),Electivire (Shadow),エレキブル（シャドウ）,game
+magmortar,467,마그마번,Magmortar,ブーバーン,game
+magmortar_shadow,467,마그마번(그림자),Magmortar (Shadow),ブーバーン（シャドウ）,game
+togekiss,468,토게키스,Togekiss,トゲキッス,game
+yanmega,469,메가자리,Yanmega,メガヤンマ,game
+leafeon,470,리피아,Leafeon,リーフィア,game
+glaceon,471,글레이시아,Glaceon,グレイシア,game
+gliscor,472,글라이온,Gliscor,グライオン,game
+gliscor_shadow,472,글라이온(그림자),Gliscor (Shadow),グライオン（シャドウ）,game
+mamoswine,473,맘모꾸리,Mamoswine,マンムー,game
+mamoswine_shadow,473,맘모꾸리(그림자),Mamoswine (Shadow),マンムー（シャドウ）,game
+porygon_z,474,폴리곤Z,Porygon-Z,ポリゴンＺ,game
+porygon_z_shadow,474,폴리곤Z(그림자),Porygon-Z (Shadow),ポリゴンＺ（シャドウ）,game
+gallade,475,엘레이드,Gallade,エルレイド,game
+gallade_mega,475,메가엘레이드,Gallade (Mega),メガエルレイド,game
+gallade_shadow,475,엘레이드(그림자),Gallade (Shadow),エルレイド（シャドウ）,game
+probopass,476,대코파스,Probopass,ダイノーズ,game
+probopass_shadow,476,대코파스(그림자),Probopass (Shadow),ダイノーズ（シャドウ）,game
+dusknoir,477,야느와르몽,Dusknoir,ヨノワール,game
+dusknoir_shadow,477,야느와르몽(그림자),Dusknoir (Shadow),ヨノワール（シャドウ）,game
+froslass,478,눈여아,Froslass,ユキメノコ,game
+froslass_shadow,478,눈여아(그림자),Froslass (Shadow),ユキメノコ（シャドウ）,game
+rotom,479,로토무,Rotom,ロトム,game
+rotom_fan,479,로토무(스핀로토무),Rotom (Fan),ロトム（スピンロトム）,game
+rotom_frost,479,로토무(프로스트로토무),Rotom (Frost),ロトム（フロストロトム）,game
+rotom_heat,479,로토무(히트로토무),Rotom (Heat),ロトム（ヒートロトム）,game
+rotom_mow,479,로토무(커트로토무),Rotom (Mow),ロトム（カットロトム）,game
+rotom_wash,479,로토무(워시로토무),Rotom (Wash),ロトム（ウォッシュロトム）,game
+uxie,480,유크시,Uxie,ユクシー,game
+mesprit,481,엠라이트,Mesprit,エムリット,game
+azelf,482,아그놈,Azelf,アグノム,game
+dialga,483,디아루가,Dialga,ディアルガ,game
+dialga_origin,483,디아루가(오리진폼),Dialga (Origin),ディアルガ（オリジンフォルム）,game
+dialga_shadow,483,디아루가(그림자),Dialga (Shadow),ディアルガ（シャドウ）,game
+palkia,484,펄기아,Palkia,パルキア,game
+palkia_origin,484,펄기아(오리진폼),Palkia (Origin),パルキア（オリジンフォルム）,game
+palkia_shadow,484,펄기아(그림자),Palkia (Shadow),パルキア（シャドウ）,game
+heatran,485,히드런,Heatran,ヒードラン,game
+heatran_shadow,485,히드런(그림자),Heatran (Shadow),ヒードラン（シャドウ）,game
+regigigas,486,레지기가스,Regigigas,レジギガス,game
+regigigas_shadow,486,레지기가스(그림자),Regigigas (Shadow),レジギガス（シャドウ）,game
+giratina_altered,487,기라티나(어나더폼),Giratina (Altered),ギラティナ（アナザーフォルム）,game
+giratina_altered_shadow,487,기라티나(어나더폼)(그림자),Giratina (Altered) (Shadow),ギラティナ（アナザーフォルム）（シャドウ）,game
+giratina_origin,487,기라티나(오리진폼),Giratina (Origin),ギラティナ（オリジンフォルム）,game
+cresselia,488,크레세리아,Cresselia,クレセリア,game
+cresselia_shadow,488,크레세리아(그림자),Cresselia (Shadow),クレセリア（シャドウ）,game
+phione,489,피오네,Phione,フィオネ,game
+manaphy,490,마나피,Manaphy,マナフィ,game
+darkrai,491,다크라이,Darkrai,ダークライ,game
+darkrai_shadow,491,다크라이(그림자),Darkrai (Shadow),ダークライ（シャドウ）,game
+shaymin_land,492,쉐이미(랜드폼),Shaymin (Land),シェイミ（ランドフォルム）,game
+shaymin_sky,492,쉐이미(스카이폼),Shaymin (Sky),シェイミ（スカイフォルム）,game
+arceus,493,아르세우스,Arceus,アルセウス,game
+arceus_bug,493,아르세우스(벌레),Arceus (Bug),アルセウス（むし）,game
+arceus_dark,493,아르세우스(악),Arceus (Dark),アルセウス（あく）,game
+arceus_dragon,493,아르세우스(드래곤),Arceus (Dragon),アルセウス（ドラゴン）,game
+arceus_electric,493,아르세우스(전기),Arceus (Electric),アルセウス（でんき）,game
+arceus_fairy,493,아르세우스(페어리),Arceus (Fairy),アルセウス（フェアリー）,game
+arceus_fighting,493,아르세우스(격투),Arceus (Fighting),アルセウス（かくとう）,game
+arceus_fire,493,아르세우스(불꽃),Arceus (Fire),アルセウス（ほのお）,game
+arceus_flying,493,아르세우스(비행),Arceus (Flying),アルセウス（ひこう）,game
+arceus_ghost,493,아르세우스(고스트),Arceus (Ghost),アルセウス（ゴースト）,game
+arceus_grass,493,아르세우스(풀),Arceus (Grass),アルセウス（くさ）,game
+arceus_ground,493,아르세우스(땅),Arceus (Ground),アルセウス（じめん）,game
+arceus_ice,493,아르세우스(얼음),Arceus (Ice),アルセウス（こおり）,game
+arceus_poison,493,아르세우스(독),Arceus (Poison),アルセウス（どく）,game
+arceus_psychic,493,아르세우스(에스퍼),Arceus (Psychic),アルセウス（エスパー）,game
+arceus_rock,493,아르세우스(바위),Arceus (Rock),アルセウス（いわ）,game
+arceus_steel,493,아르세우스(강철),Arceus (Steel),アルセウス（はがね）,game
+arceus_water,493,아르세우스(물),Arceus (Water),アルセウス（みず）,game
+victini,494,비크티니,Victini,ビクティニ,game
+snivy,495,주리비얀,Snivy,ツタージャ,game
+snivy_shadow,495,주리비얀(그림자),Snivy (Shadow),ツタージャ（シャドウ）,game
+servine,496,샤비,Servine,ジャノビー,game
+servine_shadow,496,샤비(그림자),Servine (Shadow),ジャノビー（シャドウ）,game
+serperior,497,샤로다,Serperior,ジャローダ,game
+serperior_shadow,497,샤로다(그림자),Serperior (Shadow),ジャローダ（シャドウ）,game
+tepig,498,뚜꾸리,Tepig,ポカブ,game
+tepig_shadow,498,뚜꾸리(그림자),Tepig (Shadow),ポカブ（シャドウ）,game
+pignite,499,차오꿀,Pignite,チャオブー,game
+pignite_shadow,499,차오꿀(그림자),Pignite (Shadow),チャオブー（シャドウ）,game
+emboar,500,염무왕,Emboar,エンブオー,game
+emboar_shadow,500,염무왕(그림자),Emboar (Shadow),エンブオー（シャドウ）,game
+oshawott,501,수댕이,Oshawott,ミジュマル,game
+oshawott_shadow,501,수댕이(그림자),Oshawott (Shadow),ミジュマル（シャドウ）,game
+dewott,502,쌍검자비,Dewott,フタチマル,game
+dewott_shadow,502,쌍검자비(그림자),Dewott (Shadow),フタチマル（シャドウ）,game
+samurott,503,대검귀,Samurott,ダイケンキ,game
+samurott_hisuian,503,대검귀(히스이의 모습),Samurott (Hisuian),ダイケンキ（ヒスイのすがた）,game
+samurott_shadow,503,대검귀(그림자),Samurott (Shadow),ダイケンキ（シャドウ）,game
+patrat,504,보르쥐,Patrat,ミネズミ,game
+patrat_shadow,504,보르쥐(그림자),Patrat (Shadow),ミネズミ（シャドウ）,game
+watchog,505,보르그,Watchog,ミルホッグ,game
+watchog_shadow,505,보르그(그림자),Watchog (Shadow),ミルホッグ（シャドウ）,game
+lillipup,506,요테리,Lillipup,ヨーテリー,game
+herdier,507,하데리어,Herdier,ハーデリア,game
+stoutland,508,바랜드,Stoutland,ムーランド,game
+purrloin,509,쌔비냥,Purrloin,チョロネコ,game
+purrloin_shadow,509,쌔비냥(그림자),Purrloin (Shadow),チョロネコ（シャドウ）,game
+liepard,510,레파르다스,Liepard,レパルダス,game
+liepard_shadow,510,레파르다스(그림자),Liepard (Shadow),レパルダス（シャドウ）,game
+pansage,511,야나프,Pansage,ヤナップ,game
+simisage,512,야나키,Simisage,ヤナッキー,game
+pansear,513,바오프,Pansear,バオップ,game
+simisear,514,바오키,Simisear,バオッキー,game
+panpour,515,앗차프,Panpour,ヒヤップ,game
+simipour,516,앗차키,Simipour,ヒヤッキー,game
+munna,517,몽나,Munna,ムンナ,game
+musharna,518,몽얌나,Musharna,ムシャーナ,game
+pidove,519,콩둘기,Pidove,マメパト,game
+pidove_shadow,519,콩둘기(그림자),Pidove (Shadow),マメパト（シャドウ）,game
+tranquill,520,유토브,Tranquill,ハトーボー,game
+tranquill_shadow,520,유토브(그림자),Tranquill (Shadow),ハトーボー（シャドウ）,game
+unfezant,521,켄호로우,Unfezant,ケンホロウ,game
+unfezant_shadow,521,켄호로우(그림자),Unfezant (Shadow),ケンホロウ（シャドウ）,game
+blitzle,522,줄뮤마,Blitzle,シママ,game
+blitzle_shadow,522,줄뮤마(그림자),Blitzle (Shadow),シママ（シャドウ）,game
+zebstrika,523,제브라이카,Zebstrika,ゼブライカ,game
+zebstrika_shadow,523,제브라이카(그림자),Zebstrika (Shadow),ゼブライカ（シャドウ）,game
+roggenrola,524,단굴,Roggenrola,ダンゴロ,game
+roggenrola_shadow,524,단굴(그림자),Roggenrola (Shadow),ダンゴロ（シャドウ）,game
+boldore,525,암트르,Boldore,ガントル,game
+boldore_shadow,525,암트르(그림자),Boldore (Shadow),ガントル（シャドウ）,game
+gigalith,526,기가이어스,Gigalith,ギガイアス,game
+gigalith_shadow,526,기가이어스(그림자),Gigalith (Shadow),ギガイアス（シャドウ）,game
+woobat,527,또르박쥐,Woobat,コロモリ,game
+swoobat,528,맘박쥐,Swoobat,ココロモリ,game
+drilbur,529,두더류,Drilbur,モグリュー,game
+drilbur_shadow,529,두더류(그림자),Drilbur (Shadow),モグリュー（シャドウ）,game
+excadrill,530,몰드류,Excadrill,ドリュウズ,game
+excadrill_shadow,530,몰드류(그림자),Excadrill (Shadow),ドリュウズ（シャドウ）,game
+audino,531,다부니,Audino,タブンネ,game
+audino_mega,531,메가다부니,Audino (Mega),メガタブンネ,game
+timburr,532,으랏차,Timburr,ドッコラー,game
+timburr_shadow,532,으랏차(그림자),Timburr (Shadow),ドッコラー（シャドウ）,game
+gurdurr,533,토쇠골,Gurdurr,ドテッコツ,game
+gurdurr_shadow,533,토쇠골(그림자),Gurdurr (Shadow),ドテッコツ（シャドウ）,game
+conkeldurr,534,노보청,Conkeldurr,ローブシン,game
+conkeldurr_shadow,534,노보청(그림자),Conkeldurr (Shadow),ローブシン（シャドウ）,game
+tympole,535,동챙이,Tympole,オタマロ,game
+palpitoad,536,두까비,Palpitoad,ガマガル,game
+seismitoad,537,두빅굴,Seismitoad,ガマゲロゲ,game
+throh,538,던지미,Throh,ナゲキ,game
+throh_shadow,538,던지미(그림자),Throh (Shadow),ナゲキ（シャドウ）,game
+sawk,539,타격귀,Sawk,ダゲキ,game
+sawk_shadow,539,타격귀(그림자),Sawk (Shadow),ダゲキ（シャドウ）,game
+sewaddle,540,두르보,Sewaddle,クルミル,game
+swadloon,541,두르쿤,Swadloon,クルマユ,game
+leavanny,542,모아머,Leavanny,ハハコモリ,game
+venipede,543,마디네,Venipede,フシデ,game
+venipede_shadow,543,마디네(그림자),Venipede (Shadow),フシデ（シャドウ）,game
+whirlipede,544,휠구,Whirlipede,ホイーガ,game
+whirlipede_shadow,544,휠구(그림자),Whirlipede (Shadow),ホイーガ（シャドウ）,game
+scolipede,545,펜드라,Scolipede,ペンドラー,game
+scolipede_shadow,545,펜드라(그림자),Scolipede (Shadow),ペンドラー（シャドウ）,game
+cottonee,546,소미안,Cottonee,モンメン,game
+whimsicott,547,엘풍,Whimsicott,エルフーン,game
+petilil,548,치릴리,Petilil,チュリネ,game
+lilligant,549,드레디어,Lilligant,ドレディア,game
+lilligant_hisuian,549,드레디어(히스이의 모습),Lilligant (Hisuian),ドレディア（ヒスイのすがた）,game
+basculin,550,배쓰나이,Basculin,バスラオ,game
+sandile,551,깜눈크,Sandile,メグロコ,game
+krokorok,552,악비르,Krokorok,ワルビル,game
+krookodile,553,악비아르,Krookodile,ワルビアル,game
+darumaka,554,달막화,Darumaka,ダルマッカ,game
+darumaka_galarian,554,달막화(가라르의 모습),Darumaka (Galarian),ダルマッカ（ガラルのすがた）,game
+darumaka_shadow,554,달막화(그림자),Darumaka (Shadow),ダルマッカ（シャドウ）,game
+darmanitan_galarian_standard,555,불비달마(가라르의 모습),Darmanitan (Galarian),ヒヒダルマ（ガラルのすがた）,game
+darmanitan_galarian_zen,555,불비달마(가라르의 모습)(달마모드),Darmanitan (Galarian Zen),ヒヒダルマ（ガラルのすがた）（ダルマモード）,override
+darmanitan_standard,555,불비달마(노말모드),Darmanitan (Standard),ヒヒダルマ（ノーマルモード）,game
+darmanitan_standard_shadow,555,불비달마(노말모드)(그림자),Darmanitan (Standard) (Shadow),ヒヒダルマ（ノーマルモード）（シャドウ）,game
+darmanitan_zen,555,불비달마(달마모드),Darmanitan (Zen),ヒヒダルマ（ダルマモード）,override
+maractus,556,마라카치,Maractus,マラカッチ,game
+dwebble,557,돌살이,Dwebble,イシズマイ,game
+dwebble_shadow,557,돌살이(그림자),Dwebble (Shadow),イシズマイ（シャドウ）,game
+crustle,558,암팰리스,Crustle,イワパレス,game
+crustle_shadow,558,암팰리스(그림자),Crustle (Shadow),イワパレス（シャドウ）,game
+scraggy,559,곤율랭,Scraggy,ズルッグ,game
+scrafty,560,곤율거니,Scrafty,ズルズキン,game
+sigilyph,561,심보러,Sigilyph,シンボラー,game
+yamask,562,데스마스,Yamask,デスマス,game
+yamask_galarian,562,데스마스(가라르의 모습),Yamask (Galarian),デスマス（ガラルのすがた）,game
+yamask_shadow,562,데스마스(그림자),Yamask (Shadow),デスマス（シャドウ）,game
+cofagrigus,563,데스니칸,Cofagrigus,デスカーン,game
+cofagrigus_shadow,563,데스니칸(그림자),Cofagrigus (Shadow),デスカーン（シャドウ）,game
+tirtouga,564,프로토가,Tirtouga,プロトーガ,game
+tirtouga_shadow,564,프로토가(그림자),Tirtouga (Shadow),プロトーガ（シャドウ）,game
+carracosta,565,늑골라,Carracosta,アバゴーラ,game
+carracosta_shadow,565,늑골라(그림자),Carracosta (Shadow),アバゴーラ（シャドウ）,game
+archen,566,아켄,Archen,アーケン,game
+archen_shadow,566,아켄(그림자),Archen (Shadow),アーケン（シャドウ）,game
+archeops,567,아케오스,Archeops,アーケオス,game
+archeops_shadow,567,아케오스(그림자),Archeops (Shadow),アーケオス（シャドウ）,game
+trubbish,568,깨봉이,Trubbish,ヤブクロン,game
+trubbish_shadow,568,깨봉이(그림자),Trubbish (Shadow),ヤブクロン（シャドウ）,game
+garbodor,569,더스트나,Garbodor,ダストダス,game
+garbodor_shadow,569,더스트나(그림자),Garbodor (Shadow),ダストダス（シャドウ）,game
+zorua,570,조로아,Zorua,ゾロア,game
+zorua_hisuian,570,조로아(히스이의 모습),Zorua (Hisuian),ゾロア（ヒスイのすがた）,game
+zoroark,571,조로아크,Zoroark,ゾロアーク,game
+zoroark_hisuian,571,조로아크(히스이의 모습),Zoroark (Hisuian),ゾロアーク（ヒスイのすがた）,game
+minccino,572,치라미,Minccino,チラーミィ,game
+cinccino,573,치라치노,Cinccino,チラチーノ,game
+gothita,574,고디탱,Gothita,ゴチム,game
+gothita_shadow,574,고디탱(그림자),Gothita (Shadow),ゴチム（シャドウ）,game
+gothorita,575,고디보미,Gothorita,ゴチミル,game
+gothorita_shadow,575,고디보미(그림자),Gothorita (Shadow),ゴチミル（シャドウ）,game
+gothitelle,576,고디모아젤,Gothitelle,ゴチルゼル,game
+gothitelle_shadow,576,고디모아젤(그림자),Gothitelle (Shadow),ゴチルゼル（シャドウ）,game
+solosis,577,유니란,Solosis,ユニラン,game
+solosis_shadow,577,유니란(그림자),Solosis (Shadow),ユニラン（シャドウ）,game
+duosion,578,듀란,Duosion,ダブラン,game
+duosion_shadow,578,듀란(그림자),Duosion (Shadow),ダブラン（シャドウ）,game
+reuniclus,579,란쿨루스,Reuniclus,ランクルス,game
+reuniclus_shadow,579,란쿨루스(그림자),Reuniclus (Shadow),ランクルス（シャドウ）,game
+ducklett,580,꼬지보리,Ducklett,コアルヒー,game
+ducklett_shadow,580,꼬지보리(그림자),Ducklett (Shadow),コアルヒー（シャドウ）,game
+swanna,581,스완나,Swanna,スワンナ,game
+swanna_shadow,581,스완나(그림자),Swanna (Shadow),スワンナ（シャドウ）,game
+vanillite,582,바닐프티,Vanillite,バニプッチ,game
+vanillish,583,바닐리치,Vanillish,バニリッチ,game
+vanilluxe,584,배바닐라,Vanilluxe,バイバニラ,game
+deerling,585,사철록,Deerling,シキジカ,game
+sawsbuck,586,바라철록,Sawsbuck,メブキジカ,game
+emolga,587,에몽가,Emolga,エモンガ,game
+karrablast,588,딱정곤,Karrablast,カブルモ,game
+karrablast_shadow,588,딱정곤(그림자),Karrablast (Shadow),カブルモ（シャドウ）,game
+escavalier,589,슈바르고,Escavalier,シュバルゴ,game
+escavalier_shadow,589,슈바르고(그림자),Escavalier (Shadow),シュバルゴ（シャドウ）,game
+foongus,590,깜놀버슬,Foongus,タマゲタケ,game
+foongus_shadow,590,깜놀버슬(그림자),Foongus (Shadow),タマゲタケ（シャドウ）,game
+amoonguss,591,뽀록나,Amoonguss,モロバレル,game
+amoonguss_shadow,591,뽀록나(그림자),Amoonguss (Shadow),モロバレル（シャドウ）,game
+frillish,592,탱그릴,Frillish,プルリル,game
+jellicent,593,탱탱겔,Jellicent,ブルンゲル,game
+alomomola,594,맘복치,Alomomola,ママンボウ,game
+joltik,595,파쪼옥,Joltik,バチュル,game
+joltik_shadow,595,파쪼옥(그림자),Joltik (Shadow),バチュル（シャドウ）,game
+galvantula,596,전툴라,Galvantula,デンチュラ,game
+galvantula_shadow,596,전툴라(그림자),Galvantula (Shadow),デンチュラ（シャドウ）,game
+ferroseed,597,철시드,Ferroseed,テッシード,game
+ferroseed_shadow,597,철시드(그림자),Ferroseed (Shadow),テッシード（シャドウ）,game
+ferrothorn,598,너트령,Ferrothorn,ナットレイ,game
+ferrothorn_shadow,598,너트령(그림자),Ferrothorn (Shadow),ナットレイ（シャドウ）,game
+klink,599,기어르,Klink,ギアル,game
+klang,600,기기어르,Klang,ギギアル,game
+klinklang,601,기기기어르,Klinklang,ギギギアル,game
+tynamo,602,저리어,Tynamo,シビシラス,game
+eelektrik,603,저리릴,Eelektrik,シビビール,game
+eelektross,604,저리더프,Eelektross,シビルドン,game
+elgyem,605,리그레,Elgyem,リグレー,game
+beheeyem,606,벰크,Beheeyem,オーベム,game
+litwick,607,불켜미,Litwick,ヒトモシ,game
+litwick_shadow,607,불켜미(그림자),Litwick (Shadow),ヒトモシ（シャドウ）,game
+lampent,608,램프라,Lampent,ランプラー,game
+lampent_shadow,608,램프라(그림자),Lampent (Shadow),ランプラー（シャドウ）,game
+chandelure,609,샹델라,Chandelure,シャンデラ,game
+chandelure_shadow,609,샹델라(그림자),Chandelure (Shadow),シャンデラ（シャドウ）,game
+axew,610,터검니,Axew,キバゴ,game
+axew_shadow,610,터검니(그림자),Axew (Shadow),キバゴ（シャドウ）,game
+fraxure,611,액슨도,Fraxure,オノンド,game
+fraxure_shadow,611,액슨도(그림자),Fraxure (Shadow),オノンド（シャドウ）,game
+haxorus,612,액스라이즈,Haxorus,オノノクス,game
+haxorus_shadow,612,액스라이즈(그림자),Haxorus (Shadow),オノノクス（シャドウ）,game
+cubchoo,613,코고미,Cubchoo,クマシュン,game
+beartic,614,툰베어,Beartic,ツンベアー,game
+cryogonal,615,프리지오,Cryogonal,フリージオ,game
+shelmet,616,쪼마리,Shelmet,チョボマキ,game
+shelmet_shadow,616,쪼마리(그림자),Shelmet (Shadow),チョボマキ（シャドウ）,game
+accelgor,617,어지리더,Accelgor,アギルダー,game
+accelgor_shadow,617,어지리더(그림자),Accelgor (Shadow),アギルダー（シャドウ）,game
+stunfisk,618,메더,Stunfisk,マッギョ,game
+stunfisk_galarian,618,메더(가라르의 모습),Stunfisk (Galarian),マッギョ（ガラルのすがた）,game
+mienfoo,619,비조푸,Mienfoo,コジョフー,game
+mienshao,620,비조도,Mienshao,コジョンド,game
+druddigon,621,크리만,Druddigon,クリムガン,game
+golett,622,골비람,Golett,ゴビット,game
+golett_shadow,622,골비람(그림자),Golett (Shadow),ゴビット（シャドウ）,game
+golurk,623,골루그,Golurk,ゴルーグ,game
+golurk_shadow,623,골루그(그림자),Golurk (Shadow),ゴルーグ（シャドウ）,game
+pawniard,624,자망칼,Pawniard,コマタナ,game
+bisharp,625,절각참,Bisharp,キリキザン,game
+bouffalant,626,버프론,Bouffalant,バッフロン,game
+rufflet,627,수리둥보,Rufflet,ワシボン,game
+braviary,628,워글,Braviary,ウォーグル,game
+braviary_hisuian,628,워글(히스이의 모습),Braviary (Hisuian),ウォーグル（ヒスイのすがた）,game
+vullaby,629,벌차이,Vullaby,バルチャイ,game
+mandibuzz,630,버랜지나,Mandibuzz,バルジーナ,game
+heatmor,631,앤티골,Heatmor,クイタラン,game
+durant,632,아이앤트,Durant,アイアント,game
+deino,633,모노두,Deino,モノズ,game
+deino_shadow,633,모노두(그림자),Deino (Shadow),モノズ（シャドウ）,game
+zweilous,634,디헤드,Zweilous,ジヘッド,game
+zweilous_shadow,634,디헤드(그림자),Zweilous (Shadow),ジヘッド（シャドウ）,game
+hydreigon,635,삼삼드래,Hydreigon,サザンドラ,game
+hydreigon_shadow,635,삼삼드래(그림자),Hydreigon (Shadow),サザンドラ（シャドウ）,game
+larvesta,636,활화르바,Larvesta,メラルバ,game
+volcarona,637,불카모스,Volcarona,ウルガモス,game
+cobalion,638,코바르온,Cobalion,コバルオン,game
+terrakion,639,테라키온,Terrakion,テラキオン,game
+virizion,640,비리디온,Virizion,ビリジオン,game
+tornadus_incarnate,641,토네로스(화신폼),Tornadus (Incarnate),トルネロス（けしんフォルム）,game
+tornadus_incarnate_shadow,641,토네로스(화신폼)(그림자),Tornadus (Incarnate) (Shadow),トルネロス（けしんフォルム）（シャドウ）,game
+tornadus_therian,641,토네로스(영물폼),Tornadus (Therian),トルネロス（れいじゅうフォルム）,game
+thundurus_incarnate,642,볼트로스(화신폼),Thundurus (Incarnate),ボルトロス（けしんフォルム）,game
+thundurus_incarnate_shadow,642,볼트로스(화신폼)(그림자),Thundurus (Incarnate) (Shadow),ボルトロス（けしんフォルム）（シャドウ）,game
+thundurus_therian,642,볼트로스(영물폼),Thundurus (Therian),ボルトロス（れいじゅうフォルム）,game
+reshiram,643,레시라무,Reshiram,レシラム,game
+reshiram_shadow,643,레시라무(그림자),Reshiram (Shadow),レシラム（シャドウ）,game
+zekrom,644,제크로무,Zekrom,ゼクロム,game
+landorus_incarnate,645,랜드로스(화신폼),Landorus (Incarnate),ランドロス（けしんフォルム）,game
+landorus_incarnate_shadow,645,랜드로스(화신폼)(그림자),Landorus (Incarnate) (Shadow),ランドロス（けしんフォルム）（シャドウ）,game
+landorus_therian,645,랜드로스(영물폼),Landorus (Therian),ランドロス（れいじゅうフォルム）,game
+kyurem,646,큐레무,Kyurem,キュレム,game
+kyurem_black,646,큐레무(블랙큐레무),Kyurem (Black),キュレム（ブラックキュレム）,game
+kyurem_white,646,큐레무(화이트큐레무),Kyurem (White),キュレム（ホワイトキュレム）,game
+keldeo_ordinary,647,케르디오(평상시 모습),Keldeo (Ordinary),ケルディオ（いつものすがた）,game
+keldeo_resolute,647,케르디오(각오의 모습),Keldeo (Resolute),ケルディオ（かくごのすがた）,override
+meloetta_aria,648,메로엣타(보이스폼),Meloetta (Aria),メロエッタ（ボイスフォルム）,game
+meloetta_pirouette,648,메로엣타(스텝폼),Meloetta (Pirouette),メロエッタ（ステップフォルム）,game
+genesect,649,게노세크트,Genesect,ゲノセクト,game
+genesect_burn,649,게노세크트(블레이즈카세트),Genesect (Burn),ゲノセクト（ブレイズカセット）,game
+genesect_chill,649,게노세크트(프리즈카세트),Genesect (Chill),ゲノセクト（フリーズカセット）,game
+genesect_douse,649,게노세크트(아쿠아카세트),Genesect (Douse),ゲノセクト（アクアカセット）,game
+genesect_shock,649,게노세크트(번개카세트),Genesect (Shock),ゲノセクト（イナズマカセット）,game
+chespin,650,도치마론,Chespin,ハリマロン,game
+chespin_shadow,650,도치마론(그림자),Chespin (Shadow),ハリマロン（シャドウ）,game
+quilladin,651,도치보구,Quilladin,ハリボーグ,game
+quilladin_shadow,651,도치보구(그림자),Quilladin (Shadow),ハリボーグ（シャドウ）,game
+chesnaught,652,브리가론,Chesnaught,ブリガロン,game
+chesnaught_mega,652,메가브리가론,Chesnaught (Mega),メガブリガロン,game
+chesnaught_shadow,652,브리가론(그림자),Chesnaught (Shadow),ブリガロン（シャドウ）,game
+fennekin,653,푸호꼬,Fennekin,フォッコ,game
+fennekin_shadow,653,푸호꼬(그림자),Fennekin (Shadow),フォッコ（シャドウ）,game
+braixen,654,테르나,Braixen,テールナー,game
+braixen_shadow,654,테르나(그림자),Braixen (Shadow),テールナー（シャドウ）,game
+delphox,655,마폭시,Delphox,マフォクシー,game
+delphox_mega,655,메가마폭시,Delphox (Mega),メガマフォクシー,game
+delphox_shadow,655,마폭시(그림자),Delphox (Shadow),マフォクシー（シャドウ）,game
+froakie,656,개구마르,Froakie,ケロマツ,game
+froakie_shadow,656,개구마르(그림자),Froakie (Shadow),ケロマツ（シャドウ）,game
+frogadier,657,개굴반장,Frogadier,ゲコガシラ,game
+frogadier_shadow,657,개굴반장(그림자),Frogadier (Shadow),ゲコガシラ（シャドウ）,game
+greninja,658,개굴닌자,Greninja,ゲッコウガ,game
+greninja_mega,658,메가개굴닌자,Greninja (Mega),メガゲッコウガ,game
+greninja_shadow,658,개굴닌자(그림자),Greninja (Shadow),ゲッコウガ（シャドウ）,game
+bunnelby,659,파르빗,Bunnelby,ホルビー,game
+bunnelby_shadow,659,파르빗(그림자),Bunnelby (Shadow),ホルビー（シャドウ）,game
+diggersby,660,파르토,Diggersby,ホルード,game
+diggersby_shadow,660,파르토(그림자),Diggersby (Shadow),ホルード（シャドウ）,game
+fletchling,661,화살꼬빈,Fletchling,ヤヤコマ,game
+fletchling_shadow,661,화살꼬빈(그림자),Fletchling (Shadow),ヤヤコマ（シャドウ）,game
+fletchinder,662,불화살빈,Fletchinder,ヒノヤコマ,game
+fletchinder_shadow,662,불화살빈(그림자),Fletchinder (Shadow),ヒノヤコマ（シャドウ）,game
+talonflame,663,파이어로,Talonflame,ファイアロー,game
+talonflame_shadow,663,파이어로(그림자),Talonflame (Shadow),ファイアロー（シャドウ）,game
+scatterbug,664,분이벌레,Scatterbug,コフキムシ,game
+spewpa,665,분떠도리,Spewpa,コフーライ,game
+vivillon,666,비비용,Vivillon,ビビヨン,game
+litleo,667,레오꼬,Litleo,シシコ,game
+pyroar,668,화염레오,Pyroar,カエンジシ,game
+flabebe,669,플라베베,Flabebe,フラベベ,game
+floette,670,플라엣테,Floette,フラエッテ,game
+florges,671,플라제스,Florges,フラージェス,game
+skiddo,672,메이클,Skiddo,メェークル,game
+gogoat,673,고고트,Gogoat,ゴーゴート,game
+pancham,674,판짱,Pancham,ヤンチャム,game
+pangoro,675,부란다,Pangoro,ゴロンダ,game
+furfrou,676,트리미앙,Furfrou,トリミアン,game
+espurr,677,냐스퍼,Espurr,ニャスパー,game
+meowstic,678,냐오닉스(수컷),Meowstic (Male),ニャオニクス（オス）,game
+meowstic_female,678,냐오닉스(암컷),Meowstic (Female),ニャオニクス（メス）,game
+honedge,679,단칼빙,Honedge,ヒトツキ,game
+doublade,680,쌍검킬,Doublade,ニダンギル,game
+aegislash_blade,681,킬가르도(블레이드폼),Aegislash (Blade),ギルガルド（ブレードフォルム）,game
+aegislash_shield,681,킬가르도(실드폼),Aegislash (Shield),ギルガルド（シールドフォルム）,game
+spritzee,682,슈쁘,Spritzee,シュシュプ,game
+aromatisse,683,프레프티르,Aromatisse,フレフワン,game
+swirlix,684,나룸퍼프,Swirlix,ペロッパフ,game
+slurpuff,685,나루림,Slurpuff,ペロリーム,game
+inkay,686,오케이징,Inkay,マーイーカ,game
+inkay_shadow,686,오케이징(그림자),Inkay (Shadow),マーイーカ（シャドウ）,game
+malamar,687,칼라마네로,Malamar,カラマネロ,game
+malamar_mega,687,메가칼라마네로,Malamar (Mega),メガカラマネロ,game
+malamar_shadow,687,칼라마네로(그림자),Malamar (Shadow),カラマネロ（シャドウ）,game
+binacle,688,거북손손,Binacle,カメテテ,game
+barbaracle,689,거북손데스,Barbaracle,ガメノデス,game
+skrelp,690,수레기,Skrelp,クズモー,game
+dragalge,691,드래캄,Dragalge,ドラミドロ,game
+clauncher,692,완철포,Clauncher,ウデッポウ,game
+clawitzer,693,블로스터,Clawitzer,ブロスター,game
+helioptile,694,목도리키텔,Helioptile,エリキテル,game
+helioptile_shadow,694,목도리키텔(그림자),Helioptile (Shadow),エリキテル（シャドウ）,game
+heliolisk,695,일레도리자드,Heliolisk,エレザード,game
+heliolisk_shadow,695,일레도리자드(그림자),Heliolisk (Shadow),エレザード（シャドウ）,game
+tyrunt,696,티고라스,Tyrunt,チゴラス,game
+tyrunt_shadow,696,티고라스(그림자),Tyrunt (Shadow),チゴラス（シャドウ）,game
+tyrantrum,697,견고라스,Tyrantrum,ガチゴラス,game
+tyrantrum_shadow,697,견고라스(그림자),Tyrantrum (Shadow),ガチゴラス（シャドウ）,game
+amaura,698,아마루스,Amaura,アマルス,game
+amaura_shadow,698,아마루스(그림자),Amaura (Shadow),アマルス（シャドウ）,game
+aurorus,699,아마루르가,Aurorus,アマルルガ,game
+aurorus_shadow,699,아마루르가(그림자),Aurorus (Shadow),アマルルガ（シャドウ）,game
+sylveon,700,님피아,Sylveon,ニンフィア,game
+hawlucha,701,루차불,Hawlucha,ルチャブル,game
+dedenne,702,데덴네,Dedenne,デデンネ,game
+carbink,703,멜리시,Carbink,メレシー,game
+goomy,704,미끄메라,Goomy,ヌメラ,game
+sliggoo,705,미끄네일,Sliggoo,ヌメイル,game
+goodra,706,미끄래곤,Goodra,ヌメルゴン,game
+klefki,707,클레피,Klefki,クレッフィ,game
+phantump,708,나목령,Phantump,ボクレー,game
+phantump_shadow,708,나목령(그림자),Phantump (Shadow),ボクレー（シャドウ）,game
+trevenant,709,대로트,Trevenant,オーロット,game
+trevenant_shadow,709,대로트(그림자),Trevenant (Shadow),オーロット（シャドウ）,game
+pumpkaboo_average,710,호바귀(보통 사이즈),Pumpkaboo (Average),バケッチャ（ふつうのサイズ）,game
+pumpkaboo_large,710,호바귀(큰 사이즈),Pumpkaboo (Large),バケッチャ（おおきいサイズ）,game
+pumpkaboo_small,710,호바귀(작은 사이즈),Pumpkaboo (Small),バケッチャ（ちいさいサイズ）,game
+pumpkaboo_super,710,호바귀(특대 사이즈),Pumpkaboo (Super),バケッチャ（とくだいサイズ）,game
+gourgeist_average,711,펌킨인(보통 사이즈),Gourgeist (Average),パンプジン（ふつうのサイズ）,game
+gourgeist_large,711,펌킨인(큰 사이즈),Gourgeist (Large),パンプジン（おおきいサイズ）,game
+gourgeist_small,711,펌킨인(작은 사이즈),Gourgeist (Small),パンプジン（ちいさいサイズ）,game
+gourgeist_super,711,펌킨인(특대 사이즈),Gourgeist (Super),パンプジン（とくだいサイズ）,game
+bergmite,712,꽁어름,Bergmite,カチコール,game
+avalugg,713,크레베이스,Avalugg,クレベース,game
+avalugg_hisuian,713,크레베이스(히스이의 모습),Avalugg (Hisuian),クレベース（ヒスイのすがた）,game
+noibat,714,음뱃,Noibat,オンバット,game
+noibat_shadow,714,음뱃(그림자),Noibat (Shadow),オンバット（シャドウ）,game
+noivern,715,음번,Noivern,オンバーン,game
+noivern_shadow,715,음번(그림자),Noivern (Shadow),オンバーン（シャドウ）,game
+xerneas,716,제르네아스,Xerneas,ゼルネアス,game
+yveltal,717,이벨타르,Yveltal,イベルタル,game
+zygarde,718,지가르데(50%폼),Zygarde (50% Forme),ジガルデ（５０％フォルム）,game
+zygarde_10,718,지가르데(10%폼),Zygarde (10% Forme),ジガルデ（１０％フォルム）,game
+zygarde_complete,718,지가르데(퍼펙트폼),Zygarde (Complete Forme),ジガルデ（パーフェクトフォルム）,game
+diancie,719,디안시,Diancie,ディアンシー,game
+diancie_mega,719,메가디안시,Diancie (Mega),メガディアンシー,game
+hoopa,720,후파,Hoopa,フーパ,game
+hoopa_confined,720,굴레에 빠진 후파,Hoopa (Confined),いましめられしフーパ,override
+hoopa_unbound,720,굴레를 벗어난 후파,Hoopa (Unbound),ときはなたれしフーパ,override
+volcanion,721,볼케니온,Volcanion,ボルケニオン,game
+rowlet,722,나몰빼미,Rowlet,モクロー,game
+dartrix,723,빼미스로우,Dartrix,フクスロー,game
+decidueye,724,모크나이퍼,Decidueye,ジュナイパー,game
+decidueye_hisuian,724,모크나이퍼(히스이의 모습),Decidueye (Hisuian),ジュナイパー（ヒスイのすがた）,game
+litten,725,냐오불,Litten,ニャビー,game
+torracat,726,냐오히트,Torracat,ニャヒート,game
+incineroar,727,어흥염,Incineroar,ガオガエン,game
+popplio,728,누리공,Popplio,アシマリ,game
+brionne,729,키요공,Brionne,オシャマリ,game
+primarina,730,누리레느,Primarina,アシレーヌ,game
+pikipek,731,콕코구리,Pikipek,ツツケラ,game
+pikipek_shadow,731,콕코구리(그림자),Pikipek (Shadow),ツツケラ（シャドウ）,game
+trumbeak,732,크라파,Trumbeak,ケララッパ,game
+trumbeak_shadow,732,크라파(그림자),Trumbeak (Shadow),ケララッパ（シャドウ）,game
+toucannon,733,왕큰부리,Toucannon,ドデカバシ,game
+toucannon_shadow,733,왕큰부리(그림자),Toucannon (Shadow),ドデカバシ（シャドウ）,game
+yungoos,734,영구스,Yungoos,ヤングース,game
+gumshoos,735,형사구스,Gumshoos,デカグース,game
+grubbin,736,턱지충이,Grubbin,アゴジムシ,game
+grubbin_shadow,736,턱지충이(그림자),Grubbin (Shadow),アゴジムシ（シャドウ）,game
+charjabug,737,전지충이,Charjabug,デンヂムシ,game
+charjabug_shadow,737,전지충이(그림자),Charjabug (Shadow),デンヂムシ（シャドウ）,game
+vikavolt,738,투구뿌논,Vikavolt,クワガノン,game
+vikavolt_shadow,738,투구뿌논(그림자),Vikavolt (Shadow),クワガノン（シャドウ）,game
+crabrawler,739,오기지게,Crabrawler,マケンカニ,game
+crabominable,740,모단단게,Crabominable,ケケンカニ,game
+oricorio_baile,741,춤추새(이글이글스타일),Oricorio (Baile),オドリドリ（めらめらスタイル）,game
+oricorio_pau,741,춤추새(훌라훌라스타일),Oricorio (Pa'u),オドリドリ（ふらふらスタイル）,game
+oricorio_pom_pom,741,춤추새(파칙파칙스타일),Oricorio (Pom-Pom),オドリドリ（ぱちぱちスタイル）,game
+oricorio_sensu,741,춤추새(하늘하늘스타일),Oricorio (Sensu),オドリドリ（まいまいスタイル）,game
+cutiefly,742,에블리,Cutiefly,アブリー,game
+ribombee,743,에리본,Ribombee,アブリボン,game
+rockruff,744,암멍이,Rockruff,イワンコ,game
+lycanroc_dusk,745,루가루암(황혼의 모습),Lycanroc (Dusk),ルガルガン（たそがれのすがた）,game
+lycanroc_midday,745,루가루암(한낮의 모습),Lycanroc (Midday),ルガルガン（まひるのすがた）,game
+lycanroc_midnight,745,루가루암(한밤중의 모습),Lycanroc (Midnight),ルガルガン（まよなかのすがた）,game
+wishiwashi,746,약어리,Wishiwashi,ヨワシ,game
+wishiwashi_school,746,약어리(군집의 모습),Wishiwashi (School),ヨワシ（むれたすがた）,game
+wishiwashi_solo,746,약어리(Solo Form),Wishiwashi (Solo),ヨワシ（たんどくのすがた）,game
+mareanie,747,시마사리,Mareanie,ヒドイデ,game
+toxapex,748,더시마사리,Toxapex,ドヒドイデ,game
+mudbray,749,머드나기,Mudbray,ドロバンコ,game
+mudsdale,750,만마드,Mudsdale,バンバドロ,game
+dewpider,751,물거미,Dewpider,シズクモ,game
+dewpider_shadow,751,물거미(그림자),Dewpider (Shadow),シズクモ（シャドウ）,game
+araquanid,752,깨비물거미,Araquanid,オニシズクモ,game
+araquanid_shadow,752,깨비물거미(그림자),Araquanid (Shadow),オニシズクモ（シャドウ）,game
+fomantis,753,짜랑랑,Fomantis,カリキリ,game
+lurantis,754,라란티스,Lurantis,ラランテス,game
+morelull,755,자마슈,Morelull,ネマシュ,game
+shiinotic,756,마셰이드,Shiinotic,マシェード,game
+shiinotic_shadow,756,마셰이드(그림자),Shiinotic (Shadow),マシェード（シャドウ）,game
+salandit,757,야도뇽,Salandit,ヤトウモリ,game
+salazzle,758,염뉴트,Salazzle,エンニュート,game
+stufful,759,포곰곰,Stufful,ヌイコグマ,game
+stufful_shadow,759,포곰곰(그림자),Stufful (Shadow),ヌイコグマ（シャドウ）,game
+bewear,760,이븐곰,Bewear,キテルグマ,game
+bewear_shadow,760,이븐곰(그림자),Bewear (Shadow),キテルグマ（シャドウ）,game
+bounsweet,761,달콤아,Bounsweet,アマカジ,game
+steenee,762,달무리나,Steenee,アママイコ,game
+tsareena,763,달코퀸,Tsareena,アマージョ,game
+comfey,764,큐아링,Comfey,キュワワー,game
+oranguru,765,하랑우탄,Oranguru,ヤレユータン,game
+passimian,766,내던숭이,Passimian,ナゲツケサル,game
+wimpod,767,꼬시레,Wimpod,コソクムシ,game
+golisopod,768,갑주무사,Golisopod,グソクムシャ,game
+golisopodsh,768,갑주무사,Golisopod,グソクムシャ,game
+sandygast,769,모래꿍,Sandygast,スナバァ,game
+palossand,770,모래성이당,Palossand,シロデスナ,game
+pyukumuku,771,해무기,Pyukumuku,ナマコブシ,game
+type_null,772,타입:널,Type (Null),タイプ：ヌル,override
+silvally,773,실버디,Silvally,シルヴァディ,game
+silvally_bug,773,실버디(벌레),Silvally (Bug),シルヴァディ（むし）,game
+silvally_dark,773,실버디(악),Silvally (Dark),シルヴァディ（あく）,game
+silvally_dragon,773,실버디(드래곤),Silvally (Dragon),シルヴァディ（ドラゴン）,game
+silvally_electric,773,실버디(전기),Silvally (Electric),シルヴァディ（でんき）,game
+silvally_fairy,773,실버디(페어리),Silvally (Fairy),シルヴァディ（フェアリー）,game
+silvally_fighting,773,실버디(격투),Silvally (Fighting),シルヴァディ（かくとう）,game
+silvally_fire,773,실버디(불꽃),Silvally (Fire),シルヴァディ（ほのお）,game
+silvally_flying,773,실버디(비행),Silvally (Flying),シルヴァディ（ひこう）,game
+silvally_ghost,773,실버디(고스트),Silvally (Ghost),シルヴァディ（ゴースト）,game
+silvally_grass,773,실버디(풀),Silvally (Grass),シルヴァディ（くさ）,game
+silvally_ground,773,실버디(땅),Silvally (Ground),シルヴァディ（じめん）,game
+silvally_ice,773,실버디(얼음),Silvally (Ice),シルヴァディ（こおり）,game
+silvally_poison,773,실버디(독),Silvally (Poison),シルヴァディ（どく）,game
+silvally_psychic,773,실버디(에스퍼),Silvally (Psychic),シルヴァディ（エスパー）,game
+silvally_rock,773,실버디(바위),Silvally (Rock),シルヴァディ（いわ）,game
+silvally_steel,773,실버디(강철),Silvally (Steel),シルヴァディ（はがね）,game
+silvally_water,773,실버디(물),Silvally (Water),シルヴァディ（みず）,game
+minior_core,774,메테노(Core),Minior (Core),メテノ（Core）,game
+minior_meteor,774,메테노(Meteor Form),Minior (Meteor),メテノ（りゅうせいのすがた）,game
+komala,775,자말라,Komala,ネッコアラ,game
+turtonator,776,폭거북스,Turtonator,バクガメス,game
+togedemaru,777,토게데마루,Togedemaru,トゲデマル,game
+mimikyu,778,따라큐,Mimikyu,ミミッキュ,game
+mimikyu_busted,778,따라큐(들킨 모습),Mimikyu (Busted),ミミッキュ（ばれたすがた）,game
+bruxish,779,치갈기,Bruxish,ハギギシリ,game
+drampa,780,할비롱,Drampa,ジジーロン,game
+dhelmise,781,타타륜,Dhelmise,ダダリン,game
+jangmo_o,782,짜랑꼬,Jangmo-o,ジャラコ,game
+hakamo_o,783,짜랑고우,Hakamo-o,ジャランゴ,game
+kommo_o,784,짜랑고우거,Kommo-o,ジャラランガ,game
+tapu_koko,785,카푸꼬꼬꼭,Tapu Koko,カプ・コケコ,game
+tapu_lele,786,카푸나비나,Tapu Lele,カプ・テテフ,game
+tapu_bulu,787,카푸브루루,Tapu Bulu,カプ・ブルル,game
+tapu_fini,788,카푸느지느,Tapu Fini,カプ・レヒレ,game
+cosmog,789,코스모그,Cosmog,コスモッグ,game
+cosmoem,790,코스모움,Cosmoem,コスモウム,game
+solgaleo,791,솔가레오,Solgaleo,ソルガレオ,game
+lunala,792,루나아라,Lunala,ルナアーラ,game
+nihilego,793,텅비드,Nihilego,ウツロイド,game
+buzzwole,794,매시붕,Buzzwole,マッシブーン,game
+pheromosa,795,페로코체,Pheromosa,フェローチェ,game
+xurkitree,796,전수목,Xurkitree,デンジュモク,game
+celesteela,797,철화구야,Celesteela,テッカグヤ,game
+kartana,798,종이신도,Kartana,カミツルギ,game
+guzzlord,799,악식킹,Guzzlord,アクジキング,game
+necrozma,800,네크로즈마,Necrozma,ネクロズマ,game
+necrozma_dawn_wings,800,네크로즈마(새벽의 날개),Necrozma (Dawn Wings),ネクロズマ（あかつきのつばさ）,game
+necrozma_dusk_mane,800,네크로즈마(황혼의 갈기),Necrozma (Dusk Mane),ネクロズマ（たそがれのたてがみ）,game
+necrozma_ultra,800,울트라네크로즈마,Necrozma (Ultra),ウルトラネクロズマ,override
+magearna,801,마기아나,Magearna,マギアナ,game
+marshadow,802,마샤도,Marshadow,マーシャドー,game
+poipole,803,베베놈,Poipole,ベベノム,game
+naganadel,804,아고용,Naganadel,アーゴヨン,game
+stakataka,805,차곡차곡,Stakataka,ツンデツンデ,game
+blacephalon,806,두파팡,Blacephalon,ズガドーン,game
+zeraora,807,제라오라,Zeraora,ゼラオラ,game
+meltan,808,멜탄,Meltan,メルタン,game
+melmetal,809,멜메탈,Melmetal,メルメタル,game
+grookey,810,흥나숭,Grookey,サルノリ,game
+thwackey,811,채키몽,Thwackey,バチンキー,game
+rillaboom,812,고릴타,Rillaboom,ゴリランダー,game
+scorbunny,813,염버니,Scorbunny,ヒバニー,game
+raboot,814,래비풋,Raboot,ラビフット,game
+cinderace,815,에이스번,Cinderace,エースバーン,game
+sobble,816,울머기,Sobble,メッソン,game
+drizzile,817,누겔레온,Drizzile,ジメレオン,game
+inteleon,818,인텔리레온,Inteleon,インテレオン,game
+skwovet,819,탐리스,Skwovet,ホシガリス,game
+greedent,820,요씽리스,Greedent,ヨクバリス,game
+rookidee,821,파라꼬,Rookidee,ココガラ,game
+rookidee_shadow,821,파라꼬(그림자),Rookidee (Shadow),ココガラ（シャドウ）,game
+corvisquire,822,파크로우,Corvisquire,アオガラス,game
+corvisquire_shadow,822,파크로우(그림자),Corvisquire (Shadow),アオガラス（シャドウ）,game
+corviknight,823,아머까오,Corviknight,アーマーガア,game
+corviknight_shadow,823,아머까오(그림자),Corviknight (Shadow),アーマーガア（シャドウ）,game
+blipbug,824,두루지벌레,Blipbug,サッチムシ,game
+dottler,825,레돔벌레,Dottler,レドームシ,game
+orbeetle,826,이올브,Orbeetle,イオルブ,game
+nickit,827,훔처우,Nickit,クスネ,game
+thievul,828,폭슬라이,Thievul,フォクスライ,game
+gossifleur,829,꼬모카,Gossifleur,ヒメンカ,game
+eldegoss,830,백솜모카,Eldegoss,ワタシラガ,game
+wooloo,831,우르,Wooloo,ウールー,game
+dubwool,832,배우르,Dubwool,バイウールー,game
+chewtle,833,깨물부기,Chewtle,カムカメ,game
+drednaw,834,갈가부기,Drednaw,カジリガメ,game
+yamper,835,멍파치,Yamper,ワンパチ,game
+boltund,836,펄스멍,Boltund,パルスワン,game
+rolycoly,837,탄동,Rolycoly,タンドン,game
+carkol,838,탄차곤,Carkol,トロッゴン,game
+coalossal,839,석탄산,Coalossal,セキタンザン,game
+applin,840,과사삭벌레,Applin,カジッチュ,game
+flapple,841,애프룡,Flapple,アップリュー,game
+appletun,842,단지래플,Appletun,タルップル,game
+silicobra,843,모래뱀,Silicobra,スナヘビ,game
+sandaconda,844,사다이사,Sandaconda,サダイジャ,game
+cramorant,845,윽우지,Cramorant,ウッウ,game
+cramorant_gorging,845,윽우지(Gorging Form),Cramorant (Gorging),ウッウ（まるのみのすがた）,game
+cramorant_gulping,845,윽우지(Gulping Form),Cramorant (Gulping),ウッウ（うのみのすがた）,game
+arrokuda,846,찌로꼬치,Arrokuda,サシカマス,game
+barraskewda,847,꼬치조,Barraskewda,カマスジョー,game
+toxel,848,일레즌,Toxel,エレズン,game
+toxtricity,849,스트린더,Toxtricity,ストリンダー,game
+toxtricity_amped,849,스트린더(하이한 모습),Toxtricity (Amped),ストリンダー（ハイなすがた）,game
+toxtricity_low_key,849,스트린더(로우한 모습),Toxtricity (Low Key),ストリンダー（ローなすがた）,override
+sizzlipede,850,태우지네,Sizzlipede,ヤクデ,game
+centiskorch,851,다태우지네,Centiskorch,マルヤクデ,game
+clobbopus,852,때때무노,Clobbopus,タタッコ,game
+grapploct,853,케오퍼스,Grapploct,オトスパス,game
+sinistea,854,데인차,Sinistea,ヤバチャ,game
+polteageist,855,포트데스,Polteageist,ポットデス,game
+hatenna,856,몸지브림,Hatenna,ミブリム,game
+hattrem,857,손지브림,Hattrem,テブリム,game
+hatterene,858,브리무음,Hatterene,ブリムオン,game
+impidimp,859,메롱꿍,Impidimp,ベロバー,game
+morgrem,860,쏘겨모,Morgrem,ギモー,game
+grimmsnarl,861,오롱털,Grimmsnarl,オーロンゲ,game
+obstagoon,862,가로막구리,Obstagoon,タチフサグマ,game
+obstagoon_shadow,862,가로막구리(그림자),Obstagoon (Shadow),タチフサグマ（シャドウ）,game
+perrserker,863,나이킹,Perrserker,ニャイキング,game
+cursola,864,산호르곤,Cursola,サニゴーン,game
+sirfetchd,865,창파나이트,Sirfetch'd,ネギガナイト,game
+mr_rime,866,마임꽁꽁,Mr. Rime,バリコオル,game
+runerigus,867,데스판,Runerigus,デスバーン,game
+milcery,868,마빌크,Milcery,マホミル,game
+alcremie,869,마휘핑,Alcremie,マホイップ,game
+falinks,870,대여르,Falinks,タイレーツ,game
+falinks_mega,870,메가대여르,Falinks (Mega),メガタイレーツ,game
+pincurchin,871,찌르성게,Pincurchin,バチンウニ,game
+snom,872,누니머기,Snom,ユキハミ,game
+frosmoth,873,모스노우,Frosmoth,モスノウ,game
+stonjourner,874,돌헨진,Stonjourner,イシヘンジン,game
+eiscue,875,빙큐보,Eiscue,コオリッポ,game
+eiscue_ice,875,빙큐보(얼음),Eiscue (Ice),コオリッポ（こおり）,game
+eiscue_noice,875,빙큐보(Noice Face),Eiscue (Noice),コオリッポ（ナイスフェイス）,game
+indeedee_female,876,에써르(암컷),Indeedee (Female),イエッサン（メス）,game
+indeedee_male,876,에써르(수컷),Indeedee (Male),イエッサン（オス）,game
+morpeko_full_belly,877,모르페코(배부른 모양),Morpeko (Full Belly),モルペコ（まんぷくもよう）,game
+morpeko_hangry,877,모르페코(배고픈 모양),Morpeko (Hangry),モルペコ（はらぺこもよう）,game
+cufant,878,끼리동,Cufant,ゾウドウ,game
+copperajah,879,대왕끼리동,Copperajah,ダイオウドウ,game
+dracozolt,880,파치래곤,Dracozolt,パッチラゴン,game
+arctozolt,881,파치르돈,Arctozolt,パッチルドン,game
+dracovish,882,어래곤,Dracovish,ウオノラゴン,game
+arctovish,883,어치르돈,Arctovish,ウオチルドン,game
+duraludon,884,두랄루돈,Duraludon,ジュラルドン,game
+dreepy,885,드라꼰,Dreepy,ドラメシヤ,game
+drakloak,886,드래런치,Drakloak,ドロンチ,game
+dragapult,887,드래펄트,Dragapult,ドラパルト,game
+zacian_crowned_sword,888,자시안(검왕),Zacian (Crowned Sword),ザシアン（けんのおう）,game
+zacian_hero,888,자시안(역전의 용사),Zacian (Hero),ザシアン（れきせんのゆうしゃ）,game
+zamazenta_crowned_shield,889,자마젠타(방패왕),Zamazenta (Crowned Shield),ザマゼンタ（たてのおう）,game
+zamazenta_hero,889,자마젠타(역전의 용사),Zamazenta (Hero),ザマゼンタ（れきせんのゆうしゃ）,game
+eternatus,890,무한다이노,Eternatus,ムゲンダイナ,game
+eternatus_eternamax,890,무한다이노(무한다이맥스),Eternatus (Eternamax),ムゲンダイナ（ムゲンダイマックス）,override
+kubfu,891,치고마,Kubfu,ダクマ,game
+urshifu_rapid_strike,892,우라오스(연격의 태세),Urshifu (Rapid Strike),ウーラオス（れんげきのかた）,game
+urshifu_single_strike,892,우라오스(일격의 태세),Urshifu (Single Strike),ウーラオス（いちげきのかた）,game
+zarude,893,자루도,Zarude,ザルード,game
+regieleki,894,레지에레키,Regieleki,レジエレキ,game
+regidrago,895,레지드래고,Regidrago,レジドラゴ,game
+glastrier,896,블리자포스,Glastrier,ブリザポス,game
+spectrier,897,레이스포스,Spectrier,レイスポス,game
+calyrex,898,버드렉스,Calyrex,バドレックス,game
+calyrex_ice_rider,898,버드렉스(백마 탄 모습),Calyrex (Ice Rider),バドレックス（はくばじょうのすがた）,override
+wyrdeer,899,신비록,Wyrdeer,アヤシシ,game
+kleavor,900,사마자르,Kleavor,バサギリ,game
+ursaluna,901,다투곰,Ursaluna,ガチグマ,game
+ursaluna_shadow,901,다투곰(그림자),Ursaluna (Shadow),ガチグマ（シャドウ）,game
+basculegion_female,902,대쓰여너(암컷),Basculegion (Female),イダイトウ（メス）,game
+basculegion_male,902,대쓰여너(수컷),Basculegion (Male),イダイトウ（オス）,game
+sneasler,903,포푸니크,Sneasler,オオニューラ,game
+sneasler_shadow,903,포푸니크(그림자),Sneasler (Shadow),オオニューラ（シャドウ）,game
+overqwil,904,장침바루,Overqwil,ハリーマン,game
+enamorus_incarnate,905,러브로스(화신폼),Enamorus (Incarnate),ラブトロス（けしんフォルム）,game
+enamorus_therian,905,러브로스(영물폼),Enamorus (Therian),ラブトロス（れいじゅうフォルム）,game
+sprigatito,906,나오하,Sprigatito,ニャオハ,game
+floragato,907,나로테,Floragato,ニャローテ,game
+meowscarada,908,마스카나,Meowscarada,マスカーニャ,game
+fuecoco,909,뜨아거,Fuecoco,ホゲータ,game
+crocalor,910,악뜨거,Crocalor,アチゲータ,game
+skeledirge,911,라우드본,Skeledirge,ラウドボーン,game
+quaxly,912,꾸왁스,Quaxly,クワッス,game
+quaxwell,913,아꾸왁,Quaxwell,ウェルカモ,game
+quaquaval,914,웨이니발,Quaquaval,ウェーニバル,game
+lechonk,915,맛보돈,Lechonk,グルトン,game
+oinkologne,916,퍼퓨돈,Oinkologne,パフュートン,game
+oinkologne_female,916,퍼퓨돈(암컷),Oinkologne (Female),パフュートン（メス）,game
+tarountula,917,타랜툴라,Tarountula,タマンチュラ,game
+spidops,918,트래피더,Spidops,ワナイダー,game
+nymble,919,콩알뚜기,Nymble,マメバッタ,game
+lokix,920,엑스레그,Lokix,エクスレッグ,game
+pawmi,921,빠모,Pawmi,パモ,game
+pawmo,922,빠모트,Pawmo,パモット,game
+pawmot,923,빠르모트,Pawmot,パーモット,game
+tandemaus,924,두리쥐,Tandemaus,ワッカネズミ,game
+maushold,925,파밀리쥐,Maushold,イッカネズミ,game
+maushold_family_of_four,925,파밀리쥐,Maushold_family_of_four,イッカネズミ,game
+maushold_family_of_three,925,파밀리쥐,Maushold_family_of_three,イッカネズミ,game
+fidough,926,쫀도기,Fidough,パピモッチ,game
+dachsbun,927,바우첼,Dachsbun,バウッツェル,game
+smoliv,928,미니브,Smoliv,ミニーブ,game
+dolliv,929,올리뇨,Dolliv,オリーニョ,game
+arboliva,930,올리르바,Arboliva,オリーヴァ,game
+squawkabilly,931,시비꼬,Squawkabilly,イキリンコ,game
+nacli,932,베베솔트,Nacli,コジオ,game
+naclstack,933,스태솔트,Naclstack,ジオヅム,game
+garganacl,934,콜로솔트,Garganacl,キョジオーン,game
+charcadet,935,카르본,Charcadet,カルボウ,game
+armarouge,936,카디나르마,Armarouge,グレンアルマ,game
+ceruledge,937,파라블레이즈,Ceruledge,ソウブレイズ,game
+tadbulb,938,빈나두,Tadbulb,ズピカ,game
+bellibolt,939,찌리배리,Bellibolt,ハラバリー,game
+wattrel,940,찌리비,Wattrel,カイデン,game
+kilowattrel,941,찌리비크,Kilowattrel,タイカイデン,game
+maschiff,942,오라티프,Maschiff,オラチフ,game
+mabosstiff,943,마피티프,Mabosstiff,マフィティフ,game
+shroodle,944,땃쭈르,Shroodle,シルシュルー,game
+grafaiai,945,태깅구르,Grafaiai,タギングル,game
+bramblin,946,그푸리,Bramblin,アノクサ,game
+brambleghast,947,공푸리,Brambleghast,アノホラグサ,game
+toedscool,948,들눈해,Toedscool,ノノクラゲ,game
+toedscruel,949,육파리,Toedscruel,リククラゲ,game
+klawf,950,절벼게,Klawf,ガケガニ,game
+capsakid,951,캡싸이,Capsakid,カプサイジ,game
+scovillain,952,스코빌런,Scovillain,スコヴィラン,game
+rellor,953,구르데,Rellor,シガロコ,game
+rabsca,954,베라카스,Rabsca,ベラカス,game
+flittle,955,하느라기,Flittle,ヒラヒナ,game
+espathra,956,클레스퍼트라,Espathra,クエスパトラ,game
+tinkatink,957,어리짱,Tinkatink,カヌチャン,game
+tinkatuff,958,벼리짱,Tinkatuff,ナカヌチャン,game
+tinkaton,959,두드리짱,Tinkaton,デカヌチャン,game
+wiglett,960,바다그다,Wiglett,ウミディグダ,game
+wugtrio,961,바닥트리오,Wugtrio,ウミトリオ,game
+bombirdier,962,떨구새,Bombirdier,オトシドリ,game
+finizen,963,맨돌핀,Finizen,ナミイルカ,game
+palafin,964,돌핀맨,Palafin,イルカマン,game
+palafin_hero,964,돌핀맨,Palafin_hero,イルカマン,game
+palafin_zero,964,돌핀맨,Palafin_zero,イルカマン,game
+varoom,965,부르롱,Varoom,ブロロン,game
+revavroom,966,부르르룸,Revavroom,ブロロローム,game
+cyclizar,967,모토마,Cyclizar,モトトカゲ,game
+orthworm,968,꿈트렁,Orthworm,ミミズズ,game
+glimmet,969,초롱순,Glimmet,キラーメ,game
+glimmora,970,킬라플로르,Glimmora,キラフロル,game
+greavard,971,망망이,Greavard,ボチ,game
+houndstone,972,묘두기,Houndstone,ハカドッグ,game
+flamigo,973,꼬이밍고,Flamigo,カラミンゴ,game
+cetoddle,974,터벅고래,Cetoddle,アルクジラ,game
+cetitan,975,우락고래,Cetitan,ハルクジラ,game
+veluza,976,가비루사,Veluza,ミガルーサ,game
+dondozo,977,어써러셔,Dondozo,ヘイラッシャ,game
+tatsugiri_curly,978,싸리용(젖힌 모습),Tatsugiri (Curly),シャリタツ（そったすがた）,game
+tatsugiri_droopy,978,싸리용(늘어진 모습),Tatsugiri (Droopy),シャリタツ（たれたすがた）,game
+tatsugiri_stretchy,978,싸리용(뻗은 모습),Tatsugiri (Stretchy),シャリタツ（のびたすがた）,game
+annihilape,979,저승갓숭,Annihilape,コノヨザル,game
+annihilape_shadow,979,저승갓숭(그림자),Annihilape (Shadow),コノヨザル（シャドウ）,game
+clodsire,980,토오,Clodsire,ドオー,game
+farigiraf,981,키키링,Farigiraf,リキキリン,game
+dudunsparce,982,노고고치,Dudunsparce,ノココッチ,game
+kingambit,983,대도각참,Kingambit,ドドゲザン,game
+greattusk,984,위대한엄니,Greattusk,イダイナキバ,game
+screamtail,985,우렁찬꼬리,Screamtail,サケブシッポ,game
+brutebonnet,986,사나운버섯,Brutebonnet,アラブルタケ,game
+fluttermane,987,날개치는머리,Fluttermane,ハバタクカミ,game
+slitherwing,988,땅을기는날개,Slitherwing,チヲハウハネ,game
+sandyshocks,989,모래털가죽,Sandyshocks,スナノケガワ,game
+irontreads,990,무쇠바퀴,Irontreads,テツノワダチ,game
+ironbundle,991,무쇠보따리,Ironbundle,テツノツツミ,game
+ironhands,992,무쇠손,Ironhands,テツノカイナ,game
+ironjugulis,993,무쇠머리,Ironjugulis,テツノコウベ,game
+ironmoth,994,무쇠독나방,Ironmoth,テツノドクガ,game
+ironthorns,995,무쇠가시,Ironthorns,テツノイバラ,game
+frigibax,996,드니차,Frigibax,セビエ,game
+arctibax,997,드니꽁,Arctibax,セゴール,game
+baxcalibur,998,드닐레이브,Baxcalibur,セグレイブ,game
+gimmighoul,999,모으령,Gimmighoul,コレクレー,game
+gholdengo,1000,타부자고,Gholdengo,サーフゴー,game
+wo_chien,1001,총지엔,Wo-Chien,チオンジェン,game
+chien_pao,1002,파오젠,Chien-Pao,パオジアン,game
+ting_lu,1003,딩루,Ting-Lu,ディンルー,game
+chi_yu,1004,위유이,Chi-Yu,イーユイ,game
+roaringmoon,1005,고동치는달,Roaringmoon,トドロクツキ,game
+ironvaliant,1006,무쇠무인,Ironvaliant,テツノブジン,game
+koraidon,1007,코라이돈,Koraidon,コライドン,game
+koraidon_apex,1007,코라이돈,Koraidon_apex,コライドン,game
+miraidon,1008,미라이돈 ,Miraidon,ミライドン,game
+miraidon_ultimate,1008,미라이돈 ,Miraidon_ultimate,ミライドン,game
+walking_wake,1009,굽이치는물결,Walking Wake,ウネルミナモ,leekduck
+iron_leaves,1010,무쇠잎새,Iron Leaves,テツノイサハ,leekduck
+dipplin,1011,과미르,Dipplin,カミッチュ,pokeapi
+poltchageist,1012,차데스,Poltchageist,チャデス,pokeapi
+sinistcha,1013,그우린차,Sinistcha,ヤバソチャ,pokeapi
+okidogi,1014,조타구,Okidogi,イイネイヌ,pokeapi
+munkidori,1015,이야후,Munkidori,マシマシラ,pokeapi
+fezandipiti,1016,기로치,Fezandipiti,キチキギス,pokeapi
+ogerpon,1017,오거폰,Ogerpon,オーガポン,pokeapi
+archaludon,1018,브리두라스,Archaludon,ブリジュラス,pokeapi
+hydrapple,1019,과미드라,Hydrapple,カミツオロチ,pokeapi
+gouging_fire,1020,꿰뚫는화염,Gouging Fire,ウガツホムラ,pokeapi
+raging_bolt,1021,날뛰는우레,Raging Bolt,タケルライコ,pokeapi
+iron_boulder,1022,무쇠암석,Iron Boulder,テツノイワオ,pokeapi
+iron_crown,1023,무쇠감투,Iron Crown,テツノカシラ,pokeapi
+terapagos,1024,테라파고스,Terapagos,テラパゴス,pokeapi
+pecharunt,1025,복숭악동,Pecharunt,モモワロウ,pokeapi

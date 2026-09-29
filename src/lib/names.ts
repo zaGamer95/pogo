@@ -178,3 +178,40 @@ export function gblSchedule(data: GameData): GblWeek[] {
 export function pvpokeLink(format: PvpFormat, speciesId?: string): string {
   return `https://pvpoke.com/rankings/${format.cup}/${format.cp}/overall/${speciesId ? speciesId + '/' : ''}`;
 }
+
+// ---------- pokemongo-get.com (JP) leagues ----------
+
+/** The JP-site league that corresponds to a PvPoke format key. */
+export function jpLeagueForFormat(data: GameData, key: string) {
+  return data.jpParties?.leagues.find((l) => matchLeague(data, l.en).format?.key === key) ?? null;
+}
+
+/** The JP-site league for a GBL label from LeekDuck (works for cups PvPoke doesn't rank). */
+export function jpLeagueForLabel(data: GameData, label: string) {
+  const leagues = data.jpParties?.leagues ?? [];
+  const pv = matchLeague(data, label);
+  if (pv.format) {
+    const hit = leagues.find((l) => matchLeague(data, l.en).format?.key === pv.format!.key);
+    if (hit) return hit;
+  }
+  const want = tokens(label.split(':')[0]).filter((w) => w !== 'mega');
+  let best: (typeof leagues)[number] | null = null;
+  let bestScore = 0;
+  for (const l of leagues.filter((x) => x.cp === pv.cp)) {
+    const have = new Set(tokens(l.en.split(':')[0]));
+    const score = want.filter((w) => have.has(w)).length;
+    if (score > bestScore) {
+      bestScore = score;
+      best = l;
+    }
+  }
+  return best;
+}
+
+/** Route key for the Meta page: the PvPoke format when there is one, else "jp-<id>". */
+export function metaKeyForLabel(data: GameData, label: string): string | null {
+  const pv = matchLeague(data, label);
+  if (pv.format) return pv.format.key;
+  const jp = jpLeagueForLabel(data, label);
+  return jp ? `jp-${jp.id}` : null;
+}

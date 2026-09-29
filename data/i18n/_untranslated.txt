@@ -1,0 +1,30 @@
+form:pikachu_5th_anniversary:5th Anniversary
+form:pikachu_horizons:Horizons
+form:pikachu_kariyushi:Kariyushi
+form:pikachu_libre:Libre
+form:pikachu_pop_star:Pop Star
+form:pikachu_rock_star:Rock Star
+form:pikachu_shaymin:Shaymin Scarf
+form:mewtwo_armored:Armored
+form:mime_jr:Jr
+form:darmanitan_galarian_zen:Galarian Zen
+form:darmanitan_zen:Zen
+form:keldeo_resolute:Resolute
+form:hoopa_confined:Confined
+form:hoopa_unbound:Unbound
+form:wishiwashi_solo:Solo
+form:type_null:Null
+form:minior_core:Core
+form:minior_meteor:Meteor
+form:necrozma_ultra:Ultra
+form:cramorant_gulping:Gulping
+form:cramorant_gorging:Gorging
+form:toxtricity_low_key:Low Key
+form:eiscue_noice:Noice
+form:eternatus_eternamax:Eternamax
+form:calyrex_ice_rider:Ice Rider
+move:GULP_MISSILE_ARROKUDA
+move:GULP_MISSILE_PIKACHU
+move:TECHNO_BLAST_DOUSE
+move:AEGISLASH_CHARGE_AIR_SLASH
+move:AEGISLASH_CHARGE_PSYCHO_CUT
