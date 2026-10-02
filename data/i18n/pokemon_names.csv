@@ -390,7 +390,6 @@ crobat,169,크로뱃,Crobat,クロバット,game
 crobat_shadow,169,크로뱃(그림자),Crobat (Shadow),クロバット（シャドウ）,game
 chinchou,170,초라기,Chinchou,チョンチー,game
 lanturn,171,랜턴,Lanturn,ランターン,game
-lanturnw,171,랜턴,Lanturn,ランターン,game
 pichu,172,피츄,Pichu,ピチュー,game
 cleffa,173,삐,Cleffa,ピィ,game
 igglybuff,174,푸푸린,Igglybuff,ププリン,game
@@ -1232,6 +1231,7 @@ thundurus_therian,642,볼트로스(영물폼),Thundurus (Therian),ボルトロ�
 reshiram,643,레시라무,Reshiram,レシラム,game
 reshiram_shadow,643,레시라무(그림자),Reshiram (Shadow),レシラム（シャドウ）,game
 zekrom,644,제크로무,Zekrom,ゼクロム,game
+zekrom_shadow,644,제크로무(그림자),Zekrom (Shadow),ゼクロム（シャドウ）,game
 landorus_incarnate,645,랜드로스(화신폼),Landorus (Incarnate),ランドロス（けしんフォルム）,game
 landorus_incarnate_shadow,645,랜드로스(화신폼)(그림자),Landorus (Incarnate) (Shadow),ランドロス（けしんフォルム）（シャドウ）,game
 landorus_therian,645,랜드로스(영물폼),Landorus (Therian),ランドロス（れいじゅうフォルム）,game
@@ -1289,7 +1289,9 @@ florges,671,플라제스,Florges,フラージェス,game
 skiddo,672,메이클,Skiddo,メェークル,game
 gogoat,673,고고트,Gogoat,ゴーゴート,game
 pancham,674,판짱,Pancham,ヤンチャム,game
+pancham_shadow,674,판짱(그림자),Pancham (Shadow),ヤンチャム（シャドウ）,game
 pangoro,675,부란다,Pangoro,ゴロンダ,game
+pangoro_shadow,675,부란다(그림자),Pangoro (Shadow),ゴロンダ（シャドウ）,game
 furfrou,676,트리미앙,Furfrou,トリミアン,game
 espurr,677,냐스퍼,Espurr,ニャスパー,game
 meowstic,678,냐오닉스(수컷),Meowstic (Male),ニャオニクス（オス）,game
@@ -1411,7 +1413,9 @@ dewpider_shadow,751,물거미(그림자),Dewpider (Shadow),シズクモ（シャ
 araquanid,752,깨비물거미,Araquanid,オニシズクモ,game
 araquanid_shadow,752,깨비물거미(그림자),Araquanid (Shadow),オニシズクモ（シャドウ）,game
 fomantis,753,짜랑랑,Fomantis,カリキリ,game
+fomantis_shadow,753,짜랑랑(그림자),Fomantis (Shadow),カリキリ（シャドウ）,game
 lurantis,754,라란티스,Lurantis,ラランテス,game
+lurantis_shadow,754,라란티스(그림자),Lurantis (Shadow),ラランテス（シャドウ）,game
 morelull,755,자마슈,Morelull,ネマシュ,game
 shiinotic,756,마셰이드,Shiinotic,マシェード,game
 shiinotic_shadow,756,마셰이드(그림자),Shiinotic (Shadow),マシェード（シャドウ）,game
@@ -1428,10 +1432,13 @@ comfey,764,큐아링,Comfey,キュワワー,game
 oranguru,765,하랑우탄,Oranguru,ヤレユータン,game
 passimian,766,내던숭이,Passimian,ナゲツケサル,game
 wimpod,767,꼬시레,Wimpod,コソクムシ,game
+wimpod_shadow,767,꼬시레(그림자),Wimpod (Shadow),コソクムシ（シャドウ）,game
 golisopod,768,갑주무사,Golisopod,グソクムシャ,game
-golisopodsh,768,갑주무사,Golisopod,グソクムシャ,game
+golisopod_shadow,768,갑주무사(그림자),Golisopod (Shadow),グソクムシャ（シャドウ）,game
 sandygast,769,모래꿍,Sandygast,スナバァ,game
+sandygast_shadow,769,모래꿍(그림자),Sandygast (Shadow),スナバァ（シャドウ）,game
 palossand,770,모래성이당,Palossand,シロデスナ,game
+palossand_shadow,770,모래성이당(그림자),Palossand (Shadow),シロデスナ（シャドウ）,game
 pyukumuku,771,해무기,Pyukumuku,ナマコブシ,game
 type_null,772,타입:널,Type (Null),タイプ：ヌル,override
 silvally,773,실버디,Silvally,シルヴァディ,game

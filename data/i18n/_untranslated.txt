@@ -8,8 +8,8 @@ form:pikachu_shaymin:Shaymin Scarf
 form:wishiwashi_solo:Solo
 form:minior_core:Core
 form:minior_meteor:Meteor
-form:cramorant_gulping:Gulping
 form:cramorant_gorging:Gorging
+form:cramorant_gulping:Gulping
 form:eiscue_noice:Noice
 move:GULP_MISSILE_ARROKUDA
 move:GULP_MISSILE_PIKACHU
