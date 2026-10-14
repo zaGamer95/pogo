@@ -58,10 +58,11 @@ src/lib/
   data.ts                  types + loadGameData(), loadRankings(), useGameData(), spriteUrl(dex, shiny)
   calc.ts                  CPM/CP/stats, bestLevelUnderCap, pvpIvRank (4096-spread table, cached), levelFromCP,
                            type effectiveness, raid tiers, WEATHER_TYPES, simulate() DPS/TDO, bestMoveset()
+  liveRaids.ts             reconcileRaids: drops bosses whose raid-battles event ended, adds bosses of running ones (LeekDuck's boss page lags rotations)
   raid.ts                  bossMovesets, rankCounters (generic L40/50 hundos), rankRoster, maxAttackers, maxTanks
   pvp.ts                   sharedWeaknesses, uncovered, suggestTeams (meta cores), myCandidates, bestTeams, assignRoles
   names.ts                 resolveName (LeekDuck names → species), gblSchedule/matchLeague (GBL names → PvPoke format)
-  roster.ts                RosterMon store (useRoster), Poke Genie CSV import + mergePokeGenie, JSON backup
+  roster.ts                RosterMon store (useRoster), Poke Genie CSV import (English or Korean export) + mergePokeGenie, JSON backup
   events.ts                event type colours/labels, withDates, overlapsDay, isActive
   dex.ts                   Pokédex store (useDex), GENERATIONS, parse/formatDexList, dexEntries, spares()
 ```
@@ -75,7 +76,7 @@ src/lib/
 | `types.json` | PokeMiners `typeEffective` | `{ types: string[18], chart: {atk: {def: mult}} }` |
 | `cpm.json` | PokeMiners `PLAYER_LEVEL_SETTINGS` | `number[]`, index = `(level-1)*2`, levels 1–55 in 0.5 steps (half levels interpolated) |
 | `events.json` | ScrapedDuck `events.min.json` (LeekDuck), **verified against official posts** | `LeekEvent[]`; matched events get `official: { url, urlKo, title, titleKo, start, end, leekStart, leekEnd, mismatch }` and their `start/end` replaced by the official window; official posts LeekDuck lacks are appended as `eventType: 'official'` (`official.only = true`) |
-| `raids.json` | ScrapedDuck `raids.min.json` | `LeekRaid[]` (raw) |
+| `raids.json` | ScrapedDuck `raids.min.json` | `LeekRaid[]` (raw). On load `reconcileRaids()` (`lib/liveRaids.ts`) syncs it with the `raid-battles` events: bosses whose event ended are dropped, bosses of running events missing from the list are added (tier from the event name, CP/weather computed), because LeekDuck's boss page often lags a rotation by hours |
 | `shinies.json` | LeekDuck `shiny/pms.json` | `{ dex, form: string\|null, released: 'YYYY-MM-DD'\|null }[]` |
 | `names.json` | LeekDuck `shiny/name.json` | `Record<dex, { en, ko }>` |
 | `news.json` | Official posts (pokemongo.com/news, en + ko); RSS fallback | `{ title, titleKo?, link, linkKo?, date }[]` |
@@ -126,6 +127,7 @@ RosterMon { uid, speciesId /* NON-shadow id */, nickname?, shadow?, purified?, l
             dynamax?: 'dmax'|'gmax', bestBuddy?, ivs: [atk, def, sta], level, fast?, charged: string[],
             raidReady?, pvpReady?, forTrade?, favorite?, source?: 'pokegenie'|'manual', notes?, addedAt }
 ```
+- **Poke Genie import** reads English or Korean exports (`이름/모습/포켓몬/공격 IV/노멀스킬/스페셜스킬/반짝반짝/그림자/정화…`). Korean rows are resolved by the dex number (`포켓몬`) + a Korean form table (`KO_FORM` in `roster.ts`; the Korean export prints `캐스퐁` for default forms), moves by their official Korean names.
 - **Poke Genie re-import** (`mergePokeGenie`): replaces all `source==='pokegenie'` rows, keeps `manual` rows, and carries user flags (`raidReady, pvpReady, shiny, forTrade, dynamax, bestBuddy, notes, nickname`) + `uid` to the new row matching `speciesId|ivs|shadow-state`.
 - Backups: Roster → "Export backup" (JSON `{app, version, exported, roster}`); Trade → "Share list" → Pokédex backup (JSON).
 - Bump the key suffix (`-v2`) + write a migration if a schema change is not backward compatible.

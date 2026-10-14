@@ -139,9 +139,42 @@ const FORM_MAP: Record<string, string> = {
   paldean: 'Paldean',
 };
 
+// Korean Poke Genie exports label forms in Korean. "캐스퐁" (Castform) is what the Korean export
+// prints for plain/default forms (Mewtwo, Pikachu, Rayquaza…), so it means "no form".
+const KO_FORM: Record<string, string> = {
+  캐스퐁: '',
+  노말: '',
+  노말폼: '',
+  알로라: 'alola',
+  가라르: 'galar',
+  히스이: 'hisui',
+  팔데아: 'paldea',
+  스카이: 'Sky',
+  랜드: 'Land',
+  방패: 'Crowned Shield',
+  검: 'Crowned Sword',
+  어나더: 'Altered',
+  오리진: 'Origin',
+  장갑: 'Armored',
+  어택폼: 'Attack',
+  디펜스폼: 'Defense',
+  스피드폼: 'Speed',
+  초목: 'Plant',
+  모래땅: 'Sandy',
+  슈레: 'Trash',
+  화신폼: 'Incarnate',
+  영물폼: 'Therian',
+};
+
 function moveIdByName(data: GameData, name: string): string | undefined {
   if (!name) return undefined;
   const n = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (!n) {
+    // Korean export: match the official Korean move name (spacing differs between sources)
+    const ko = name.replace(/\s+/g, '');
+    const hit = Object.entries(data.i18n.moves).find(([id, [k]]) => k.replace(/\s+/g, '') === ko && data.moves[id]);
+    return hit?.[0];
+  }
   for (const [id, m] of Object.entries(data.moves)) {
     if (m.name.toLowerCase().replace(/[^a-z0-9]/g, '') === n) return id;
   }
@@ -150,6 +183,8 @@ function moveIdByName(data: GameData, name: string): string | undefined {
 }
 
 const truthy = (v: string | undefined) => ['1', 'true', 'yes', 'y'].includes((v ?? '').trim().toLowerCase());
+// Poke Genie stores the favourite as a star/colour index (0 = none, 1–3 = favourite)
+const flagged = (v: string | undefined) => truthy(v) || /^[1-9]$/.test((v ?? '').trim());
 
 export interface ImportResult {
   added: RosterMon[];
@@ -160,36 +195,45 @@ export interface ImportResult {
 export function importPokeGenieCsv(data: GameData, text: string): ImportResult {
   const rows = parseCsv(text);
   if (rows.length < 2) throw new Error('CSV looks empty');
-  // Poke Genie renames/relabels columns between versions, so match on letters+digits only
-  const squash = (h: string) => h.toLowerCase().replace(/[^a-z0-9%#]/g, '');
+  // Poke Genie renames/relabels columns between versions (and localises them), so match on letters+digits only
+  const squash = (h: string) => h.toLowerCase().replace(/[^\p{L}\p{N}%#]/gu, '');
   const header = rows[0].map(squash);
   const col = (...names: string[]) => header.findIndex((h) => names.map(squash).includes(h));
   const c = {
-    name: col('name'),
-    form: col('form'),
+    // English export headers, then the Korean export's ("이름, 모습, 포켓몬, 공격 IV, 노멀스킬, 반짝반짝…")
+    name: col('name', '이름'),
+    form: col('form', '모습'),
+    dex: col('pokemon number', '포켓몬'),
     cp: col('cp'),
-    atk: col('atk iv', 'attack iv', 'atk'),
-    def: col('def iv', 'defense iv', 'def'),
-    sta: col('sta iv', 'stamina iv', 'sta', 'hp iv'),
-    lvlMin: col('level min', 'level'),
-    lvlMax: col('level max'),
-    fast: col('quick move', 'fast move'),
-    c1: col('charge move', 'charged move', 'charge move 1'),
-    c2: col('charge move 2', 'charged move 2'),
-    lucky: col('lucky'),
-    shadow: col('shadow/purified'),
-    nick: col('nickname'),
-    fav: col('favorite', 'favourite'),
-    pvp: col('marked for pvp use'),
+    atk: col('atk iv', 'attack iv', 'atk', '공격 iv'),
+    def: col('def iv', 'defense iv', 'def', '방어 iv'),
+    sta: col('sta iv', 'stamina iv', 'sta', 'hp iv', '스테미너 iv', '스태미나 iv', '체력 iv'),
+    lvlMin: col('level min', 'level', '최소 레벨'),
+    lvlMax: col('level max', '최대 레벨'),
+    fast: col('quick move', 'fast move', '노멀스킬', '노말스킬'),
+    c1: col('charge move', 'charged move', 'charge move 1', '스페셜스킬'),
+    c2: col('charge move 2', 'charged move 2', '스페셜스킬 2'),
+    lucky: col('lucky', '반짝반짝'),
+    shadow: col('shadow/purified', '그림자/정화'),
+    nick: col('nickname', '닉네임'),
+    fav: col('favorite', 'favourite', '즐겨찾기'),
+    pvp: col('marked for pvp use', 'pvp 사용을위한 플래그된'),
   };
   if (c.name < 0 || c.atk < 0) throw new Error('Could not find "Name" and "Atk IV" columns – is this a Poke Genie export?');
 
   const added: RosterMon[] = [];
   const skipped: string[] = [];
   for (const r of rows.slice(1)) {
-    const rawName = r[c.name]?.trim();
+    let rawName = r[c.name]?.trim();
     if (!rawName) continue;
-    const formRaw = (c.form >= 0 ? r[c.form] : '').trim();
+    let formRaw = (c.form >= 0 ? r[c.form] : '').trim();
+    if (/[^\x00-\x7f]/.test(rawName + formRaw)) {
+      // Korean export: take the English species name from the dex number, translate the form label
+      const dex = Number(r[c.dex]);
+      const base = dex ? data.pokemon.find((p) => p.dex === dex && !/_shadow$|_mega/.test(p.id)) : undefined;
+      if (base) rawName = base.name.replace(/\s*\(.*\)$/, '');
+      formRaw = KO_FORM[formRaw.replace(/\s+/g, '')] ?? formRaw;
+    }
     const form = FORM_MAP[formRaw.toLowerCase()] ?? formRaw;
     const query = form && !/^normal$/i.test(form) ? (FORM_MAP[formRaw.toLowerCase()] ? `${form} ${rawName}` : `${rawName} (${form})`) : rawName;
     let { species } = resolveName(data, query);
@@ -217,7 +261,7 @@ export function importPokeGenieCsv(data: GameData, text: string): ImportResult {
       level,
       fast: moveIdByName(data, r[c.fast]),
       charged,
-      favorite: c.fav >= 0 && truthy(r[c.fav]) ? true : undefined,
+      favorite: c.fav >= 0 && flagged(r[c.fav]) ? true : undefined,
       pvpReady: c.pvp >= 0 && truthy(r[c.pvp]) ? true : undefined,
       source: 'pokegenie',
       addedAt: Date.now(),

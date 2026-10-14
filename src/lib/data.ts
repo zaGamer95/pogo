@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react';
+import { reconcileRaids } from './liveRaids';
 
 export type PokeType = string;
 
@@ -172,7 +173,7 @@ export async function loadGameData(): Promise<GameData> {
     load<I18nData>('i18n.json').catch(() => ({ pokemon: {}, moves: {}, types: {}, weather: {}, leagues: {} })),
     load<JpParties>('jp-parties.json').catch(() => null),
   ]);
-  return {
+  const data: GameData = {
     pokemon,
     byId: new Map(pokemon.map((p) => [p.id, p])),
     moves,
@@ -189,6 +190,8 @@ export async function loadGameData(): Promise<GameData> {
     jpParties,
     meta,
   };
+  data.raids = reconcileRaids(data);
+  return data;
 }
 
 const rankingCache = new Map<string, Promise<Rankings>>();
