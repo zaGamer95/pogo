@@ -66,8 +66,8 @@ export default {
   '100% catch CP (Lv 20)': '100% 포획 CP (Lv 20)',
   'Lv 40 max CP': 'Lv 40 최대 CP',
   'Attacks with': '공격 타입',
-  'Include all species (the game data only flags {n} Dynamax-capable species)':
-    '모든 포켓몬 포함 (게임 데이터에 다이맥스 가능으로 표시된 포켓몬은 {n}종뿐)',
+  'Include all species (the game data flags {n} Dynamax / {g} Gigantamax species)':
+    '모든 포켓몬 포함 (게임 데이터 기준 다이맥스 가능 {n}종 / 거다이맥스 {g}종)',
   'Best Max attackers': '최적 맥스 딜러',
   'Best tanks (Max Guard / Spirit)': '최적 탱커 (맥스가드 / 맥스스피릿)',
   'Your Dynamax Pokémon': '내 다이맥스 포켓몬',
@@ -75,7 +75,7 @@ export default {
     '“내 포켓몬” 페이지에서 다이맥스 또는 거다이맥스로 표시하면 여기에서 순위를 볼 수 있습니다.',
   'Your attackers': '내 딜러',
   'Your tanks': '내 탱커',
-  "Max Move damage uses the fast move's type (G-Max moves use the Pokémon's own type), so attackers are ranked by Attack × STAB × type effectiveness. Tanks are ranked by Defense × HP against the boss's attack types.":
-    '맥스어택 데미지는 노말어택의 타입을 따릅니다 (거다이맥스 기술은 포켓몬 자신의 타입). 따라서 딜러는 공격 × 자속 보정 × 타입 상성으로, 탱커는 보스 공격 타입에 대한 방어 × HP로 순위를 매깁니다.',
+  "Attackers are ranked by Attack × Max Move power × STAB × type effectiveness, with Max Moves at level 3. Dynamax: Max Attack takes the fast move's type (power 350). Gigantamax: always its signature G-Max Move, whatever the fast move (power 450). Eternatus uses Dynamax Cannon (Dragon, 450); Crowned Zacian / Zamazenta use Behemoth Blade / Bash (Steel, 350). Tanks are ranked by Defense × HP against the boss's attack types.":
+    '딜러는 공격 × 맥스기술 위력 × 자속 보정 × 타입 상성으로 순위를 매깁니다 (맥스기술 레벨 3 기준). 다이맥스: 맥스어택은 노말어택의 타입을 따릅니다 (위력 350). 거다이맥스: 노말어택과 상관없이 항상 고유 거다이맥스 기술 (위력 450). 무한다이노는 다이맥스포 (드래곤, 450), 검왕/방패왕 자시안·자마젠타는 거수참·거수탄 (강철, 350). 탱커는 보스 공격 타입에 대한 방어 × HP로 순위를 매깁니다.',
   'takes {m} worst-case': '최악의 경우 {m} 피해',
 } as Record<string, string>;

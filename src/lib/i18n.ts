@@ -117,6 +117,12 @@ export function weatherNames(data: GameData, w: string): Tri {
   return { ko, en, ja };
 }
 
+/** Max Move by English name ("Max Wyrmwind", "G-Max Wildfire", "Dynamax Cannon"). */
+export function maxMoveNames(data: GameData, en: string): Tri {
+  const [ko, ja] = data.i18n.maxMoves?.[en] ?? [en, en];
+  return { ko, en, ja };
+}
+
 /** League / cup title (English, as used by GBL events & PvPoke) → ko / ja when the game has it. */
 export function leagueNames(data: GameData, en: string): Tri {
   const exact = data.i18n.leagues[en] ?? data.i18n.leagues[en.split(':')[0].trim()];

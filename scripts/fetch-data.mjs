@@ -141,21 +141,36 @@ async function main() {
   }
 
   // ---- Dynamax / Gigantamax availability ----
-  const scaling = gm.find((t) => t.templateId === 'BREAD_POKEMON_SCALING_SETTINGS')?.data.breadPokemonScalingSettings;
+  // Per-form Max Battle visual overrides (EXTENDED_* templates, `breadOverrides`):
+  //   BREAD_MODE = can Dynamax, BREAD_DOUGH_MODE(_2) = can Gigantamax,
+  //   BREAD_SPECIAL_MODE = special Max Move (Eternatus; Crowned Zacian/Zamazenta via formChange).
+  // The older BREAD_POKEMON_SCALING_SETTINGS table is no longer maintained, but is kept as a fallback.
   const dmax = new Set();
   const gmax = new Set();
+  const maxSpecial = new Set();
   const normForm = (f) => f.toLowerCase()
     .replace(/_normal$/, '')
     .replace(/_alola$/, '_alolan')
     .replace(/_galarian$/, '_galarian')
     .replace(/_hisuian$/, '_hisuian');
+  const addMode = (id, mode) => {
+    if (mode === 'BREAD_MODE') dmax.add(id);
+    else if (/^BREAD_DOUGH_MODE/.test(mode ?? '')) gmax.add(id);
+    else if (mode === 'BREAD_SPECIAL_MODE') maxSpecial.add(id);
+  };
+  const scaling = gm.find((t) => t.templateId === 'BREAD_POKEMON_SCALING_SETTINGS')?.data.breadPokemonScalingSettings;
   for (const p of scaling?.visualSettings ?? []) {
     for (const f of p.pokemonFormData ?? [{ pokemonForm: p.pokemonId }]) {
-      const id = normForm(f.pokemonForm ?? p.pokemonId);
-      for (const v of f.visualData ?? []) {
-        if (v.breadMode === 'BREAD_MODE') dmax.add(id);
-        if (v.breadMode === 'BREAD_DOUGH_MODE') gmax.add(id);
-      }
+      for (const v of f.visualData ?? []) addMode(normForm(f.pokemonForm ?? p.pokemonId), v.breadMode);
+    }
+  }
+  for (const t of gm) {
+    const ext = t.data.pokemonExtendedSettings;
+    const m = t.templateId.match(/^EXTENDED_V\d+_POKEMON_(.+)$/);
+    if (ext && m) for (const o of ext.breadOverrides ?? []) addMode(normForm(m[1]).replace(/_eternamax$/, ''), o.breadMode);
+    const ps = t.data.pokemonSettings;
+    for (const fc of ps?.formChange ?? []) {
+      for (const b of fc.formChangeBonusAttributes ?? []) if (b.targetForm) addMode(normForm(b.targetForm), b.breadMode);
     }
   }
 
@@ -178,6 +193,7 @@ async function main() {
       released: p.released !== false,
       dmax: dmax.has(p.speciesId) || undefined,
       gmax: gmax.has(p.speciesId) || undefined,
+      maxSpecial: maxSpecial.has(p.speciesId) || undefined,
     }));
 
   // ---- PvP formats + rankings ----
@@ -271,7 +287,7 @@ async function main() {
     write('meta.json', {
       updated: new Date().toISOString(),
       pvpokeUpdated: pv.timestamp,
-      counts: { official: officialPosts.length, officialMatched: official.stats.matched, officialCorrections: official.stats.mismatched, officialOnly: official.stats.officialOnly, shinies: shinies.length, news: news.length, pokemon: pokemon.length, moves: Object.keys(moves).length, formats: formats.length, events: events.length, raids: raids.length, dmax: dmax.size, gmax: gmax.size },
+      counts: { official: officialPosts.length, officialMatched: official.stats.matched, officialCorrections: official.stats.mismatched, officialOnly: official.stats.officialOnly, shinies: shinies.length, news: news.length, pokemon: pokemon.length, moves: Object.keys(moves).length, formats: formats.length, events: events.length, raids: raids.length, dmax: dmax.size, gmax: gmax.size, maxSpecial: maxSpecial.size },
     }),
   ]);
   console.log('Done.');

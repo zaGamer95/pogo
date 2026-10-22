@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react';
 import { useGameData, type LeekRaid, type Species } from '../lib/data';
 import { cpAtLevel, cpmAt, raidTier, resistances, statsAt, weaknesses, WEATHER_TYPES } from '../lib/calc';
 import { resolveName } from '../lib/names';
-import { bossMovesets, maxAttackers, maxTanks, rankCounters, rankRoster, rosterStats, type CounterOptions, type CounterRow } from '../lib/raid';
+import { bossMovesets, maxAttackers, maxModes, maxTanks, type MaxCandidate, rankCounters, rankRoster, rosterStats, type CounterOptions, type CounterRow } from '../lib/raid';
 import { useRoster } from '../lib/roster';
 import { withDates } from '../lib/events';
-import { Empty, MoveName, PokeName, SpeciesPicker, Sprite, Tabs, Types, TypeBadge, fmtDateTime } from '../components/ui';
+import { Empty, MaxMoveName, MoveName, PokeName, SpeciesPicker, Sprite, Tabs, Types, TypeBadge, fmtDateTime } from '../components/ui';
 import { usePrefs, useT, weatherNames } from '../lib/i18n';
 
 type Mode = 'raids' | 'max';
@@ -431,24 +431,33 @@ function MaxDetail({ boss }: { boss: MaxBoss }) {
   const sp = boss.species;
   const weak = weaknesses(data, sp.types);
 
+  // One candidate per way the species can fight: Dynamax (fast-move type) and/or Gigantamax (fixed G-Max Move),
+  // or a special Max Move (Eternatus, Crowned Zacian/Zamazenta). "All species" adds a hypothetical Dynamax entry.
   const pool = useMemo(() => {
     const cpm = cpmAt(data, 40);
-    return data.pokemon
-      .filter((s) => s.released && !s.tags.includes('shadow') && !s.tags.includes('mega') && (allSpecies || s.dmax || s.gmax))
-      .map((s) => ({ species: s, stats: statsAt(s, [15, 15, 15], cpm), gmax: false }));
+    const out: MaxCandidate[] = [];
+    for (const s of data.pokemon) {
+      if (!s.released || s.tags.includes('shadow') || s.tags.includes('mega')) continue;
+      const modes = maxModes(s);
+      if (allSpecies && !modes.length) modes.push('dmax');
+      for (const mode of modes) out.push({ species: s, stats: statsAt(s, [15, 15, 15], cpm), mode });
+    }
+    return out;
   }, [data, allSpecies]);
 
   const attackers = useMemo(() => maxAttackers(data, sp, pool).slice(0, 12), [data, sp, pool]);
-  const tanks = useMemo(() => maxTanks(data, sp, pool).slice(0, 12), [data, sp, pool]);
+  const tanks = useMemo(() => maxTanks(data, sp, [...new Map(pool.map((c) => [c.species.id, c])).values()]).slice(0, 12), [data, sp, pool]);
 
   const mine = useMemo(() => {
     const c = roster
       .filter((m) => m.dynamax)
       .map((m) => {
         const rs = rosterStats(data, m);
-        return rs && { ...rs, fixedFast: m.fast, roster: m, gmax: m.dynamax === 'gmax' };
+        if (!rs) return null;
+        const mode = rs.species.maxSpecial ? 'special' : m.dynamax === 'gmax' && rs.species.gmax ? 'gmax' : 'dmax';
+        return { ...rs, fixedFast: m.fast, roster: m, mode } as MaxCandidate;
       })
-      .filter((x): x is NonNullable<typeof x> => !!x);
+      .filter((x): x is MaxCandidate => !!x);
     return { attackers: maxAttackers(data, sp, c).slice(0, 6), tanks: maxTanks(data, sp, c).slice(0, 6) };
   }, [data, roster, sp]);
 
@@ -507,7 +516,10 @@ function MaxDetail({ boss }: { boss: MaxBoss }) {
       </div>
       <label className="check" style={{ marginBottom: 8 }}>
         <input type="checkbox" checked={allSpecies} onChange={(e) => setAllSpecies(e.target.checked)} />{' '}
-        {t('Include all species (the game data only flags {n} Dynamax-capable species)', { n: data.pokemon.filter((p) => p.dmax).length })}
+        {t('Include all species (the game data flags {n} Dynamax / {g} Gigantamax species)', {
+          n: data.pokemon.filter((p) => p.dmax).length,
+          g: data.pokemon.filter((p) => p.gmax).length,
+        })}
       </label>
       <div className="grid cols-2">
         <MaxTable title={t('Best Max attackers')} rows={attackers} attack />
@@ -524,7 +536,7 @@ function MaxDetail({ boss }: { boss: MaxBoss }) {
       )}
       <p className="small muted" style={{ marginTop: 10 }}>
         {t(
-          "Max Move damage uses the fast move's type (G-Max moves use the Pokémon's own type), so attackers are ranked by Attack × STAB × type effectiveness. Tanks are ranked by Defense × HP against the boss's attack types.",
+          "Attackers are ranked by Attack × Max Move power × STAB × type effectiveness, with Max Moves at level 3. Dynamax: Max Attack takes the fast move's type (power 350). Gigantamax: always its signature G-Max Move, whatever the fast move (power 450). Eternatus uses Dynamax Cannon (Dragon, 450); Crowned Zacian / Zamazenta use Behemoth Blade / Bash (Steel, 350). Tanks are ranked by Defense × HP against the boss's attack types.",
         )}
       </p>
     </div>
@@ -549,13 +561,21 @@ function MaxTable({ title, rows, attack }: { title: string; rows: ReturnType<typ
                 <div className="mon">
                   <Sprite species={r.species} size={30} />
                   <PokeName species={r.species} nickname={r.roster?.nickname || undefined} />
-                  {r.species.gmax && <span className="pill accent">{t('G-Max')}</span>}
+                  {r.mode === 'gmax' && <span className="pill accent">{t('G-Max')}</span>}
+                  {r.mode === 'dmax' && attack && <span className="pill">{t('Dynamax')}</span>}
                 </div>
               </td>
               <td className="small">
                 {attack ? (
                   <>
-                    <MoveName id={r.fast} /> <span className="muted">{detail(r.detail)}</span>
+                    {r.maxMove && <MaxMoveName name={r.maxMove} type={r.moveType} />}
+                    {r.mode === 'dmax' && (
+                      <>
+                        {' ← '}
+                        <MoveName id={r.fast} />
+                      </>
+                    )}{' '}
+                    <span className="muted">{detail(r.detail)}</span>
                   </>
                 ) : (
                   <span className="muted">{detail(r.detail)}</span>

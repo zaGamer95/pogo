@@ -19,6 +19,8 @@ export interface Species {
   released: boolean;
   dmax?: boolean;
   gmax?: boolean;
+  /** Uses a special Max Move without Dynamaxing (Eternatus: Dynamax Cannon; Crowned Zacian/Zamazenta: Behemoth Blade/Bash) */
+  maxSpecial?: boolean;
 }
 
 export interface Move {
@@ -105,6 +107,7 @@ export interface I18nData {
   types: Record<string, [string, string]>;
   weather: Record<string, [string, string]>;
   leagues: Record<string, [string, string]>; // English title → [ko, ja]
+  maxMoves?: Record<string, [string, string]>; // English Max Move name ("G-Max Wildfire") → [ko, ja]
 }
 
 export interface JpParty {

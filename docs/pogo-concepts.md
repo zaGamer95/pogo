@@ -75,10 +75,12 @@ Game mechanics the site's maths and UI rely on. Numbers marked **(verify)** are 
 
 - Fought at **Power Spots** with Dynamax Pokémon. Each trainer brings **3** Pokémon. Lobbies hold up to 4 trainers. Gigantamax battles allow more players, in groups **(verify current cap)**.
 - Your Pokémon use their **fast move** to fill a shared **Max Meter**. When it's full, they Dynamax for a few turns and pick a Max Move:
-  - **Max Attack (Max Strike)**: damage. Its type is the fast move's type. Power grows with level (roughly 250 → 300 → 350) **(verify)**.
+  - **Max Attack** (Max Flare, Max Wyrmwind… one per type): damage. Its type is the fast move's type. Power by Max Move level 250 → 300 → 350 (Bulbapedia *Max Move (GO)*; matches Dittobase's modelled damage).
   - **Max Guard**: a shield for yourself.
   - **Max Spirit**: heals the team.
-  - **G-Max moves** replace Max Attack for Gigantamax Pokémon. They use the species' signature type and have higher power **(verify)**.
+  - **G-Max moves** replace Max Attack for Gigantamax Pokémon: always the species' signature move (G-Max Wildfire = Fire for Charizard, G-Max Resonance = Ice for Lapras…), **whatever the fast move is**. Power 350 → 400 → 450. A Gigantamax Charizard with Dragon Breath still hits with Fire.
+  - **Special**: Eternatus (can't Dynamax) uses **Dynamax Cannon** (Dragon, G-Max power); Crowned Sword Zacian / Crowned Shield Zamazenta use **Behemoth Blade / Bash** (Steel, Max Attack power).
+  - Which species can Dynamax / Gigantamax: game master `EXTENDED_*` `breadOverrides` (see `pokego_claude.md` §4). Move types: `VN_BM_0xx` templates.
 - Upgrading Max Moves costs **Max Particles** plus Candy.
 - Boss tiers run from 1★ to 6★. Gigantamax bosses are the 6★ group battles.
 - Caught Max Battle bosses are Dynamax-capable. The site assumes level 20 catches **(verify)**.

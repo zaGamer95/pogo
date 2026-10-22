@@ -71,7 +71,7 @@ src/lib/
 
 | File | Source | Shape |
 | --- | --- | --- |
-| `pokemon.json` | PvPoke gamemaster (+ PokeMiners Dynamax flags) | `Species[]` |
+| `pokemon.json` | PvPoke gamemaster (+ PokeMiners Max Battle flags: `EXTENDED_*` `breadOverrides` — `BREAD_MODE` → `dmax`, `BREAD_DOUGH_MODE(_2)` → `gmax`, `BREAD_SPECIAL_MODE` / form-change → `maxSpecial`) | `Species[]` |
 | `moves.json` | PvPoke moves + PokeMiners PvE stats | `Record<MOVE_ID, Move>` |
 | `types.json` | PokeMiners `typeEffective` | `{ types: string[18], chart: {atk: {def: mult}} }` |
 | `cpm.json` | PokeMiners `PLAYER_LEVEL_SETTINGS` | `number[]`, index = `(level-1)*2`, levels 1–55 in 0.5 steps (half levels interpolated) |
@@ -83,7 +83,7 @@ src/lib/
 | `official.json` | pokemongo.com/news — latest ~30 posts, en + `/ko/` | `{ slug, url, urlKo, title, titleKo, published, image, windows: {start, end, text}[] }[]` (windows = local wall-clock `YYYY-MM-DDTHH:MM`) |
 | `pvp/formats.json` | PvPoke formats + cups that have rankings | `PvpFormat[]` (`key = "<cup>-<cp>"`) |
 | `pvp/<cup>-<cp>.json` | PvPoke rankings | `{ overall?, leads?, closers?, switches?, attackers?, chargers?: RankEntry[] }` (overall top 200, others top 60) |
-| `i18n.json` | PokeMiners `pogo_assets` i18n (ko/ja/en game text) → fallbacks LeekDuck names, PokeAPI (newest species/moves) → `data/i18n/overrides.csv` | `{ pokemon, moves, types, weather: Record<id, [ko, ja]>, leagues: Record<EnglishTitle, [ko, ja]> }` |
+| `i18n.json` | PokeMiners `pogo_assets` i18n (ko/ja/en game text) → fallbacks LeekDuck names, PokeAPI (newest species/moves) → `data/i18n/overrides.csv` | `{ pokemon, moves, types, weather: Record<id, [ko, ja]>, leagues: Record<EnglishTitle, [ko, ja]>, maxMoves: Record<EnglishMaxMove, [ko, ja]> }` (Max Flare … G-Max Wildfire, Dynamax Cannon) |
 | `jp-parties.json` | pokemongo-get.com `人気のバトルパーティ検索` (battle-log tool) | `{ source, season, fetched, leagues: { id, ja, en, cp, rule, all: JpParty[], high: JpParty[] /* rank 21–24 */, usage: {id, n}[] }[] }`; `JpParty = { rank, count, members: {dex, ja, shadow, id}[3] }` (member 0 = lead) |
 | `meta.json` | pipeline | `{ updated, pvpokeUpdated, counts }` |
 
@@ -93,7 +93,7 @@ src/lib/
 Species  { id /* pvpoke speciesId, e.g. "machamp", "machamp_shadow", "charizard_mega_y", "marowak_alolan" */,
            name, dex, types[], atk, def, hp /* base stats */, fast[], charged[] /* MOVE_IDs incl. elite */,
            elite[], tags[] /* shadow, shadoweligible, mega, legendary, mythical, ultrabeast, regional, untradeable, … */,
-           family?, released, dmax?, gmax? }
+           family?, released, dmax?, gmax?, maxSpecial? /* Eternatus, Crowned Zacian/Zamazenta */ }
 Move     { name, type, fast, pvp: { power, energy, turns? | buffs?, buffTarget?, chance? },
            pve: { power, dur /* s */, energy } | null /* null = PvP-only variant, e.g. *_PLUS */ }
 RankEntry{ id, score, moves: [fast, charged1, charged2], rating?, scores? /* [lead, closer, switch, charger, attacker, consistency] */,
@@ -135,7 +135,7 @@ RosterMon { uid, speciesId /* NON-shadow id */, nickname?, shadow?, purified?, l
 ## 6. Algorithms (where to tweak)
 
 - **Raid counters** `calc.simulate()` — GamePress-style: DPS0 from fast/charged cycles, energy-from-damage correction `(CDPS−FDPS)/(CEPS+FEPS)·(0.5−x/HP)·y`, boss incoming DPS `y` from boss moveset with +2 s gaps, `TDO = DPS·HP/y`, score `ER = (DPS³·TDO)^¼`. Boss movesets exclude elite moves and Return/Frustration. Raid tier CPM/HP table in `raidTier()`.
-- **Max Battles** `raid.maxAttackers/maxTanks` — heuristic (Atk × STAB × effectiveness of the fast-move type; bulk ÷ incoming multiplier). Not a simulation.
+- **Max Battles** `raid.maxAttackers/maxTanks` — heuristic, not a simulation. Each species is ranked once per way it can fight (`maxModes()`): **Dynamax** = Max Attack of the fast move's type, power 350; **Gigantamax** = its signature G-Max Move (`FIXED_MAX_MOVES`), type fixed whatever the fast move, power 450; **special** = Dynamax Cannon (Dragon, 450) / Behemoth Blade·Bash (Steel, 350). Score = Atk × power × STAB × effectiveness (Max Move level 3). Tanks = bulk ÷ incoming multiplier. Max Move names render with `<MaxMoveName>`.
 - **PvP IV rank** `calc.pvpIvRank()` — highest level ≤ cap (50, or 51 best buddy), stat product = atk·def·floor(hp), rank among 4096 spreads.
 - **My team** `pvp.myCandidates/bestTeams` — value = PvPoke score × (SP% )³ × (ML: level/50) × 0.93 if fast move differs; mons above the cap level are excluded (can't power down); triples searched from top 18; penalty 6/shared weakness, 15/type nobody resists; no duplicate species.
 - **Meta cores** `pvp.suggestTeams` — top leads × switches × closers with the same penalties; variety caps.

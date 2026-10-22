@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { spriteUrl, useGameData, type Species } from '../lib/data';
-import { moveNames, ordered, pokeNames, searchText, typeNames, usePrefs, useT } from '../lib/i18n';
+import { maxMoveNames, moveNames, ordered, pokeNames, searchText, typeNames, usePrefs, useT } from '../lib/i18n';
 
 export function TypeBadge({ type, small }: { type: string; small?: boolean }) {
   const data = useGameData();
@@ -63,6 +63,20 @@ export function MoveName({ id, elite }: { id: string; elite?: boolean }) {
         {primary}
         {elite && <sup title={t('Elite / legacy move')}>★</sup>}
       </span>
+      {moveAll && others.length > 0 && <span className="move-alt">{others.join(' · ')}</span>}
+    </span>
+  );
+}
+
+/** A Max Move (not in moves.json): name in the UI language, the other two like <MoveName>. */
+export function MaxMoveName({ name, type }: { name: string; type: string }) {
+  const data = useGameData();
+  const { lang, moveAll } = usePrefs();
+  const tri = maxMoveNames(data, name);
+  const { primary, others } = ordered(tri, lang);
+  return (
+    <span className={`move m-${type}${moveAll ? ' tri' : ''}`} title={`${tri.ko} / ${tri.en} / ${tri.ja}\n${typeNames(data, type)[lang]}`}>
+      <span>{primary}</span>
       {moveAll && others.length > 0 && <span className="move-alt">{others.join(' · ')}</span>}
     </span>
   );

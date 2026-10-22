@@ -215,6 +215,14 @@ export async function buildI18n({ gm, pv, dexNames = {} }) {
     moves[mv.moveId] = { source: names ? source : 'english', type: mv.type, en: mv.name, ko: (names?.ko ?? mv.name) + suffix.ko, ja: (names?.ja ?? mv.name) + suffix.ja };
   }
 
+  // ---- Max Moves (Max Flare, G-Max Wildfire, Dynamax Cannon…): keyed by English name; not PvPoke moves ----
+  const maxMoves = {};
+  for (const [k, v] of en) {
+    if (!/^move_name_\d+$/.test(k) || !/^(G-)?Max |^Behemoth |^Dynamax Cannon$/.test(v) || maxMoves[v]) continue;
+    const n = tri(k);
+    if (n) maxMoves[v] = { ko: n.ko, ja: n.ja };
+  }
+
   // ---- GBL league / cup titles ----
   const leagues = {};
   const titleKeys = new Set(gm.filter((t) => t.data.combatLeague).map((t) => t.data.combatLeague.title));
@@ -267,7 +275,7 @@ export async function buildI18n({ gm, pv, dexNames = {} }) {
   // Compact JSON for the site: [ko, ja] pairs (English already lives in pokemon.json / moves.json)
   const pair = (t) => Object.fromEntries(Object.entries(t).filter(([, n]) => n).map(([id, n]) => [id, [n.ko, n.ja]]));
   return {
-    json: { pokemon: pair(pokemon), moves: pair(moves), types: pair(types), weather: pair(weather), leagues: pair(leagues) },
+    json: { pokemon: pair(pokemon), moves: pair(moves), types: pair(types), weather: pair(weather), leagues: pair(leagues), maxMoves: pair(maxMoves) },
     missing,
     jaToSpecies: Object.fromEntries(Object.entries(pokemon).map(([id, n]) => [n.ja.normalize('NFKC'), id])),
     // base Japanese name → default species (first non-shadow entry for that dex, e.g. ギラティナ → giratina_altered)
